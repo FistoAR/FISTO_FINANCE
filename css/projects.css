@@ -1,0 +1,1600 @@
+/* ===================================
+   PROJECTS.CSS - Projects Page Styles
+   =================================== */
+
+.projects-page {
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* ===================================
+   TABS NAVIGATION - PILL STYLE
+   =================================== */
+
+.tabs-container {
+    display: inline-flex;
+    gap: 8px;
+    margin-bottom: 1vw;
+    padding: 6px;
+    background: white;
+    border-radius: 50px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.tab-btn {
+    padding: 12px 28px;
+    background: transparent;
+    border: none;
+    color: var(--color-text-secondary);
+    font-size: .8vw;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+    white-space: nowrap;
+}
+
+.tab-btn:hover {
+    color: var(--color-primary);
+    background: rgba(59, 130, 246, 0.05);
+}
+
+.tab-btn.active {
+    color: white;
+    background: #2D6BFF;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* ===================================
+   TAB CONTENT
+   =================================== */
+
+.tab-content-wrapper {
+    position: relative;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===================================
+   DAILY REPORTS CONTAINER
+   =================================== */
+
+.daily-reports-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Vertical timeline line */
+.daily-reports-container::before {
+    content: '';
+    position: absolute;
+    left: 23px;
+    top: 64px;
+    bottom: 32px;
+    width: 2px;
+    background-image: repeating-linear-gradient(to bottom,
+            var(--color-primary) 0,
+            var(--color-primary) 8px,
+            transparent 8px,
+            transparent 16px);
+    z-index: 0;
+}
+
+/* ===================================
+   REPORT CARD WRAPPER (Contains number + card)
+   =================================== */
+
+.report-card-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    position: relative;
+    padding: 10px 0;
+}
+
+/* ===================================
+   TIMELINE NUMBER (Outside on left)
+   =================================== */
+
+.timeline-number {
+    width: 48px;
+    height: 48px;
+    background: white;
+    border: 2px solid var(--color-primary);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1vw;
+    font-weight: 700;
+    color: var(--color-primary);
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.15);
+    z-index: 2;
+    position: relative;
+}
+
+/* ===================================
+   TIMELINE CONNECTOR (Dotted line)
+   =================================== */
+
+.timeline-connector {
+    width: 1vw;
+    height: 2px;
+    align-self: center;
+    margin-top: -32px;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+/* ===================================
+   REPORT CARD
+   =================================== */
+
+.report-card {
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.report-card.collapsed {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.report-card:hover {
+    cursor: pointer;
+}
+
+
+
+/* ===================================
+   REPORT HEADER (Clickable)
+   =================================== */
+
+.report-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    cursor: pointer;
+    background: white;
+    transition: background 0.2s ease;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.report-header:hover {
+    background: rgba(59, 130, 246, 0.02);
+}
+
+.report-header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.report-info {
+    display: flex;
+    gap: 2vw;
+}
+
+.report-title {
+    font-size: .8vw;
+    font-weight: 600;
+    color: var(--color-text);
+    padding: 10px 0;
+}
+
+.report-date {
+    font-size: .8vw;
+    color: var(--color-text-secondary);
+    background: rgba(59, 130, 246, 0.1);
+    padding: 10px 15px;
+    border-radius: 30px;
+}
+
+.report-toggle {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.report-toggle svg {
+    width: 18px;
+    height: 18px;
+    color: var(--color-primary);
+    transition: transform 0.3s ease;
+}
+
+.report-card.collapsed .report-toggle svg {
+    transform: rotate(180deg);
+}
+
+/* ===================================
+   REPORT CONTENT (Collapsible)
+   =================================== */
+
+.report-content {
+    max-height: 2000px;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.report-card.collapsed .report-content {
+    max-height: 0;
+    padding: 0;
+}
+
+/* ===================================
+   TASKS TABLE
+   =================================== */
+.tasks-table-wrapper {
+    padding: 20px;
+    overflow-x: auto;
+}
+
+.tasks-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #E5E7EB;
+}
+
+.tasks-table thead {
+    background: linear-gradient(135deg, #E0E7FF 0%, #DDD6FE 100%);
+}
+
+.tasks-table thead th {
+    padding: 16px 20px;
+    text-align: left;
+    font-size: .8vw;
+    font-weight: 600;
+    color: #1F2937;
+    white-space: nowrap;
+    border-right: 1px solid #9CC4FF;
+    border-bottom: 1px solid #9CC4FF;
+}
+
+.tasks-table thead th:first-child {
+    border-top-left-radius: 16px;
+}
+
+.tasks-table thead th:last-child {
+    border-top-right-radius: 16px;
+    border-right: none;
+}
+
+.tasks-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+/* Alternating row colors */
+.tasks-table tbody tr:nth-child(odd) {
+    background: white;
+}
+
+.tasks-table tbody tr:nth-child(even) {
+    background: #F9FAFB;
+}
+
+.tasks-table tbody tr:hover {
+    background: #EEF2FF;
+}
+
+.tasks-table tbody td {
+    padding: 18px 20px;
+    border-right: 1px solid #9CC4FF;
+    border-bottom: 1px solid #9CC4FF;
+    font-size: .8vw;
+    color: var(--color-text);
+}
+
+.tasks-table tbody td:last-child {
+    border-right: none;
+}
+
+.tasks-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.tasks-table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 16px;
+}
+
+.tasks-table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 16px;
+}
+
+/* Employee ID */
+.employee-id {
+    font-weight: 600;
+    color: #1F2937;
+}
+
+/* Employee Name with Avatar */
+.employee-name {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.employee-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: .8vw;
+    color: white;
+    flex-shrink: 0;
+}
+
+.employee-name-text {
+    font-weight: 500;
+    color: #1F2937;
+}
+
+/* Task Inputs */
+.task-input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    font-size: .8vw;
+    color: var(--color-text);
+    transition: all 0.2s ease;
+    font-family: inherit;
+    background: white;
+}
+
+.task-input:focus {
+    outline: none;
+    border-color: #6366F1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    background: white;
+}
+
+.task-input::placeholder {
+    color: #9CA3AF;
+    opacity: 1;
+}
+
+/* ===================================
+   PERCENTAGE INPUT
+   =================================== */
+
+.percentage-input {
+    width: 100%;
+    max-width: 140px;
+    text-align: center;
+}
+
+/* Links */
+.figma-link {
+    color: #6366F1;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.figma-link:hover {
+    text-decoration: underline;
+    color: #4F46E5;
+}
+
+/* ===================================
+   SAVE BUTTON
+   =================================== */
+
+.save-button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px 0 0 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+    margin-top: 16px;
+}
+
+.save-btn {
+    padding: 10px 32px;
+    background: #2D6BFF;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: .8vw;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(45, 107, 255, 0.2);
+}
+
+.save-btn:hover {
+    background: #1e5aee;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(45, 107, 255, 0.3);
+}
+
+.save-btn:active {
+    transform: translateY(0);
+}
+
+/* ===================================
+   EMPTY STATE
+   =================================== */
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--color-text-secondary);
+    font-size: .8vw;
+}
+
+
+
+
+
+
+/* ===================================
+   DEMOS TAB STYLES
+   =================================== */
+
+.demos-container {
+    max-width: 100%;
+    padding: 10px 0;
+}
+
+.demos-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 0.625rem;
+}
+
+.add-demo-btn {
+    position: absolute;
+    top: -9%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: #2D6BFF;
+    color: white;
+    border: none;
+    border-radius: 1.875rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 8px rgba(45, 107, 255, 0.3);
+}
+
+.add-demo-btn:hover {
+    background: #1e5aee;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(45, 107, 255, 0.4);
+}
+
+.add-demo-btn:active {
+    transform: translateY(0);
+}
+
+.add-demo-btn img {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* ===================================================  DEMOS TABLE =================================================== */
+
+.demos-table-wrapper {
+    overflow-x: auto;
+}
+
+.demos-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 1rem;
+    /* 16px */
+    overflow: hidden;
+    border: 1px solid #E5E7EB;
+    background: white;
+}
+
+.demos-table thead {
+    background:  #DEE7FF ;
+}
+
+.demos-table thead th {
+    padding: 1rem 1.25rem;
+    /* 16px 20px */
+    text-align: left;
+    font-size: 0.875rem;
+    /* 14px */
+    font-weight: 600;
+    color: #1F2937;
+    white-space: nowrap;
+    border-right: 1px solid #9CC4FF;
+    border-bottom: 1px solid #9CC4FF;
+}
+
+.demos-table thead th:first-child {
+    border-top-left-radius: 1rem;
+    /* 16px */
+}
+
+.demos-table thead th:last-child {
+    border-top-right-radius: 1rem;
+    /* 16px */
+    border-right: none;
+}
+
+.demos-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.demos-table tbody tr:nth-child(odd) {
+    background: white;
+}
+
+.demos-table tbody tr:nth-child(even) {
+    background: #F9FAFB;
+}
+
+.demos-table tbody tr:hover {
+    background: #EEF2FF;
+}
+
+.demos-table tbody td {
+    padding: 1.125rem 1.25rem;
+    /* 18px 20px */
+    border-right: 1px solid #9CC4FF;
+    border-bottom: 1px solid #9CC4FF;
+    font-size: 0.875rem;
+    /* 14px */
+    color: var(--color-text);
+}
+
+.demos-table tbody td:last-child {
+    border-right: none;
+}
+
+.demos-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.demos-table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 1rem;
+    /* 16px */
+}
+
+.demos-table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 1rem;
+    /* 16px */
+}
+
+
+/* Table Links */
+.table-link {
+    color: #6366F1;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.table-link:hover {
+    text-decoration: underline;
+    color: #4F46E5;
+}
+
+/* Video Link with Icon */
+.video-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.375rem;
+    /* 6px */
+    text-decoration: none;
+    color: #1F2937;
+    transition: all 0.2s ease;
+}
+
+.video-link:hover {
+    transform: translateY(-2px);
+}
+
+.video-link img {
+    width: 2vw;
+    transition: all 0.2s ease;
+}
+
+.video-link:hover img {
+    filter: drop-shadow(0 2px 4px rgba(99, 102, 241, 0.3));
+}
+
+.video-link span {
+    font-size: 0.75rem;
+    /* 12px */
+    font-weight: 500;
+    color: #6366F1;
+}
+
+/* PDF Link with Icon */
+.pdf-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.375rem;
+    /* 6px */
+    text-decoration: none;
+    color: #1F2937;
+    transition: all 0.2s ease;
+}
+
+.pdf-link:hover {
+    transform: translateY(-2px);
+}
+
+.pdf-link img {
+    width: 2vw;
+    transition: all 0.2s ease;
+}
+
+.pdf-link:hover img {
+    filter: drop-shadow(0 2px 4px rgba(239, 68, 68, 0.3));
+}
+
+.pdf-link span {
+    font-size: 0.75rem;
+    /* 12px */
+    font-weight: 500;
+    color: #EF4444;
+}
+
+/* ===================================
+   RESPONSIVE - TABLET (769px - 1024px)
+   =================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .tabs-container {
+        gap: 0.5rem;
+        margin-bottom: 1.25rem;
+        padding: 0.375rem;
+    }
+
+    .tab-btn {
+        padding: 0.625rem 1.5rem;
+        font-size: 0.875rem;
+    }
+
+    .report-card-wrapper {
+        padding: 0.625rem 0;
+    }
+
+    .timeline-number {
+        width: 2.75rem;
+        height: 2.75rem;
+        font-size: 1.125rem;
+    }
+
+    .timeline-connector {
+        width: 2.375rem;
+    }
+
+    .daily-reports-container::before {
+        left: 1.3125rem;
+    }
+
+    .report-header {
+        padding: 0.875rem 1.125rem;
+    }
+
+    .report-info {
+        gap: 1.25rem;
+    }
+
+    .report-title {
+        font-size: 0.9375rem;
+        padding: 0.625rem 0;
+    }
+
+    .report-date {
+        font-size: 0.8125rem;
+        padding: 0.625rem 0.875rem;
+    }
+
+    .report-toggle {
+        width: 1.875rem;
+        height: 1.875rem;
+    }
+
+    .report-toggle svg {
+        width: 1.0625rem;
+        height: 1.0625rem;
+    }
+
+    .tasks-table-wrapper {
+        padding: 1rem;
+    }
+
+    .tasks-table thead th {
+        padding: 0.875rem 1.125rem;
+        font-size: 0.8125rem;
+    }
+
+    .tasks-table tbody td {
+        padding: 1rem 1.125rem;
+        /* 16px 18px */
+        font-size: 0.8125rem;
+        /* 13px */
+    }
+
+    .employee-avatar {
+        width: 2.25rem;
+        /* 36px */
+        height: 2.25rem;
+        /* 36px */
+        font-size: 0.875rem;
+        /* 14px */
+    }
+
+    .task-input {
+        padding: 0.625rem 0.75rem;
+        /* 10px 12px */
+        font-size: 0.8125rem;
+        /* 13px */
+    }
+
+    .percentage-input {
+        max-width: 7.5rem;
+        /* 120px */
+    }
+
+    .save-btn {
+        padding: 0.625rem 1.75rem;
+        /* 10px 28px */
+        font-size: 0.875rem;
+        /* 14px */
+    }
+
+    .empty-state {
+        font-size: 0.9375rem;
+        /* 15px */
+        padding: 3.125rem 1.25rem;
+        /* 50px 20px */
+    }
+     .demos-container {
+        padding: 0.5rem 0; /* 8px 0 */
+    }
+
+    .demos-header {
+        padding: 0 0.5rem; /* 0 8px */
+    }
+
+    .add-demo-btn {
+        top: -10%;
+        padding: 0.625rem 1.25rem; /* 10px 20px */
+        font-size: 0.875rem; /* 14px */
+        gap: 0.375rem; /* 6px */
+    }
+
+    .add-demo-btn img {
+        width: 1.125rem; /* 18px */
+        height: 1.125rem; /* 18px */
+    }
+
+    .demos-table-wrapper {
+        padding: 0 0.5rem; /* 0 8px */
+    }
+
+    .demos-table {
+        border-radius: 0.875rem; /* 14px */
+    }
+
+    .demos-table thead th {
+        padding: 0.875rem 1rem; /* 14px 16px */
+        font-size: 0.8125rem; /* 13px */
+    }
+
+    .demos-table tbody td {
+        padding: 1rem; /* 16px */
+        font-size: 0.8125rem; /* 13px */
+    }
+
+    .video-link img,
+    .pdf-link img {
+        width: 1.875rem; /* 30px */
+    }
+
+    .video-link span,
+    .pdf-link span {
+        font-size: 0.6875rem; /* 11px */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .tabs-container {
+        gap: 0.375rem;
+        /* 6px */
+        margin-bottom: 1.25rem;
+        /* 20px */
+        padding: 0.3125rem;
+        /* 5px */
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tab-btn {
+        padding: 0.625rem 1.25rem;
+        /* 10px 20px */
+        font-size: 0.8125rem;
+        /* 13px */
+    }
+
+    .report-card-wrapper {
+        padding: 0.5rem 0;
+        /* 8px 0 */
+    }
+
+    .timeline-number {
+        width: 2.375rem;
+        /* 38px */
+        height: 2.375rem;
+        /* 38px */
+        font-size: 1rem;
+        /* 16px */
+    }
+
+    .timeline-connector {
+        width: 2rem;
+        /* 32px */
+        margin-top: -1.6875rem;
+        /* -27px */
+    }
+
+    .daily-reports-container::before {
+        left: 1.125rem;
+        /* 18px */
+        top: 4rem;
+        /* 64px */
+    }
+
+    .report-card {
+        border-radius: 1.25rem;
+        /* 20px */
+    }
+
+    .report-header {
+        padding: 0.875rem 1rem;
+        /* 14px 16px */
+    }
+
+    .report-header-left {
+        gap: 0.875rem;
+        /* 14px */
+    }
+
+    .report-info {
+        gap: 0.5rem;
+        /* 8px */
+    }
+
+    .report-title {
+        font-size: 0.9375rem;
+        /* 15px */
+        padding: 0.5rem 0;
+        /* 8px 0 */
+    }
+
+    .report-date {
+        font-size: 0.8125rem;
+        /* 13px */
+        padding: 0.5rem 0.75rem;
+        /* 8px 12px */
+    }
+
+    .report-toggle {
+        width: 1.75rem;
+        /* 28px */
+        height: 1.75rem;
+        /* 28px */
+    }
+
+    .report-toggle svg {
+        width: 1rem;
+        /* 16px */
+        height: 1rem;
+        /* 16px */
+    }
+
+    .tasks-table-wrapper {
+        padding: 0.75rem;
+        /* 12px */
+    }
+
+    .tasks-table {
+        border-radius: 0.75rem;
+        /* 12px */
+        min-width: 43.75rem;
+        /* 700px - horizontal scroll */
+    }
+
+    .tasks-table thead th {
+        padding: 0.75rem 0.875rem;
+        /* 12px 14px */
+        font-size: 0.75rem;
+        /* 12px */
+    }
+
+    .tasks-table tbody td {
+        padding: 0.875rem 1rem;
+        /* 14px 16px */
+        font-size: 0.8125rem;
+        /* 13px */
+    }
+
+    .employee-avatar {
+        width: 2rem;
+        /* 32px */
+        height: 2rem;
+        /* 32px */
+        font-size: 0.8125rem;
+        /* 13px */
+    }
+
+    .employee-name {
+        gap: 0.625rem;
+        /* 10px */
+    }
+
+    .task-input {
+        padding: 0.625rem 0.75rem;
+        /* 10px 12px */
+        font-size: 0.8125rem;
+        /* 13px */
+    }
+
+    .percentage-input {
+        max-width: 6.25rem;
+        /* 100px */
+    }
+
+    .save-button-wrapper {
+        padding: 0.75rem 0 0 0;
+        /* 12px 0 0 0 */
+        margin-top: 0.75rem;
+        /* 12px */
+    }
+
+    .save-btn {
+        padding: 0.5rem 1.5rem;
+        /* 8px 24px */
+        font-size: 0.875rem;
+        /* 14px */
+    }
+
+    .empty-state {
+        font-size: 0.875rem;
+        /* 14px */
+        padding: 2.5rem 1.25rem;
+        /* 40px 20px */
+    }
+      .demos-container {
+        padding: 0.5rem 0; /* 8px 0 */
+    }
+
+    .demos-header {
+        padding: 0 0.375rem; /* 0 6px */
+    }
+
+    .add-demo-btn {
+        top: -10%;
+        padding: 0.625rem 1.125rem; /* 10px 18px */
+        font-size: 0.8125rem; /* 13px */
+        gap: 0.375rem; /* 6px */
+        border-radius: 1.5rem; /* 24px */
+    }
+
+    .add-demo-btn img {
+        width: 1rem; /* 16px */
+        height: 1rem; /* 16px */
+    }
+
+    .demos-table-wrapper {
+        padding: 0 0.375rem; /* 0 6px */
+    }
+
+    .demos-table {
+        border-radius: 0.75rem; /* 12px */
+        min-width: 50rem; /* 800px - horizontal scroll */
+    }
+
+    .demos-table thead th {
+        padding: 0.75rem 0.875rem; /* 12px 14px */
+        font-size: 0.75rem; /* 12px */
+    }
+
+    .demos-table tbody td {
+        padding: 0.875rem 1rem; /* 14px 16px */
+        font-size: 0.8125rem; /* 13px */
+    }
+
+    .video-link img,
+    .pdf-link img {
+        width: 1.75rem; /* 28px */
+    }
+
+    .video-link span,
+    .pdf-link span {
+        font-size: 0.6875rem; /* 11px */
+    }
+
+    .table-link {
+        font-size: 0.8125rem; /* 13px */
+    }
+}
+
+
+@media (max-width: 480px) {
+    .tabs-container {
+        padding: 0.25rem;
+        /* 4px */
+        gap: 0.25rem;
+        /* 4px */
+    }
+
+    .tab-btn {
+        padding: 0.5rem 1rem;
+        /* 8px 16px */
+        font-size: 0.75rem;
+        /* 12px */
+    }
+
+    .timeline-number {
+        width: 2.125rem;
+        /* 34px */
+        height: 2.125rem;
+        /* 34px */
+        font-size: 0.875rem;
+        /* 14px */
+    }
+
+    .timeline-connector {
+        width: 1.75rem;
+        /* 28px */
+        margin-top: -1.5625rem;
+        /* -25px */
+    }
+
+    .daily-reports-container::before {
+        left: 1rem;
+        /* 16px */
+    }
+
+    .report-card {
+        border-radius: 1rem;
+        /* 16px */
+    }
+
+    .report-header {
+        padding: 0.75rem 0.875rem;
+        /* 12px 14px */
+    }
+
+    .report-title {
+        font-size: 0.875rem;
+        /* 14px */
+        padding: 0.375rem 0;
+        /* 6px 0 */
+    }
+
+    .report-date {
+        font-size: 0.75rem;
+        /* 12px */
+        padding: 0.375rem 0.625rem;
+        /* 6px 10px */
+    }
+
+    .tasks-table-wrapper {
+        padding: 0.5rem;
+        /* 8px */
+    }
+
+    .tasks-table {
+        border-radius: 0.625rem;
+        /* 10px */
+    }
+
+    .tasks-table thead th {
+        padding: 0.625rem 0.75rem;
+        /* 10px 12px */
+        font-size: 0.6875rem;
+        /* 11px */
+    }
+
+    .tasks-table tbody td {
+        padding: 0.75rem 0.875rem;
+        /* 12px 14px */
+        font-size: 0.75rem;
+        /* 12px */
+    }
+
+    .employee-avatar {
+        width: 1.875rem;
+        /* 30px */
+        height: 1.875rem;
+        /* 30px */
+        font-size: 0.75rem;
+        /* 12px */
+    }
+
+    .task-input {
+        padding: 0.5rem 0.625rem;
+        /* 8px 10px */
+        font-size: 0.75rem;
+        /* 12px */
+    }
+
+    .percentage-input {
+        max-width: 5.625rem;
+        /* 90px */
+    }
+
+    .save-btn {
+        width: 100%;
+        padding: 0.625rem 1.25rem;
+        /* 10px 20px */
+        font-size: 0.8125rem;
+        /* 13px */
+    }
+
+    .save-button-wrapper {
+        padding: 0.625rem 0 0 0;
+        /* 10px 0 0 0 */
+    }
+
+    .empty-state {
+        font-size: 0.8125rem;
+        /* 13px */
+        padding: 2rem 1rem;
+        /* 32px 16px */
+    }
+      .demos-container {
+        padding: 0.375rem 0; /* 6px 0 */
+    }
+
+    .add-demo-btn {
+        position: relative;
+        margin: .5rem 0;
+        padding: 0.5rem 1rem; /* 8px 16px */
+        font-size: 0.75rem; /* 12px */
+        gap: 0.25rem; /* 4px */
+    }
+
+    .add-demo-btn img {
+        width: 0.9375rem; /* 15px */
+        height: 0.9375rem; /* 15px */
+    }
+
+    .demos-table-wrapper {
+        padding: 0 0.25rem; /* 0 4px */
+    }
+
+    .demos-table {
+        border-radius: 0.625rem; /* 10px */
+    }
+
+    .demos-table thead th {
+        padding: 0.625rem 0.75rem; /* 10px 12px */
+        font-size: 0.6875rem; /* 11px */
+    }
+
+    .demos-table tbody td {
+        padding: 0.75rem 0.875rem; /* 12px 14px */
+        font-size: 0.75rem; /* 12px */
+    }
+
+    .video-link img,
+    .pdf-link img {
+        width: 1.5rem; /* 24px */
+    }
+
+    .video-link span,
+    .pdf-link span {
+        font-size: 0.625rem; /* 10px */
+    }
+
+    .table-link {
+        font-size: 0.75rem; /* 12px */
+    }
+}
+
+@media (max-width: 375px) {
+    .tab-btn {
+        padding: 0.5rem 0.875rem;
+        /* 8px 14px */
+        font-size: 0.6875rem;
+        /* 11px */
+    }
+
+    .timeline-number {
+        width: 2rem;
+        /* 32px */
+        height: 2rem;
+        /* 32px */
+        font-size: 0.8125rem;
+        /* 13px */
+    }
+
+    .report-title {
+        font-size: 0.8125rem;
+        /* 13px */
+    }
+
+    .report-date {
+        font-size: 0.6875rem;
+        /* 11px */
+    }
+
+    .tasks-table thead th {
+        font-size: 0.625rem;
+        /* 10px */
+        padding: 0.5rem 0.625rem;
+        /* 8px 10px */
+    }
+
+    .tasks-table tbody td {
+        font-size: 0.6875rem;
+        /* 11px */
+        padding: 0.625rem 0.75rem;
+        /* 10px 12px */
+    }
+
+    .employee-avatar {
+        width: 1.75rem;
+        /* 28px */
+        height: 1.75rem;
+        /* 28px */
+        font-size: 0.6875rem;
+        /* 11px */
+    }
+
+    .save-btn {
+        font-size: 0.75rem;
+        /* 12px */
+    }
+     .add-demo-btn {
+        top: -5%;
+        padding: 0.5rem 0.875rem; /* 8px 14px */
+        font-size: 0.6875rem; /* 11px */
+    }
+
+    .add-demo-btn img {
+        width: 0.875rem; /* 14px */
+        height: 0.875rem; /* 14px */
+    }
+
+    .demos-table {
+        border-radius: 0.5rem; /* 8px */
+    }
+
+    .demos-table thead th {
+        padding: 0.5rem 0.625rem; /* 8px 10px */
+        font-size: 0.625rem; /* 10px */
+    }
+
+    .demos-table tbody td {
+        padding: 0.625rem 0.75rem; /* 10px 12px */
+        font-size: 0.6875rem; /* 11px */
+    }
+
+    .video-link img,
+    .pdf-link img {
+        width: 1.375rem; /* 22px */
+    }
+
+    .video-link span,
+    .pdf-link span {
+        font-size: 0.5625rem; /* 9px */
+    }
+
+    .table-link {
+        font-size: 0.6875rem; /* 11px */
+    }
+}
+
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .tabs-container {
+        margin-bottom: 0.625rem;
+        /* 10px */
+        padding: 0.25rem;
+        /* 4px */
+    }
+
+    .tab-btn {
+        padding: 0.5rem 1rem;
+        /* 8px 16px */
+        font-size: 0.75rem;
+        /* 12px */
+    }
+
+    .report-card-wrapper {
+        padding: 0.375rem 0;
+        /* 6px 0 */
+    }
+
+    .timeline-number {
+        width: 2rem;
+        /* 32px */
+        height: 2rem;
+        /* 32px */
+        font-size: 0.8125rem;
+        /* 13px */
+    }
+
+    .timeline-connector {
+        width: 1.5rem;
+        /* 24px */
+        margin-top: -1.25rem;
+        /* -20px */
+    }
+
+    .daily-reports-container::before {
+        left: 0.9375rem;
+        /* 15px */
+        top: 2.5rem;
+        /* 40px */
+    }
+
+    .report-card {
+        border-radius: 0.75rem;
+        /* 12px */
+    }
+
+    .report-header {
+        padding: 0.625rem 0.875rem;
+        /* 10px 14px */
+    }
+
+    .report-info {
+        gap: 0.75rem;
+        /* 12px */
+    }
+
+    .report-title {
+        font-size: 0.8125rem;
+        /* 13px */
+        padding: 0.25rem 0;
+        /* 4px 0 */
+    }
+
+    .report-date {
+        font-size: 0.75rem;
+        /* 12px */
+        padding: 0.375rem 0.625rem;
+        /* 6px 10px */
+    }
+
+    .report-toggle {
+        width: 1.5rem;
+        /* 24px */
+        height: 1.5rem;
+        /* 24px */
+    }
+
+    .report-toggle svg {
+        width: 0.875rem;
+        /* 14px */
+        height: 0.875rem;
+        /* 14px */
+    }
+
+    .tasks-table-wrapper {
+        padding: 0.5rem;
+        /* 8px */
+    }
+
+    .tasks-table thead th {
+        padding: 0.5rem 0.625rem;
+        /* 8px 10px */
+        font-size: 0.6875rem;
+        /* 11px */
+    }
+
+    .tasks-table tbody td {
+        padding: 0.625rem 0.75rem;
+        /* 10px 12px */
+        font-size: 0.75rem;
+        /* 12px */
+    }
+
+    .employee-avatar {
+        width: 1.75rem;
+        /* 28px */
+        height: 1.75rem;
+        /* 28px */
+        font-size: 0.6875rem;
+        /* 11px */
+    }
+
+    .task-input {
+        padding: 0.375rem 0.5rem;
+        /* 6px 8px */
+        font-size: 0.75rem;
+        /* 12px */
+    }
+
+    .save-button-wrapper {
+        padding: 0.5rem 0 0 0;
+        /* 8px 0 0 0 */
+        margin-top: 0.5rem;
+        /* 8px */
+    }
+
+    .save-btn {
+        padding: 0.5rem 1.25rem;
+        font-size: 0.75rem;
+    }
+
+    .empty-state {
+        padding: 1.5rem 1rem;
+        font-size: 0.8125rem;
+    }
+
+        .demos-container {
+        padding: 0.375rem 0; /* 6px 0 */
+    }
+
+    .add-demo-btn {
+        top: -10%;
+        padding: 0.5rem 1rem; /* 8px 16px */
+        font-size: 0.75rem; /* 12px */
+        gap: 0.25rem; /* 4px */
+    }
+
+    .add-demo-btn img {
+        width: 0.875rem; /* 14px */
+        height: 0.875rem; /* 14px */
+    }
+
+    .demos-table-wrapper {
+        padding: 0 0.375rem; /* 0 6px */
+    }
+
+    .demos-table {
+        border-radius: 0.625rem; /* 10px */
+    }
+
+    .demos-table thead th {
+        padding: 0.5rem 0.625rem; /* 8px 10px */
+        font-size: 0.6875rem; /* 11px */
+    }
+
+    .demos-table tbody td {
+        padding: 0.625rem 0.75rem; /* 10px 12px */
+        font-size: 0.75rem; /* 12px */
+    }
+
+    .video-link img,
+    .pdf-link img {
+        width: 1.375rem; /* 22px */
+    }
+
+    .video-link span,
+    .pdf-link span {
+        font-size: 0.625rem; /* 10px */
+    }
+
+    .table-link {
+        font-size: 0.75rem; /* 12px */
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .tabs-container {
+        margin-bottom: 1rem;
+    }
+
+    .tab-btn {
+        padding: 0.5rem 1.25rem;
+        font-size: 0.8125rem;
+    }
+
+    .timeline-number {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1rem;
+    }
+
+    .report-header {
+        padding: 0.75rem 1rem;
+    }
+
+    .report-title {
+        font-size: 0.875rem;
+    }
+
+    .report-date {
+        font-size: 0.8125rem;
+    }
+
+    .tasks-table thead th {
+        font-size: 0.75rem;
+        padding: 0.75rem 0.875rem;
+    }
+
+    .tasks-table tbody td {
+        font-size: 0.8125rem;
+        padding: 0.875rem 1rem;
+    }
+
+     .demos-container {
+        padding: 0.5rem 0; /* 8px 0 */
+    }
+
+    .add-demo-btn {
+        top: -9%;
+        padding: 0.625rem 1.125rem; /* 10px 18px */
+        font-size: 0.8125rem; /* 13px */
+    }
+
+    .add-demo-btn img {
+        width: 1rem; /* 16px */
+        height: 1rem; /* 16px */
+    }
+
+    .demos-table thead th {
+        padding: 0.75rem 0.875rem; /* 12px 14px */
+        font-size: 0.75rem; /* 12px */
+    }
+
+    .demos-table tbody td {
+        padding: 0.875rem 1rem; /* 14px 16px */
+        font-size: 0.8125rem; /* 13px */
+    }
+
+    .video-link img,
+    .pdf-link img {
+        width: 1.625rem; /* 26px */
+    }
+
+    .video-link span,
+    .pdf-link span {
+        font-size: 0.6875rem; /* 11px */
+    }
+}

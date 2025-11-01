@@ -1,0 +1,494 @@
+/* ===================================
+   HEADER.CSS - Top Header Bar
+   =================================== */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-shrink: 0;
+  padding: 20px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+/* ===================================
+   USER INFO
+   =================================== */
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.welcome-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.role-text {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+/* ===================================
+   HEADER RIGHT SECTION
+   =================================== */
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-left: auto;
+}
+
+/* ===================================
+   DATE TIME DISPLAY
+   =================================== */
+
+.datetime-display {
+  display: flex;
+  align-items: center;
+}
+
+.datetime-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+/* ===================================
+   HEADER ACTIONS (Icon Buttons)
+   =================================== */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-btn {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-white);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--color-text);
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.icon-btn img{
+  width: 2vw;
+  height: auto;
+}
+
+.icon-btn:hover {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.icon-btn:active {
+  transform: translateY(0);
+}
+
+.icon-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Notification Badge */
+.notification-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #ef4444;
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 12px;
+  min-width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* ===================================
+   PAGE TITLE
+   =================================== */
+
+.title {
+  font-size: 30px;
+  font-family: 'Gilroy-SemiBold', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+/* ===================================
+   RESPONSIVE - TABLET (769px - 1024px)
+   =================================== */
+
+/* ===================================
+   RESPONSIVE - TABLET (769px - 1024px)
+   =================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header {
+    padding: 1.125rem 1.5rem; /* 18px 24px */
+    gap: 0.875rem; /* 14px */
+  }
+
+  .header-content {
+    gap: 1.25rem; 
+    padding-left: 7vw;
+  }
+
+  .welcome-text {
+    font-size: 1.0625rem; /* 17px */
+  }
+
+  .role-text {
+    font-size: 0.78125rem; /* 12.5px */
+  }
+
+  .datetime-text {
+    font-size: 0.8125rem; /* 13px */
+  }
+
+  .header-right {
+    gap: 1.25rem; /* 20px */
+  }
+
+  .header-actions {
+    gap: 0.5rem; /* 8px */
+  }
+
+  .icon-btn {
+    width: 2.5rem; /* 40px */
+    height: 2.5rem; /* 40px */
+  }
+
+  .icon-btn img {
+    width: 1.1875rem; /* 19px */
+  }
+
+  .icon-btn svg {
+    width: 1.1875rem; /* 19px */
+    height: 1.1875rem; /* 19px */
+  }
+
+  .title {
+    font-size: 1.75rem; /* 28px */
+  }
+}
+
+/* ===================================
+   RESPONSIVE - MOBILE (max-width: 768px)
+   =================================== */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem 1.125rem; /* 16px 18px */
+    gap: 0.75rem; /* 12px */
+  }
+
+  .header-content {
+    flex-wrap: wrap;
+    gap: 0.875rem; /* 14px */
+    justify-content: center;
+  }
+
+  .user-info {
+    order: 1;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .header-right {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+    gap: 1rem; /* 16px */
+    flex-wrap: wrap;
+  }
+
+  .datetime-display {
+    order: -1;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .welcome-text {
+    font-size: 1rem; /* 16px */
+  }
+
+  .role-text {
+    font-size: 0.75rem; /* 12px */
+  }
+
+  .datetime-text {
+    font-size: 0.8125rem; /* 13px */
+  }
+
+  .header-actions {
+    gap: 0.5rem; /* 8px */
+  }
+
+  .icon-btn {
+    width: 2.375rem; /* 38px */
+    height: 2.375rem; /* 38px */
+  }
+
+  .icon-btn img {
+    width: 1.125rem; /* 18px */
+  }
+
+  .icon-btn svg {
+    width: 1.125rem; /* 18px */
+    height: 1.125rem; /* 18px */
+  }
+
+  .title {
+    font-size: 1.5rem; /* 24px */
+    text-align: center;
+  }
+}
+
+/* ===================================
+   RESPONSIVE - SMALL MOBILE (max-width: 480px)
+   =================================== */
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0.875rem 1rem; /* 14px 16px */
+    gap: 0.625rem; /* 10px */
+  }
+
+  .header-content {
+    gap: 0.75rem; /* 12px */
+  }
+
+  .header-right {
+    gap: 0.75rem; /* 12px */
+  }
+
+  .header-actions {
+    gap: 0.5rem; /* 8px */
+  }
+
+  .welcome-text {
+    font-size: 0.9375rem; /* 15px */
+  }
+
+  .role-text {
+    font-size: 0.6875rem; /* 11px */
+  }
+
+  .datetime-text {
+    font-size: 0.75rem; /* 12px */
+  }
+
+  .icon-btn {
+    width: 2.25rem; /* 36px */
+    height: 2.25rem; /* 36px */
+  }
+
+  .icon-btn img {
+    width: 1.0625rem; /* 17px */
+  }
+
+  .icon-btn svg {
+    width: 1.0625rem; /* 17px */
+    height: 1.0625rem; /* 17px */
+  }
+
+  .notification-badge {
+    font-size: 0.5625rem; /* 9px */
+    min-width: 1.125rem; /* 18px */
+    height: 1.125rem; /* 18px */
+    padding: 0.125rem 0.3125rem; /* 2px 5px */
+  }
+
+  .title {
+    font-size: 1.375rem; /* 22px */
+  }
+}
+
+/* ===================================
+   LANDSCAPE MODE - MOBILE (max-height: 500px)
+   =================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .header {
+    padding: 0.625rem 1rem; /* 10px 16px */
+    gap: 0.5rem; /* 8px */
+  }
+
+  .header-content {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 1rem; /* 16px */
+    justify-content: space-between;
+  }
+
+  .user-info {
+    order: 0;
+    width: auto;
+    text-align: left;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+
+  .header-right {
+    order: 0;
+    width: auto;
+    justify-content: flex-end;
+    gap: 0.75rem; /* 12px */
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+  }
+
+  .datetime-display {
+    order: 0;
+  }
+
+  .welcome-text {
+    font-size: 0.875rem; /* 14px */
+  }
+
+  .role-text {
+    font-size: 0.6875rem; /* 11px */
+  }
+
+  .datetime-text {
+    font-size: 0.75rem; /* 12px */
+  }
+
+  .header-actions {
+    gap: 0.375rem; /* 6px */
+  }
+
+  .icon-btn {
+    width: 2rem; /* 32px */
+    height: 2rem; /* 32px */
+  }
+
+  .icon-btn img {
+    width: 1rem; /* 16px */
+  }
+
+  .icon-btn svg {
+    width: 1rem; /* 16px */
+    height: 1rem; /* 16px */
+  }
+
+  .notification-badge {
+    font-size: 0.5rem; /* 8px */
+    min-width: 1rem; /* 16px */
+    height: 1rem; /* 16px */
+    padding: 0.125rem 0.25rem; /* 2px 4px */
+    top: -0.125rem; /* -2px */
+    right: -0.125rem; /* -2px */
+  }
+
+  .title {
+    font-size: 1.125rem; /* 18px */
+    display: none; /* Hide title in landscape to save space */
+  }
+}
+
+/* ===================================
+   TABLET LANDSCAPE (768px - 1024px) and (orientation: landscape)
+   =================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .header {
+    padding: 0.875rem 1.5rem; /* 14px 24px */
+    gap: 0.75rem; /* 12px */
+  }
+
+  .header-content {
+    flex-wrap: nowrap;
+  }
+
+  .welcome-text {
+    font-size: 1rem; /* 16px */
+  }
+
+  .role-text {
+    font-size: 0.75rem; /* 12px */
+  }
+
+  .datetime-text {
+    font-size: 0.8125rem; /* 13px */
+  }
+
+  .title {
+    font-size: 1.5rem; /* 24px */
+  }
+}
+
+/* ===================================
+   VERY SMALL SCREENS (max-width: 375px)
+   =================================== */
+
+@media (max-width: 375px) {
+  .header {
+    padding: 0.75rem 0.875rem; /* 12px 14px */
+  }
+
+  .welcome-text {
+    font-size: 0.875rem; /* 14px */
+  }
+
+  .role-text {
+    font-size: 0.625rem; /* 10px */
+  }
+
+  .datetime-text {
+    font-size: 0.6875rem; /* 11px */
+  }
+
+  .icon-btn {
+    width: 2.125rem; /* 34px */
+    height: 2.125rem; /* 34px */
+  }
+
+  .icon-btn img {
+    width: 1rem; /* 16px */
+  }
+
+  .title {
+    font-size: 1.25rem; /* 20px */
+  }
+}
