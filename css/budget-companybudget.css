@@ -1,0 +1,652 @@
+/* ===================================
+   COMPANY BUDGET - COMPLETE CSS
+   =================================== */
+
+/* Header with Add Button */
+.company-budget-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1.5vw;
+}
+
+.btn-add-company-budget {
+  padding: 0.5vw 1.25vw;
+  background: #2D6BFF;
+  color: white;
+  border: none;
+  border-radius: 1.3vw;
+  cursor: pointer;
+  font-family: 'Gilroy-SemiBold', sans-serif;
+  font-size: 0.9vw;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4vw;
+}
+
+.btn-add-company-budget:hover {
+  background: #0052CC;
+  transform: translateY(-0.1vw);
+  box-shadow: 0 0.2vw 0.6vw rgba(45, 107, 255, 0.3);
+}
+
+.btn-add-company-budget svg {
+  flex-shrink: 0;
+}
+
+/* Table Container */
+.company-budget-table-container {
+  width: 100%;
+  overflow-x: auto;
+  background: white;
+  border-radius: 1vw;
+  box-shadow: 0 0.05vw 0.15vw rgba(0, 0, 0, 0.1);
+  border: 0.05vw solid #9CC4FF;
+}
+
+.company-budget-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 73vw;
+}
+
+/* Table Header - Light Blue Background */
+.company-budget-table thead {
+  background: #DEE7FF;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.company-budget-table thead th {
+  padding: 1vw 0.75vw;
+  text-align: left;
+  font-family: 'Gilroy-SemiBold', sans-serif;
+  font-size: 0.9vw;
+  font-weight: 600;
+  color: #1F2937;
+  border-right: 0.05vw solid #9CC4FF;
+  border-bottom: 0.1vw solid #9CC4FF;
+  white-space: nowrap;
+}
+
+.company-budget-table thead th:last-child {
+  border-right: none;
+}
+
+/* Table Body - White Background */
+.company-budget-table tbody tr {
+  background: white;
+  border-bottom: 0.05vw solid #9CC4FF;
+  transition: background 0.2s ease;
+}
+
+.company-budget-table tbody tr:hover {
+  background: #F8FAFC;
+}
+
+.company-budget-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.company-budget-table tbody td {
+  padding: 0.5vw 0.5vw;
+  border-right: 0.05vw solid #9CC4FF;
+  vertical-align: middle;
+}
+
+.company-budget-table tbody td:last-child {
+  border-right: none;
+}
+
+/* Input Fields in Table */
+.company-budget-input,
+.company-budget-select,
+.company-budget-date {
+  width: 100%;
+  min-width: 6.25vw;
+  padding: 0.4vw 0.6vw;
+  border: 0.05vw solid #D1D5DB;
+  border-radius: 0.3vw;
+  font-size: 0.85vw;
+  font-family: 'Gilroy-Medium', sans-serif;
+  background: white;
+  color: #4B5563;
+  transition: all 0.2s ease;
+}
+
+.company-budget-input:focus,
+.company-budget-select:focus,
+.company-budget-date:focus {
+  outline: none;
+  border-color: #2D6BFF;
+  box-shadow: 0 0 0 0.1vw rgba(45, 107, 255, 0.1);
+}
+
+/* Date Input Specific */
+.company-budget-date {
+  min-width: 7.3vw;
+  cursor: pointer;
+}
+
+/* Select Dropdown */
+.company-budget-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234b5563' d='M10.293 3.293L6 7.586 1.707 3.293A1 1 0 00.293 4.707l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z'%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.6vw center;
+  padding-right: 1.8vw;
+  cursor: pointer;
+}
+
+/* Colored Amount Fields */
+.company-budget-input.credit {
+  color: #10B981;
+  font-weight: 500;
+}
+
+.company-budget-input.debit {
+  color: #EF4444;
+  font-weight: 500;
+}
+
+.company-budget-input.balance {
+  color: #2D6BFF;
+  font-weight: 500;
+}
+
+/* Readonly Fields */
+.company-budget-input[readonly] {
+  background: #F9FAFB;
+  cursor: not-allowed;
+  color: #6B7280;
+}
+
+/* Remarks Input - Wider */
+.company-budget-input.remarks {
+  min-width: 7.8vw;
+}
+
+/* Empty State */
+.company-budget-empty {
+  text-align: center;
+  padding: 3.1vw 1vw;
+  color: #9CA3AF;
+  font-family: 'Gilroy-Medium', sans-serif;
+}
+
+.company-budget-empty svg {
+  width: 4.2vw;
+  height: 4.2vw;
+  margin-bottom: 1vw;
+  opacity: 0.3;
+}
+
+.company-budget-empty h3 {
+  font-size: 1.2vw;
+  font-family: 'Gilroy-SemiBold', sans-serif;
+  color: #6B7280;
+  margin-bottom: 0.5vw;
+}
+
+.company-budget-empty p {
+  font-size: 0.9vw;
+  color: #9CA3AF;
+}
+
+/* ===================================
+   RESPONSIVE - TABLET (769px - 1024px)
+   =================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .company-budget-header {
+    margin-bottom: 1.875rem;
+  }
+
+  .btn-add-company-budget {
+    padding: 0.625rem 1.5rem;
+    border-radius: 1.5625rem;
+    font-size: 0.875rem;
+    gap: 0.5rem;
+  }
+
+  .btn-add-company-budget:hover {
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.75rem rgba(45, 107, 255, 0.3);
+  }
+
+  .company-budget-table-container {
+    border-radius: 1rem;
+    box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.1);
+    border-width: 0.0625rem;
+  }
+
+  .company-budget-table {
+    min-width: 75rem;
+  }
+
+  .company-budget-table thead th {
+    padding: 0.875rem 0.75rem;
+    font-size: 0.8125rem;
+    border-width: 0.0625rem 0.0625rem 0.125rem 0;
+  }
+
+  .company-budget-table tbody tr {
+    border-bottom-width: 0.0625rem;
+  }
+
+  .company-budget-table tbody td {
+    padding: 0.625rem 0.625rem;
+    border-width: 0 0.0625rem 0 0;
+  }
+
+  .company-budget-input,
+  .company-budget-select,
+  .company-budget-date {
+    min-width: 7.5rem;
+    padding: 0.5rem 0.75rem;
+    border-width: 0.0625rem;
+    border-radius: 0.375rem;
+    font-size: 0.8125rem;
+  }
+
+  .company-budget-input:focus,
+  .company-budget-select:focus,
+  .company-budget-date:focus {
+    box-shadow: 0 0 0 0.125rem rgba(45, 107, 255, 0.1);
+  }
+
+  .company-budget-date {
+    min-width: 8.75rem;
+  }
+
+  .company-budget-select {
+    background-position: right 0.75rem center;
+    padding-right: 2.1875rem;
+  }
+
+  .company-budget-input.remarks {
+    min-width: 9.375rem;
+  }
+
+  .company-budget-empty {
+    padding: 3.75rem 1.25rem;
+  }
+
+  .company-budget-empty svg {
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .company-budget-empty h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .company-budget-empty p {
+    font-size: 0.875rem;
+  }
+}
+
+/* ===================================
+   RESPONSIVE - MOBILE (max-width: 768px)
+   =================================== */
+
+@media (max-width: 768px) {
+  .company-budget-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .btn-add-company-budget {
+    padding: 0.625rem 1.25rem;
+    border-radius: 1.5625rem;
+    font-size: 0.8125rem;
+    gap: 0.5rem;
+  }
+
+  .company-budget-table-container {
+    overflow-x: auto;
+    border-radius: 0.75rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .company-budget-table {
+    min-width: 75rem;
+  }
+
+  .company-budget-table thead th {
+    font-size: 0.75rem;
+    padding: 0.75rem 0.625rem;
+    border-width: 0.0625rem 0.0625rem 0.125rem 0;
+  }
+
+  .company-budget-table tbody tr {
+    border-bottom-width: 0.0625rem;
+  }
+
+  .company-budget-table tbody td {
+    padding: 0.5rem 0.5rem;
+    border-width: 0 0.0625rem 0 0;
+  }
+
+  .company-budget-input,
+  .company-budget-select,
+  .company-budget-date {
+    min-width: 6.25rem;
+    font-size: 0.75rem;
+    padding: 0.375rem 0.625rem;
+    border-width: 0.0625rem;
+    border-radius: 0.375rem;
+  }
+
+  .company-budget-input:focus,
+  .company-budget-select:focus,
+  .company-budget-date:focus {
+    box-shadow: 0 0 0 0.125rem rgba(45, 107, 255, 0.1);
+  }
+
+  .company-budget-date {
+    min-width: 8.125rem;
+  }
+
+  .company-budget-select {
+    background-position: right 0.625rem center;
+    padding-right: 2.1875rem;
+  }
+
+  .company-budget-input.remarks {
+    min-width: 9.375rem;
+  }
+
+  .company-budget-empty {
+    padding: 3.75rem 1.25rem;
+  }
+
+  .company-budget-empty svg {
+    width: 5rem;
+    height: 5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .company-budget-empty h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .company-budget-empty p {
+    font-size: 0.875rem;
+  }
+
+  .company-budget-table-container::-webkit-scrollbar {
+    height: 0.5rem;
+  }
+
+  .company-budget-table-container::-webkit-scrollbar-track {
+    background: #F1F5F9;
+    border-radius: 0.25rem;
+  }
+
+  .company-budget-table-container::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 0.25rem;
+  }
+}
+
+/* ===================================
+   RESPONSIVE - SMALL MOBILE (max-width: 480px)
+   =================================== */
+
+@media (max-width: 480px) {
+  .company-budget-header {
+    margin-bottom: 1.25rem;
+  }
+
+  .btn-add-company-budget {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    gap: 0.375rem;
+  }
+
+  .company-budget-table-container {
+    border-radius: 0.625rem;
+  }
+
+  .company-budget-table {
+    min-width: 68.75rem;
+  }
+
+  .company-budget-table thead th {
+    font-size: 0.6875rem;
+    padding: 0.625rem 0.5rem;
+  }
+
+  .company-budget-table tbody td {
+    padding: 0.4375rem 0.4375rem;
+  }
+
+  .company-budget-input,
+  .company-budget-select,
+  .company-budget-date {
+    min-width: 5.625rem;
+    font-size: 0.6875rem;
+    padding: 0.375rem 0.5rem;
+    border-radius: 0.3125rem;
+  }
+
+  .company-budget-date {
+    min-width: 7.5rem;
+  }
+
+  .company-budget-select {
+    background-position: right 0.5rem center;
+    padding-right: 2rem;
+  }
+
+  .company-budget-input.remarks {
+    min-width: 8.125rem;
+  }
+
+  .company-budget-empty {
+    padding: 3.125rem 1rem;
+  }
+
+  .company-budget-empty svg {
+    width: 4.375rem;
+    height: 4.375rem;
+    margin-bottom: 1rem;
+  }
+
+  .company-budget-empty h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .company-budget-empty p {
+    font-size: 0.8125rem;
+  }
+}
+
+/* ===================================
+   RESPONSIVE - EXTRA SMALL MOBILE (max-width: 375px)
+   =================================== */
+
+@media (max-width: 375px) {
+  .company-budget-header {
+    margin-bottom: 1rem;
+  }
+
+  .btn-add-company-budget {
+    padding: 0.5rem 0.875rem;
+    font-size: 0.6875rem;
+    gap: 0.3125rem;
+  }
+
+  .company-budget-table {
+    min-width: 62.5rem;
+  }
+
+  .company-budget-table thead th {
+    font-size: 0.625rem;
+    padding: 0.5625rem 0.4375rem;
+  }
+
+  .company-budget-table tbody td {
+    padding: 0.375rem 0.375rem;
+  }
+
+  .company-budget-input,
+  .company-budget-select,
+  .company-budget-date {
+    min-width: 5rem;
+    font-size: 0.625rem;
+    padding: 0.3125rem 0.4375rem;
+  }
+
+  .company-budget-date {
+    min-width: 6.875rem;
+  }
+
+  .company-budget-select {
+    background-position: right 0.4375rem center;
+    padding-right: 1.875rem;
+  }
+
+  .company-budget-input.remarks {
+    min-width: 7.5rem;
+  }
+
+  .company-budget-empty {
+    padding: 2.5rem 0.875rem;
+  }
+
+  .company-budget-empty svg {
+    width: 3.75rem;
+    height: 3.75rem;
+    margin-bottom: 0.875rem;
+  }
+
+  .company-budget-empty h3 {
+    font-size: 0.9375rem;
+    margin-bottom: 0.4375rem;
+  }
+
+  .company-budget-empty p {
+    font-size: 0.75rem;
+  }
+}
+
+/* ===================================
+   RESPONSIVE - LANDSCAPE MOBILE (max-height: 500px)
+   =================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .company-budget-header {
+    margin-bottom: 1rem;
+  }
+
+  .btn-add-company-budget {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.8125rem;
+  }
+
+  .company-budget-table-container {
+    max-height: 70vh;
+    overflow-y: auto;
+  }
+
+  .company-budget-table thead th {
+    padding: 0.625rem 0.625rem;
+    font-size: 0.75rem;
+  }
+
+  .company-budget-table tbody td {
+    padding: 0.4375rem 0.4375rem;
+  }
+
+  .company-budget-input,
+  .company-budget-select,
+  .company-budget-date {
+    font-size: 0.75rem;
+    padding: 0.375rem 0.625rem;
+  }
+
+  .company-budget-empty {
+    padding: 2.5rem 1rem;
+  }
+
+  .company-budget-empty svg {
+    width: 3.75rem;
+    height: 3.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .company-budget-empty h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .company-budget-empty p {
+    font-size: 0.8125rem;
+  }
+}
+
+/* ===================================
+   RESPONSIVE - TABLET LANDSCAPE (768px - 1024px)
+   =================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .company-budget-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .company-budget-table-container {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .company-budget-table {
+    min-width: 70rem;
+  }
+
+  .company-budget-table thead th {
+    padding: 0.875rem 0.75rem;
+    font-size: 0.8125rem;
+  }
+
+  .company-budget-table tbody td {
+    padding: 0.625rem 0.625rem;
+  }
+
+  .company-budget-input,
+  .company-budget-select,
+  .company-budget-date {
+    min-width: 7.5rem;
+    font-size: 0.8125rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+/* ===================================
+   TOUCH DEVICE OPTIMIZATION
+   =================================== */
+
+@media (hover: none) and (pointer: coarse) {
+  .btn-add-company-budget {
+    min-height: 2.75rem;
+  }
+
+  .company-budget-input,
+  .company-budget-select,
+  .company-budget-date {
+    min-height: 2.5rem;
+  }
+
+  .btn-add-company-budget:hover {
+    transform: none;
+  }
+
+  .btn-add-company-budget:active {
+    transform: scale(0.97);
+  }
+}

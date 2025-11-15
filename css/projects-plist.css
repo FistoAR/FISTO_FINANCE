@@ -1,0 +1,1351 @@
+/* ========================================
+   PROJECTS-PLIST.CSS - Project List Styles (FIXED)
+   ======================================== */
+
+/* ========================================
+   PROJECT LIST HEADER
+   ======================================== */
+
+.project-list-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1.5vw;
+}
+
+.add-project-list-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4vw;
+    background: #2D6BFF;
+    color: white;
+    border: none;
+    padding: 0.6vw 1.25vw;
+    border-radius: 1.5vw;
+    font-size: 0.8vw;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.add-project-list-btn:hover {
+    background: #1e5dd4;
+}
+
+.add-project-list-btn img {
+    width: 1vw;
+    height: 1vw;
+}
+
+/* ========================================
+   PROJECT REPORTS TABLE - FIXED
+   ======================================== */
+
+.project-reports-table-wrapper {
+    background: white;
+    border-radius: 1vw;
+    overflow: visible;
+    box-shadow: 0 0.05vw 0.15vw rgba(0, 0, 0, 0.1);
+    width: 100%;
+    border: 0.05vw solid #9CC4FF;
+    position: relative;
+}
+
+.project-list-table-container {
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+}
+
+.project-reports-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 100%;
+}
+
+/* Table Header */
+.project-reports-table thead {
+    background: #DEE7FF;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.project-reports-table th {
+    padding: 1vw 1.25vw;
+    text-align: left;
+    font-size: 0.8vw;
+    font-weight: 600;
+    color: #1F2937;
+    white-space: nowrap;
+    border-right: 0.05vw solid #9CC4FF;
+    border-bottom: 0.05vw solid #9CC4FF;
+}
+
+.project-reports-table th:last-child {
+    border-right: none;
+}
+
+/* Table Body */
+.project-reports-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.project-reports-table tbody tr:hover {
+    background: #F8FAFC;
+}
+
+.project-reports-table td {
+    padding: 1vw 1.25vw;
+    border-right: 0.05vw solid #9CC4FF;
+    border-bottom: 0.05vw solid #9CC4FF;
+    font-size: 0.85vw;
+    color: var(--color-text);
+    vertical-align: middle;
+}
+
+.project-reports-table td:last-child {
+    border-right: none;
+}
+
+.project-reports-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Column Widths */
+.project-reports-table th:nth-child(2) { width: 8vw; min-width: 8vw; }
+.project-reports-table th:nth-child(7) { width: 8vw; min-width: 8vw; }
+
+
+
+/* View/Edit and Delete Buttons with Icons */
+.view-edit-btn,
+.delete-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.view-edit-btn img,
+.delete-btn img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+.view-edit-btn {
+  background: transparent;
+}
+
+.view-edit-btn:hover {
+  background: #bae6fd;
+  transform: translateY(-1px);
+}
+
+.delete-btn {
+  background: transparent;
+}
+
+.delete-btn:hover {
+  background: #fecaca;
+  transform: translateY(-1px);
+}
+
+.view-edit-btn:active,
+.delete-btn:active {
+  transform: translateY(0);
+}
+
+/* ========================================
+   TEAM AVATARS
+   ======================================== */
+
+.project-team-avatars {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.project-team-avatar {
+    width: 1.9vw;
+    height: 1.9vw;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6vw;
+    font-weight: 600;
+    color: white;
+    border: 0.1vw solid white;
+    margin-left: -0.4vw;
+    cursor: pointer;
+    transition: transform 0.2s, z-index 0.2s;
+}
+
+.project-team-avatar:first-child {
+    margin-left: 0;
+}
+
+.project-team-avatar:hover {
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+/* More Avatars Badge */
+.project-team-avatar-more {
+    min-width: 3.65vw;
+    height: 1.9vw;
+    border-radius: 0.95vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6vw;
+    font-weight: 500;
+    color: #64748b;
+    background: #f1f5f9;
+    border: 0.1vw solid white;
+    margin-left: -0.4vw;
+    cursor: pointer;
+    padding: 0 0.6vw;
+    transition: all 0.2s;
+    white-space: nowrap;
+    position: relative;
+}
+
+.project-team-avatar-more:hover {
+    background: #e2e8f0;
+    transform: scale(1.05);
+    z-index: 100;
+}
+
+
+
+.custom-team-tooltip {
+  position: fixed;
+  z-index: 9999999;
+  background: #334155;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.9em;
+  min-width: 120px;
+  max-width: 320px;
+  white-space: pre-line;
+  text-align: left;
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  transition: opacity 0.18s;
+  line-height: 1.6;
+}
+
+
+/* ========================================
+   PROJECT LIVE LINK
+   ======================================== */
+
+.project-live-link {
+    color: #2D6BFF;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.project-live-link:hover {
+    color: #1e5dd4;
+    text-decoration: underline;
+}
+
+/* ========================================
+   PROJECT STATUS
+   ======================================== */
+
+
+/* ========================================
+   ADD PROJECT MODAL
+   ======================================== */
+
+.add-project-modal {
+    max-width: 31.25vw;
+    width: 90%;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 0.6vw;
+    overflow: hidden;
+}
+
+.modal-scrollable-project {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.25vw;
+}
+
+/* ========================================
+   FORM STYLES
+   ======================================== */
+
+.form-row {
+    display: flex;
+    gap: 0.8vw;
+    margin-bottom: 1.8vw;
+}
+
+.form-group {
+    flex: 1;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.4vw;
+    font-size: 0.8vw;
+    font-weight: 700;
+    color: #334155;
+}
+
+.form-select,
+.form-input {
+    width: 100%;
+    padding: 0.5vw 0.6vw;
+    border: 0.05vw solid #9CC4FF;
+    background-color: #9cc4ff23;
+    border-radius: 1vw;
+    font-size: 0.8vw;
+    color: #334155;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-select:focus,
+.form-input:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 0.15vw rgba(79, 70, 229, 0.1);
+}
+
+.form-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.6vw center;
+    background-size: 0.8vw;
+    padding-right: 1.9vw;
+}
+
+/* ========================================
+   PROJECT TEAM MEMBERS DROPDOWN
+   ======================================== */
+
+.project-team-members-dropdown {
+    position: relative;
+}
+
+.dropdown-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    text-align: left;
+    background: #9cc4ff2a;
+}
+
+.dropdown-trigger svg {
+    transition: transform 0.3s;
+    flex-shrink: 0;
+}
+
+.project-team-members-dropdown.active .dropdown-trigger svg {
+    transform: rotate(180deg);
+}
+
+.project-team-members-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 0.05vw solid #e2e8f0;
+    border-radius: 0.4vw;
+    box-shadow: 0 0.2vw 0.3vw rgba(0, 0, 0, 0.1);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s, opacity 0.3s;
+    opacity: 0;
+    z-index: 100;
+    margin-top: 0.2vw;
+}
+
+.project-team-members-list.active {
+    max-height: 10vw;
+    overflow-y: auto;
+    opacity: 1;
+}
+
+.project-team-member-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+    padding: 0.6vw 0.8vw;
+    cursor: pointer;
+    transition: background 0.2s;
+    user-select: none;
+}
+
+.project-team-member-checkbox:hover {
+    background: #f8fafc;
+}
+
+.project-team-member-checkbox input[type="checkbox"] {
+    width: 0.9vw;
+    height: 0.9vw;
+    cursor: pointer;
+    accent-color: #4f46e5;
+}
+
+.project-team-member-checkbox span {
+    font-size: 0.8vw;
+    color: #334155;
+}
+
+.project-selected-count {
+    font-size: 0.6vw;
+    color: #4f46e5;
+    font-weight: 600;
+    margin-left: 0.4vw;
+}
+
+/* ========================================
+   MODAL HEADER
+   ======================================== */
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1vw 1.25vw;
+    border-bottom: 0.05vw solid #e2e8f0;
+}
+
+.modal-title {
+    margin: 0;
+    font-size: 1vw;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.2vw;
+    border-radius: 0.3vw;
+    transition: background 0.2s;
+    color: #64748b;
+}
+
+.close-btn:hover {
+    background: #f1f5f9;
+    color: #334155;
+}
+
+.close-btn svg {
+    display: block;
+    width: 1.25vw;
+    height: 1.25vw;
+}
+
+/* ========================================
+   MODAL FOOTER
+   ======================================== */
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.8vw 1.25vw;
+    border-top: 0.05vw solid #e2e8f0;
+}
+
+.btn {
+    padding: 0.5vw 1vw;
+    border-radius: 1.5vw;
+    font-size: 0.8vw;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: none;
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: #2D6BFF;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #1e5dd4;
+}
+
+/* ========================================
+   MODAL OVERLAY
+   ======================================== */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    backdrop-filter: blur(0.2vw);
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal {
+    background: white;
+    border-radius: 0.6vw;
+    box-shadow: 0 1vw 1.3vw -0.25vw rgba(0, 0, 0, 0.1), 0 0.5vw 0.5vw -0.25vw rgba(0, 0, 0, 0.04);
+    position: relative;
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-1vw);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   SCROLLBAR STYLING
+   ======================================== */
+
+.modal-scrollable-project::-webkit-scrollbar,
+.project-team-members-list::-webkit-scrollbar {
+    width: 0.3vw;
+}
+
+.modal-scrollable-project::-webkit-scrollbar-track,
+.project-team-members-list::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 0.15vw;
+}
+
+.modal-scrollable-project::-webkit-scrollbar-thumb,
+.project-team-members-list::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 0.15vw;
+}
+
+.modal-scrollable-project::-webkit-scrollbar-thumb:hover,
+.project-team-members-list::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* ========================================
+   SELECTED MEMBERS BADGES
+   ======================================== */
+
+.selected-members-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5vw;
+    margin-top: 0.75vw;
+    min-height: 0;
+    transition: min-height 0.3s ease;
+}
+
+.selected-members-badges:empty {
+    display: none;
+}
+
+/* Individual Badge */
+.selected-member-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5vw;
+    background: #9cc4ff2b;
+    color: #000000;
+    padding: 0.5vw 0.75vw;
+    border-radius: 1.25vw;
+    font-size: 0.8vw;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    animation: badgeSlideIn 0.2s ease;
+}
+
+@keyframes badgeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-0.5vw);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Badge Text */
+.badge-text {
+    line-height: 1;
+    white-space: nowrap;
+}
+
+/* Remove Button */
+.badge-remove-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: #000000;
+    cursor: pointer;
+    padding: 0;
+    width: 0.9vw;
+    height: 0.9vw;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.badge-remove-btn:hover {
+    background: rgba(79, 70, 229, 0.15);
+    transform: rotate(90deg);
+}
+
+.badge-remove-btn svg {
+    display: block;
+    width: 0.7vw;
+    height: 0.7vw;
+}
+
+/* ===================================
+   RESPONSIVE - TABLET (769px - 1024px)
+   =================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .project-list-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .add-project-list-btn {
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        border-radius: 1.875rem;
+        font-size: 0.8125rem;
+    }
+
+    .add-project-list-btn img {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+
+    .project-reports-table-wrapper {
+        border-radius: 1rem;
+        box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.1);
+        border-width: 0.0625rem;
+    }
+
+    .project-reports-table {
+        min-width: 100%;
+    }
+
+    .project-reports-table th {
+        padding: 0.875rem 1.125rem;
+        font-size: 0.75rem;
+        border-width: 0.0625rem;
+    }
+
+    .project-reports-table td {
+        padding: 0.875rem 1.125rem;
+        font-size: 0.75rem;
+        border-width: 0.0625rem;
+    }
+
+    .project-team-avatar {
+        width: 2.25rem;
+        height: 2.25rem;
+        font-size: 0.75rem;
+        border-width: 0.125rem;
+        margin-left: -0.5rem;
+    }
+
+    .project-team-avatar-more {
+        min-width: 4.375rem;
+        height: 2.25rem;
+        border-radius: 1.125rem;
+        font-size: 0.6875rem;
+        border-width: 0.125rem;
+        margin-left: -0.5rem;
+        padding: 0 0.75rem;
+    }
+
+    .project-team-avatar-more::after {
+        bottom: calc(100% + 0.75rem);
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem;
+        font-size: 0.8125rem;
+        min-width: 8.75rem;
+    }
+
+    .project-team-avatar-more::before {
+        bottom: calc(100% + 0.25rem);
+        border-width: 0.5rem;
+    }
+
+    .project-report-status {
+        padding: 0.375rem 0.75rem;
+        border-radius: 0.375rem;
+        font-size: 0.75rem;
+    }
+
+    .add-project-modal {
+        max-width: 90%;
+        border-radius: 0.75rem;
+    }
+
+    .modal-scrollable-project {
+        padding: 1.5rem;
+    }
+
+    .form-row {
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .form-label {
+        margin-bottom: 0.5rem;
+        font-size: 0.8125rem;
+    }
+
+    .form-select,
+    .form-input {
+        padding: 0.625rem 0.75rem;
+        border-width: 0.0625rem;
+        border-radius: 1.25rem;
+        font-size: 0.8125rem;
+    }
+
+    .form-select:focus,
+    .form-input:focus {
+        box-shadow: 0 0 0 0.1875rem rgba(79, 70, 229, 0.1);
+    }
+
+    .form-select {
+        background-position: right 0.75rem center;
+        background-size: 1rem;
+        padding-right: 2.25rem;
+    }
+
+    .project-team-members-list {
+        border-width: 0.0625rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+        margin-top: 0.25rem;
+    }
+
+    .project-team-members-list.active {
+        max-height: 15rem;
+    }
+
+    .project-team-member-checkbox {
+        gap: 0.625rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .project-team-member-checkbox input[type="checkbox"] {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+
+    .project-team-member-checkbox span {
+        font-size: 0.8125rem;
+    }
+
+    .project-selected-count {
+        font-size: 0.75rem;
+        margin-left: 0.5rem;
+    }
+
+    .modal-header {
+        padding: 1.25rem 1.5rem;
+        border-bottom-width: 0.0625rem;
+    }
+
+    .modal-title {
+        font-size: 1.125rem;
+    }
+
+    .close-btn {
+        padding: 0.25rem;
+        border-radius: 0.375rem;
+    }
+
+    .close-btn svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .modal-footer {
+        padding: 1rem 1.5rem;
+        border-top-width: 0.0625rem;
+    }
+
+    .btn {
+        padding: 0.625rem 1.25rem;
+        border-radius: 1.875rem;
+        font-size: 0.8125rem;
+    }
+
+    .modal {
+        border-radius: 0.75rem;
+        box-shadow: 0 1.25rem 1.5625rem -0.3125rem rgba(0, 0, 0, 0.1), 0 0.625rem 0.625rem -0.3125rem rgba(0, 0, 0, 0.04);
+    }
+
+    .modal-scrollable-project::-webkit-scrollbar,
+    .project-team-members-list::-webkit-scrollbar {
+        width: 0.375rem;
+    }
+
+    .modal-scrollable-project::-webkit-scrollbar-track,
+    .project-team-members-list::-webkit-scrollbar-track {
+        border-radius: 0.1875rem;
+    }
+
+    .modal-scrollable-project::-webkit-scrollbar-thumb,
+    .project-team-members-list::-webkit-scrollbar-thumb {
+        border-radius: 0.1875rem;
+    }
+
+    .selected-members-badges {
+        gap: 0.625rem;
+        margin-top: 0.75rem;
+    }
+
+    .selected-member-badge {
+        gap: 0.5rem;
+        padding: 0.5rem 0.75rem;
+        border-radius: 1.25rem;
+        font-size: 0.8125rem;
+    }
+
+    .badge-remove-btn {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+
+    .badge-remove-btn svg {
+        width: 0.875rem;
+        height: 0.875rem;
+    }
+}
+
+/* ===================================
+   RESPONSIVE - MOBILE (max-width: 768px)
+   =================================== */
+
+@media (max-width: 768px) {
+    .project-list-header {
+        margin-bottom: 1.25rem;
+    }
+
+    .add-project-list-btn {
+        gap: 0.5rem;
+        padding: 0.625rem 1.25rem;
+        border-radius: 1.5rem;
+        font-size: 0.8125rem;
+    }
+
+    .add-project-list-btn img {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+
+    .project-reports-table-wrapper {
+        border-radius: 0.75rem;
+        box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.1);
+        border-width: 0.0625rem;
+    }
+
+    .project-list-table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .project-reports-table {
+        min-width: 56.25rem; /* 900px - Prevents collapse */
+    }
+
+    .project-reports-table th {
+        padding: 0.75rem 1rem;
+        font-size: 0.75rem;
+        border-width: 0.0625rem;
+    }
+
+    .project-reports-table td {
+        padding: 0.75rem 1rem;
+        font-size: 0.75rem;
+        border-width: 0.0625rem;
+    }
+
+    .project-team-avatar {
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.6875rem;
+        border-width: 0.125rem;
+        margin-left: -0.5rem;
+    }
+
+    .project-team-avatar-more {
+        min-width: 4rem;
+        height: 2rem;
+        border-radius: 1rem;
+        font-size: 0.625rem;
+        border-width: 0.125rem;
+        margin-left: -0.5rem;
+        padding: 0 0.75rem;
+    }
+
+    .project-team-avatar-more::after {
+        bottom: calc(100% + 0.75rem);
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem;
+        font-size: 0.8125rem;
+        min-width: 8.75rem;
+    }
+
+    .project-team-avatar-more::before {
+        bottom: calc(100% + 0.25rem);
+        border-width: 0.5rem;
+    }
+
+    .project-report-status {
+        padding: 0.375rem 0.625rem;
+        border-radius: 0.375rem;
+        font-size: 0.6875rem;
+    }
+
+    .add-project-modal {
+        max-width: 95%;
+        border-radius: 0.75rem;
+    }
+
+    .modal-scrollable-project {
+        padding: 1.25rem;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0.875rem;
+        margin-bottom: 0.875rem;
+    }
+
+    .form-label {
+        margin-bottom: 0.5rem;
+        font-size: 0.8125rem;
+    }
+
+    .form-select,
+    .form-input {
+        padding: 0.625rem 0.875rem;
+        border-width: 0.0625rem;
+        border-radius: 1.25rem;
+        font-size: 0.8125rem;
+    }
+
+    .form-select:focus,
+    .form-input:focus {
+        box-shadow: 0 0 0 0.1875rem rgba(79, 70, 229, 0.1);
+    }
+
+    .form-select {
+        background-position: right 0.75rem center;
+        background-size: 1rem;
+        padding-right: 2.25rem;
+    }
+
+    .project-team-members-list {
+        border-width: 0.0625rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+        margin-top: 0.25rem;
+    }
+
+    .project-team-members-list.active {
+        max-height: 12.5rem;
+    }
+
+    .project-team-member-checkbox {
+        gap: 0.625rem;
+        padding: 0.75rem 1rem;
+    }
+
+    .project-team-member-checkbox input[type="checkbox"] {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+
+    .project-team-member-checkbox span {
+        font-size: 0.8125rem;
+    }
+
+    .project-selected-count {
+        font-size: 0.75rem;
+        margin-left: 0.5rem;
+    }
+
+    .modal-header {
+        padding: 1.125rem 1.25rem;
+        border-bottom-width: 0.0625rem;
+    }
+
+    .modal-title {
+        font-size: 1.125rem;
+    }
+
+    .close-btn {
+        padding: 0.25rem;
+        border-radius: 0.375rem;
+    }
+
+    .close-btn svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .modal-footer {
+        padding: 0.875rem 1.25rem;
+        border-top-width: 0.0625rem;
+    }
+
+    .btn {
+        padding: 0.625rem 1.25rem;
+        border-radius: 1.5rem;
+        font-size: 0.8125rem;
+    }
+
+    .modal {
+        border-radius: 0.75rem;
+    }
+
+    .modal-scrollable-project::-webkit-scrollbar,
+    .project-team-members-list::-webkit-scrollbar {
+        width: 0.375rem;
+    }
+
+    .selected-members-badges {
+        gap: 0.5rem;
+        margin-top: 0.75rem;
+    }
+
+    .selected-member-badge {
+        gap: 0.5rem;
+        padding: 0.5rem 0.75rem;
+        border-radius: 1.25rem;
+        font-size: 0.8125rem;
+    }
+
+    .badge-remove-btn {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+
+    .badge-remove-btn svg {
+        width: 0.875rem;
+        height: 0.875rem;
+    }
+}
+
+/* ===================================
+   RESPONSIVE - SMALL MOBILE (max-width: 480px)
+   =================================== */
+
+@media (max-width: 480px) {
+    .project-list-header {
+        margin-bottom: 1rem;
+    }
+
+    .add-project-list-btn {
+        gap: 0.375rem;
+        padding: 0.625rem 1.125rem;
+        border-radius: 1.25rem;
+        font-size: 0.75rem;
+    }
+
+    .add-project-list-btn img {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+
+    .project-reports-table-wrapper {
+        border-radius: 0.625rem;
+        border-width: 0.0625rem;
+    }
+
+    .project-reports-table {
+        min-width: 50rem; /* 800px - Adjusted for small screens */
+    }
+
+    .project-reports-table th {
+        padding: 0.625rem 0.875rem;
+        font-size: 0.6875rem;
+    }
+
+    .project-reports-table td {
+        padding: 0.625rem 0.875rem;
+        font-size: 0.6875rem;
+    }
+
+    .project-team-avatar {
+        width: 1.75rem;
+        height: 1.75rem;
+        font-size: 0.625rem;
+        margin-left: -0.375rem;
+    }
+
+    .project-team-avatar-more {
+        min-width: 3.5rem;
+        height: 1.75rem;
+        border-radius: 0.875rem;
+        font-size: 0.5625rem;
+        margin-left: -0.375rem;
+        padding: 0 0.625rem;
+    }
+
+    .project-team-avatar-more::after {
+        bottom: calc(100% + 0.625rem);
+        padding: 0.625rem 0.875rem;
+        border-radius: 0.5rem;
+        font-size: 0.75rem;
+        min-width: 7.5rem;
+    }
+
+    .project-team-avatar-more::before {
+        bottom: calc(100% + 0.1875rem);
+        border-width: 0.375rem;
+    }
+
+    .project-report-status {
+        padding: 0.3125rem 0.5rem;
+        border-radius: 0.3125rem;
+        font-size: 0.625rem;
+    }
+
+    .add-project-modal {
+        max-width: 98%;
+        border-radius: 0.625rem;
+    }
+
+    .modal-scrollable-project {
+        padding: 1rem;
+    }
+
+    .form-label {
+        font-size: 0.75rem;
+    }
+
+    .form-select,
+    .form-input {
+        padding: 0.5rem 0.75rem;
+        border-radius: 1rem;
+        font-size: 0.75rem;
+    }
+
+    .form-select {
+        background-position: right 0.625rem center;
+        background-size: 0.875rem;
+        padding-right: 2rem;
+    }
+
+    .project-team-members-list.active {
+        max-height: 10rem;
+    }
+
+    .project-team-member-checkbox {
+        gap: 0.5rem;
+        padding: 0.625rem 0.875rem;
+    }
+
+    .project-team-member-checkbox input[type="checkbox"] {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .project-team-member-checkbox span {
+        font-size: 0.75rem;
+    }
+
+    .project-selected-count {
+        font-size: 0.6875rem;
+    }
+
+    .modal-header {
+        padding: 1rem;
+    }
+
+    .modal-title {
+        font-size: 1rem;
+    }
+
+    .close-btn svg {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+
+    .modal-footer {
+        padding: 0.75rem 1rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 0.625rem 1.125rem;
+        border-radius: 1.25rem;
+        font-size: 0.75rem;
+    }
+
+    .selected-members-badges {
+        gap: 0.5rem;
+    }
+
+    .selected-member-badge {
+        padding: 0.375rem 0.625rem;
+        font-size: 0.75rem;
+    }
+
+    .badge-remove-btn {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .badge-remove-btn svg {
+        width: 0.75rem;
+        height: 0.75rem;
+    }
+}
+
+/* ===================================
+   RESPONSIVE - EXTRA SMALL MOBILE (max-width: 375px)
+   =================================== */
+
+@media (max-width: 375px) {
+    .add-project-list-btn {
+        padding: 0.5625rem 1rem;
+        border-radius: 1.125rem;
+        font-size: 0.6875rem;
+    }
+
+    .project-reports-table-wrapper {
+        border-radius: 0.5rem;
+    }
+
+    .project-reports-table {
+        min-width: 46.875rem; /* 750px */
+    }
+
+    .project-reports-table th {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.625rem;
+    }
+
+    .project-reports-table td {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.625rem;
+    }
+
+    .project-team-avatar {
+        width: 1.625rem;
+        height: 1.625rem;
+        font-size: 0.5625rem;
+    }
+
+    .project-team-avatar-more {
+        min-width: 3.125rem;
+        height: 1.625rem;
+        font-size: 0.5rem;
+    }
+
+    .project-report-status {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.5625rem;
+    }
+
+    .modal-title {
+        font-size: 0.9375rem;
+    }
+}
+
+/* ===================================
+   RESPONSIVE - LANDSCAPE MOBILE (max-height: 500px)
+   =================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .project-reports-table th {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.6875rem;
+    }
+
+    .project-reports-table td {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.6875rem;
+    }
+
+    .add-project-modal {
+        max-height: 85vh;
+    }
+
+    .modal-header {
+        padding: 0.875rem 1.25rem;
+    }
+
+    .modal-scrollable-project {
+        padding: 0.875rem 1.25rem;
+    }
+
+    .modal-footer {
+        padding: 0.75rem 1.25rem;
+    }
+
+    .project-team-members-list.active {
+        max-height: 8rem;
+    }
+}
+
+/* ===================================
+   RESPONSIVE - TABLET LANDSCAPE (768px - 1024px)
+   =================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .project-reports-table th {
+        padding: 0.75rem 0.875rem;
+        font-size: 0.75rem;
+    }
+
+    .project-reports-table td {
+        padding: 0.75rem 0.875rem;
+        font-size: 0.75rem;
+    }
+
+    .add-project-modal {
+        max-width: 85%;
+    }
+
+    .form-row {
+        flex-direction: row;
+    }
+}

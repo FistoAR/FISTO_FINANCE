@@ -1,0 +1,834 @@
+/* ===================================
+   ENHANCED MODAL SYSTEM - CSS
+   Toast notifications + Themed modals
+   =================================== */
+
+/* ===================================
+   SUCCESS/ERROR TOAST - TOP RIGHT SLIDE
+   =================================== */
+
+.common-toast {
+    display: none;
+    position: fixed;
+    top: 1.5vw;
+    right: -25vw;
+    z-index: 10000;
+    width: 22vw;
+    min-width: 20vw;
+    background: white;
+    border-radius: 0.8vw;
+    box-shadow: 0 0.5vw 2vw rgba(0, 0, 0, 0.15), 0 0 0 0.05vw rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.common-toast.show {
+    display: block;
+    right: 1.5vw;
+}
+
+.common-toast-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8vw;
+    padding: 1vw 1.2vw;
+    position: relative;
+}
+
+.common-toast-icon-wrapper {
+    width: 2.5vw;
+    height: 2.5vw;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.common-toast-icon-wrapper.success {
+    background: #D1FAE5;
+}
+
+.common-toast-icon-wrapper.error {
+    background: #FEE2E2;
+}
+
+.common-toast-icon {
+    width: 1.5vw;
+    height: 1.5vw;
+    object-fit: contain;
+}
+
+.common-toast-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.common-toast-title {
+    font-size: 0.9vw;
+    font-family: 'Gilroy-Bold', sans-serif;
+    margin: 0 0 0.3vw 0;
+    color: #1a1a1a;
+}
+
+.common-toast-message {
+    font-size: 0.8vw;
+    font-family: 'Gilroy-Medium', sans-serif;
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.common-toast-close {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9CA3AF;
+    transition: all 0.2s ease;
+    border-radius: 0.3vw;
+    flex-shrink: 0;
+}
+
+.common-toast-close:hover {
+    background: #F3F4F6;
+    color: #1a1a1a;
+}
+
+.common-toast-close svg {
+    width: 0.9vw;
+    height: 0.9vw;
+}
+
+/* Progress Bar */
+.common-toast-progress {
+    height: 0.2vw;
+    background: #E5E7EB;
+    position: relative;
+    overflow: hidden;
+}
+
+.common-toast-progress::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, #10B981 0%, #059669 100%);
+    transform-origin: left;
+    animation: toastProgress 3s linear forwards;
+}
+
+.common-toast.error .common-toast-progress::after {
+    background: linear-gradient(90deg, #EF4444 0%, #DC2626 100%);
+}
+
+@keyframes toastProgress {
+    from {
+        transform: scaleX(1);
+    }
+    to {
+        transform: scaleX(0);
+    }
+}
+
+/* ===================================
+   CENTER MODALS (Info/Alert/Confirm)
+   =================================== */
+
+.common-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(0.3vw);
+    -webkit-backdrop-filter: blur(0.3vw);
+    animation: commonModalFadeIn 0.3s ease;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes commonModalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.common-modal-content {
+    background-color: #ffffff;
+    border-radius: 1vw;
+    width: 90%;
+    max-width: 28vw;
+    box-shadow: 0 1vw 3vw rgba(0, 0, 0, 0.2);
+    animation: commonModalSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+    position: relative;
+}
+
+@keyframes commonModalSlideUp {
+    from {
+        transform: translateY(2.6vw) scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Close X Button (for confirm modal) */
+.common-modal-close-x {
+    position: absolute;
+    top: 1vw;
+    right: 1vw;
+    background: #F3F4F6;
+    border: none;
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 10;
+    color: #6B7280;
+}
+
+.common-modal-close-x:hover {
+    background: #E5E7EB;
+    color: #1a1a1a;
+    transform: rotate(90deg);
+}
+
+.common-modal-close-x svg {
+    width: 1.2vw;
+    height: 1.2vw;
+}
+
+/* Header with Icon */
+.common-modal-header {
+    padding: 2vw 2vw 1vw 2vw;
+    text-align: center;
+    background: #ffffff;
+}
+
+.common-modal-icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.common-modal-icon {
+    width: 4.2vw;
+    height: 4.2vw;
+    object-fit: contain;
+    animation: commonModalIconPop 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Confirm Modal Icon (SVG Circle with Exclamation) */
+.common-modal-icon-container.confirm-icon {
+    width: 4.2vw;
+    height: 4.2vw;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #3B82F6 0%, #2D6BFF 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: commonModalIconPop 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.common-modal-icon-container.confirm-icon svg {
+    color: white;
+    width: 2.5vw;
+    height: 2.5vw;
+}
+
+@keyframes commonModalIconPop {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Body */
+.common-modal-body {
+    padding: 1vw 2vw 1.5vw 2vw;
+    text-align: center;
+}
+
+.common-modal-title {
+    font-size: 1.3vw;
+    font-family: 'Gilroy-Bold', sans-serif;
+    color: #1a1a1a;
+    margin: 0 0 0.8vw 0;
+}
+
+.common-modal-message {
+    font-size: 0.9vw;
+    font-family: 'Gilroy-Medium', sans-serif;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Footer */
+.common-modal-footer {
+    padding: 1vw 2vw 1.5vw 2vw;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    gap: 0.8vw;
+}
+
+.common-modal-footer.confirm-footer {
+    padding: 1.2vw 2vw 2vw 2vw;
+}
+
+/* Buttons */
+.common-modal-btn {
+    padding: 0.7vw 2.5vw;
+    border: none;
+    border-radius: 0.5vw;
+    font-size: 0.9vw;
+    font-family: 'Gilroy-Bold', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 7vw;
+}
+
+.common-modal-btn:active {
+    transform: scale(0.95);
+}
+
+/* Primary Button (Blue) */
+.common-modal-btn-primary {
+    background: #2D6BFF;
+    color: white;
+}
+
+.common-modal-btn-primary:hover {
+    background: #0052CC;
+    transform: translateY(-0.1vw);
+    box-shadow: 0 0.3vw 0.8vw rgba(45, 107, 255, 0.3);
+}
+
+/* Confirm Button (Blue Gradient) */
+.common-modal-btn-confirm {
+    background: linear-gradient(135deg, #3B82F6 0%, #2D6BFF 100%);
+    color: white;
+}
+
+.common-modal-btn-confirm:hover {
+    background: linear-gradient(135deg, #2D6BFF 0%, #1e5dd4 100%);
+    transform: translateY(-0.1vw);
+    box-shadow: 0 0.3vw 0.8vw rgba(45, 107, 255, 0.4);
+}
+
+/* Secondary Button (Gray) */
+.common-modal-btn-secondary {
+    background: #F3F4F6;
+    color: #374151;
+    border: 0.05vw solid #E5E7EB;
+}
+
+.common-modal-btn-secondary:hover {
+    background: #E5E7EB;
+    border-color: #D1D5DB;
+}
+
+/* Danger Button (Red) */
+.common-modal-btn-danger {
+    background: #ef4444;
+    color: white;
+}
+
+.common-modal-btn-danger:hover {
+    background: #dc2626;
+    transform: translateY(-0.1vw);
+    box-shadow: 0 0.3vw 0.8vw rgba(239, 68, 68, 0.3);
+}
+
+/* ===================================
+   RESPONSIVE - TABLET (769px - 1024px)
+   =================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .common-toast {
+        top: 1.5rem;
+        width: 22rem;
+        min-width: 20rem;
+        border-radius: 1rem;
+    }
+
+    .common-toast.show {
+        right: 1.5rem;
+    }
+
+    .common-toast-content {
+        gap: 1rem;
+        padding: 1.25rem 1.5rem;
+    }
+
+    .common-toast-icon-wrapper {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .common-toast-icon {
+        width: 1.875rem;
+        height: 1.875rem;
+    }
+
+    .common-toast-title {
+        font-size: 1rem;
+        margin-bottom: 0.375rem;
+    }
+
+    .common-toast-message {
+        font-size: 0.875rem;
+    }
+
+    .common-toast-close {
+        padding: 0.25rem;
+        border-radius: 0.375rem;
+    }
+
+    .common-toast-close svg {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+
+    .common-toast-progress {
+        height: 0.25rem;
+    }
+
+    .common-modal {
+        backdrop-filter: blur(0.375rem);
+        -webkit-backdrop-filter: blur(0.375rem);
+    }
+
+    .common-modal-content {
+        border-radius: 1.25rem;
+        max-width: 28rem;
+        box-shadow: 0 1.25rem 3.75rem rgba(0, 0, 0, 0.2);
+    }
+
+    .common-modal-close-x {
+        top: 1.25rem;
+        right: 1.25rem;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .common-modal-close-x svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .common-modal-header {
+        padding: 2.5rem 2.5rem 1.25rem 2.5rem;
+    }
+
+    .common-modal-icon {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .common-modal-icon-container.confirm-icon {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .common-modal-icon-container.confirm-icon svg {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .common-modal-body {
+        padding: 1.25rem 2.5rem 1.875rem 2.5rem;
+    }
+
+    .common-modal-title {
+        font-size: 1.375rem;
+        margin-bottom: 1rem;
+    }
+
+    .common-modal-message {
+        font-size: 1rem;
+    }
+
+    .common-modal-footer {
+        padding: 1.25rem 2.5rem 1.875rem 2.5rem;
+        gap: 1rem;
+    }
+
+    .common-modal-footer.confirm-footer {
+        padding: 1.5rem 2.5rem 2.5rem 2.5rem;
+    }
+
+    .common-modal-btn {
+        padding: 0.875rem 3.125rem;
+        border-radius: 0.625rem;
+        font-size: 1rem;
+        min-width: 8.75rem;
+    }
+
+    .common-modal-btn-secondary {
+        border-width: 0.0625rem;
+    }
+
+    .common-modal-btn-primary:hover,
+    .common-modal-btn-confirm:hover,
+    .common-modal-btn-danger:hover {
+        transform: translateY(-0.125rem);
+        box-shadow: 0 0.375rem 1rem rgba(45, 107, 255, 0.3);
+    }
+}
+
+/* ===================================
+   RESPONSIVE - MOBILE (max-width: 768px)
+   =================================== */
+
+@media (max-width: 768px) {
+    .common-toast {
+        top: 1rem;
+        width: calc(100% - 2rem);
+        min-width: 0;
+        left: 1rem;
+        right: auto;
+        transform: translateY(-6rem);
+        border-radius: 0.75rem;
+    }
+
+    .common-toast.show {
+        transform: translateY(0);
+        right: auto;
+    }
+
+    .common-toast-content {
+        gap: 0.875rem;
+        padding: 1rem 1.25rem;
+    }
+
+    .common-toast-icon-wrapper {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .common-toast-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .common-toast-title {
+        font-size: 0.9375rem;
+        margin-bottom: 0.3125rem;
+    }
+
+    .common-toast-message {
+        font-size: 0.8125rem;
+    }
+
+    .common-toast-close svg {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .common-toast-progress {
+        height: 0.1875rem;
+    }
+
+    .common-modal-content {
+        width: 95%;
+        max-width: 95%;
+        border-radius: 1rem;
+    }
+
+    .common-modal-close-x {
+        top: 1rem;
+        right: 1rem;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .common-modal-close-x svg {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+
+    .common-modal-header {
+        padding: 2rem 1.5rem 1rem 1.5rem;
+    }
+
+    .common-modal-icon {
+        width: 4.375rem;
+        height: 4.375rem;
+    }
+
+    .common-modal-icon-container.confirm-icon {
+        width: 4.375rem;
+        height: 4.375rem;
+    }
+
+    .common-modal-icon-container.confirm-icon svg {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .common-modal-body {
+        padding: 1rem 1.5rem 1.25rem 1.5rem;
+    }
+
+    .common-modal-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .common-modal-message {
+        font-size: 0.9375rem;
+    }
+
+    .common-modal-footer {
+        padding: 1rem 1.5rem 1.5rem 1.5rem;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .common-modal-footer.confirm-footer {
+        padding: 1.25rem 1.5rem 2rem 1.5rem;
+    }
+
+    .common-modal-btn {
+        width: 100%;
+        padding: 0.75rem 1.25rem;
+        font-size: 0.9375rem;
+        min-width: 0;
+    }
+}
+
+/* ===================================
+   RESPONSIVE - SMALL MOBILE (max-width: 480px)
+   =================================== */
+
+@media (max-width: 480px) {
+    .common-toast {
+        top: 0.875rem;
+        left: 0.875rem;
+        width: calc(100% - 1.75rem);
+    }
+
+    .common-toast-content {
+        padding: 0.875rem 1rem;
+        gap: 0.75rem;
+    }
+
+    .common-toast-icon-wrapper {
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+
+    .common-toast-icon {
+        width: 1.375rem;
+        height: 1.375rem;
+    }
+
+    .common-toast-title {
+        font-size: 0.875rem;
+    }
+
+    .common-toast-message {
+        font-size: 0.75rem;
+    }
+
+    .common-modal-content {
+        width: 98%;
+        border-radius: 0.875rem;
+    }
+
+    .common-modal-close-x {
+        top: 0.875rem;
+        right: 0.875rem;
+        width: 1.875rem;
+        height: 1.875rem;
+    }
+
+    .common-modal-close-x svg {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+
+    .common-modal-header {
+        padding: 1.75rem 1.25rem 0.875rem 1.25rem;
+    }
+
+    .common-modal-icon {
+        width: 3.75rem;
+        height: 3.75rem;
+    }
+
+    .common-modal-icon-container.confirm-icon {
+        width: 3.75rem;
+        height: 3.75rem;
+    }
+
+    .common-modal-icon-container.confirm-icon svg {
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+
+    .common-modal-body {
+        padding: 0.875rem 1.25rem 1.125rem 1.25rem;
+    }
+
+    .common-modal-title {
+        font-size: 1.125rem;
+        margin-bottom: 0.625rem;
+    }
+
+    .common-modal-message {
+        font-size: 0.875rem;
+    }
+
+    .common-modal-footer {
+        padding: 0.875rem 1.25rem 1.5rem 1.25rem;
+        gap: 0.625rem;
+    }
+
+    .common-modal-footer.confirm-footer {
+        padding: 1.125rem 1.25rem 1.75rem 1.25rem;
+    }
+
+    .common-modal-btn {
+        padding: 0.6875rem 1rem;
+        font-size: 0.875rem;
+    }
+}
+
+/* ===================================
+   RESPONSIVE - EXTRA SMALL (max-width: 375px)
+   =================================== */
+
+@media (max-width: 375px) {
+    .common-toast {
+        top: 0.75rem;
+        left: 0.75rem;
+        width: calc(100% - 1.5rem);
+    }
+
+    .common-toast-content {
+        padding: 0.75rem 0.875rem;
+    }
+
+    .common-toast-icon-wrapper {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .common-toast-icon {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+
+    .common-toast-title {
+        font-size: 0.8125rem;
+    }
+
+    .common-toast-message {
+        font-size: 0.6875rem;
+    }
+
+    .common-modal-icon {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .common-modal-icon-container.confirm-icon {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .common-modal-icon-container.confirm-icon svg {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .common-modal-title {
+        font-size: 1rem;
+    }
+
+    .common-modal-message {
+        font-size: 0.8125rem;
+    }
+
+    .common-modal-btn {
+        padding: 0.625rem 0.875rem;
+        font-size: 0.8125rem;
+    }
+}
+
+/* ===================================
+   LANDSCAPE MOBILE
+   =================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .common-toast {
+        top: 0.625rem;
+    }
+
+    .common-toast-content {
+        padding: 0.75rem 1rem;
+    }
+
+    .common-modal-content {
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .common-modal-header {
+        padding: 1.5rem 1.5rem 0.75rem 1.5rem;
+    }
+
+    .common-modal-icon {
+        width: 3.125rem;
+        height: 3.125rem;
+    }
+
+    .common-modal-icon-container.confirm-icon {
+        width: 3.125rem;
+        height: 3.125rem;
+    }
+
+    .common-modal-icon-container.confirm-icon svg {
+        width: 1.875rem;
+        height: 1.875rem;
+    }
+
+    .common-modal-body {
+        padding: 0.75rem 1.5rem 1rem 1.5rem;
+    }
+
+    .common-modal-footer {
+        padding: 0.875rem 1.5rem 1.25rem 1.5rem;
+    }
+
+    .common-modal-footer.confirm-footer {
+        padding: 1rem 1.5rem 1.5rem 1.5rem;
+    }
+}

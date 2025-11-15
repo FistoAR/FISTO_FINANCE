@@ -1,0 +1,563 @@
+/* ===================================
+   SIDEBAR.CSS - Sidebar Navigation
+   =================================== */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    backdrop-filter: blur(10px);
+    border-right: 1px solid #D9D9D9;
+    z-index: 200;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.03);
+}
+
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* ===================================
+   SIDEBAR HEADER
+   =================================== */
+
+.sidebar-header {
+    padding: 1.5rem 1.25rem; /* 24px 20px */
+    flex-shrink: 0;
+    position: relative;
+}
+
+.sidebar-header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar-header .logo img {
+    max-width: 8.75rem; /* 140px */
+    height: auto;
+}
+
+.buble img{
+    position: absolute;
+    top: 0;
+    width: 14vw;
+}
+
+/* Close button (hidden on desktop) */
+.sidebar-close {
+    display: none;
+    position: absolute;
+    top: 1.25rem; /* 20px */
+    right: 1rem; /* 16px */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem; /* 8px */
+    color: var(--color-text);
+    z-index: 10;
+    transition: all 0.2s ease;
+    border-radius: 0.375rem; /* 6px */
+}
+
+.sidebar-close:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* ===================================
+   SIDEBAR NAVIGATION
+   =================================== */
+
+.sidebar-nav {
+    flex: 1;
+    padding: 1rem 0.75rem; /* 16px 12px */
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem; /* 14px */
+    padding: 0.875rem 1rem; /* 14px 16px */
+    color: var(--color-text);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-radius: 0.625rem; /* 10px */
+    font-size: 0.9375rem; /* 15px */
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 0.375rem; /* 6px */
+}
+
+.nav-item:hover {
+    background: rgba(59, 130, 246, 0.08);
+    color: var(--color-primary);
+}
+
+.nav-item.active {
+    background: #eff6ff;
+    color: var(--color-primary);
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.1);
+}
+
+.nav-icon {
+    width: 1.375rem; /* 22px */
+    height: 1.375rem; /* 22px */
+    flex-shrink: 0;
+}
+
+.nav-text {
+    font-size: 0.9375rem; /* 15px */
+}
+
+/* ===================================
+   SIDEBAR FOOTER (Logout Button)
+   =================================== */
+
+.sidebar-footer {
+    padding: 1rem 0.75rem; /* 16px 12px */
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    flex-shrink: 0;
+}
+
+.logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem; /* 12px */
+    width: 100%;
+    padding: 0.75rem 1rem; /* 12px 16px */
+    background: transparent;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: 0.625rem; /* 10px */
+    color: #ef4444;
+    font-size: 0.9375rem; /* 15px */
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: #ef4444;
+}
+
+.logout-btn svg {
+    width: 1.25rem; /* 20px */
+    height: 1.25rem; /* 20px */
+}
+
+/* ===================================
+   MOBILE MENU TOGGLE BUTTON
+   =================================== */
+
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 1rem; /* 16px */
+    left: 1rem; /* 16px */
+    z-index: 300;
+    background: transparent;
+    border: none;
+    border-radius: 0.625rem; /* 10px */
+    padding: 0.625rem 0.75rem; /* 10px 12px */
+    cursor: pointer;
+    flex-direction: column;
+    gap: 0.3125rem; /* 5px */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    width: 2.75rem; /* 44px - fixed width for alignment */
+    height: 2.75rem; /* 44px - fixed height for alignment */
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar-toggle:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar-toggle span {
+    width: 1.5rem; /* 24px */
+    height: 0.125rem; /* 2px */
+    background: var(--color-text);
+    display: block;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 0.125rem; /* 2px */
+    transform-origin: center;
+}
+
+/* X mark animation when sidebar is open */
+.sidebar-toggle.active span:nth-child(1) {
+    transform: translateY(0.4375rem) rotate(45deg); /* Move down then rotate */
+}
+
+.sidebar-toggle.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+.sidebar-toggle.active span:nth-child(3) {
+    transform: translateY(-0.4375rem) rotate(-45deg); /* Move up then rotate */
+}
+/* ===================================
+   SIDEBAR OVERLAY (for mobile)
+   =================================== */
+
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 199;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ===================================
+   TABLET RESPONSIVE (769px - 1024px)
+   =================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    :root {
+        --sidebar-width: 16.25rem; /* 260px */
+    }
+
+
+    /* Show hamburger menu on tablet */
+    .sidebar-toggle {
+        display: flex;
+    }
+
+    /* Show close button in sidebar */
+    .sidebar-close {
+        display: block;
+    }
+
+    /* Sidebar hidden by default */
+    .sidebar {
+        transform: translateX(-100%);
+        box-shadow: none;
+
+    }
+
+    /* Sidebar visible state */
+    .sidebar.open {
+        transform: translateX(0);
+        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
+        background-color: #c8deff;
+    }
+
+    /* Show overlay when sidebar is open */
+    .sidebar-overlay {
+        display: block;
+    }
+
+    .sidebar-header {
+        padding: 1.25rem 1.125rem; /* 20px 18px */
+    }
+
+    .sidebar-header .logo img {
+        max-width: 7.5rem; /* 120px */
+    }
+
+    .nav-item {
+        padding: 0.75rem 0.875rem; /* 12px 14px */
+        font-size: 0.875rem; /* 14px */
+    }
+
+    .nav-icon {
+        width: 1.25rem; /* 20px */
+        height: 1.25rem; /* 20px */
+    }
+
+    .nav-text {
+        font-size: 0.875rem; /* 14px */
+    }
+
+    .logout-btn {
+        font-size: 0.875rem; /* 14px */
+    }
+}
+
+/* ===================================
+   MOBILE RESPONSIVE (max-width: 768px)
+   =================================== */
+
+@media (max-width: 768px) {
+    :root {
+        --sidebar-width: 17.5rem; /* 280px */
+    }
+
+    /* Show hamburger menu */
+    .sidebar-toggle {
+        display: flex;
+    }
+
+    /* Show close button in sidebar */
+    .sidebar-close {
+        display: block;
+    }
+
+    /* Sidebar hidden by default, slides in from left */
+    .sidebar {
+        transform: translateX(-100%);
+        box-shadow: none;
+    }
+
+    /* Sidebar visible state */
+    .sidebar.open {
+        transform: translateX(0);
+        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+        background-color: #c8deff;
+    }
+
+    /* Show overlay when sidebar is open */
+    .sidebar-overlay {
+        display: block;
+    }
+
+    .sidebar-header {
+        padding: 1.125rem 1rem; /* 18px 16px */
+    }
+
+    .sidebar-header .logo img {
+        max-width: 7rem; /* 112px */
+    }
+
+    .nav-item {
+        padding: 0.75rem 0.875rem; /* 12px 14px */
+        font-size: 0.875rem; /* 14px */
+    }
+
+    .nav-icon {
+        width: 1.1875rem; /* 19px */
+        height: 1.1875rem; /* 19px */
+    }
+
+    .nav-text {
+        font-size: 0.875rem; /* 14px */
+    }
+
+    .logout-btn {
+        padding: 0.625rem 0.875rem; /* 10px 14px */
+        font-size: 0.875rem; /* 14px */
+    }
+}
+
+/* ===================================
+   SMALL MOBILE (max-width: 480px)
+   =================================== */
+
+@media (max-width: 480px) {
+    :root {
+        --sidebar-width: 16.25rem; /* 260px */
+    }
+
+    .sidebar-header {
+        padding: 1.125rem 1rem; /* 18px 16px */
+    }
+
+    .sidebar-header .logo img {
+        max-width: 6.875rem; /* 110px */
+    }
+
+    .nav-item {
+        padding: 0.6875rem 0.875rem; /* 11px 14px */
+        font-size: 0.875rem; /* 14px */
+    }
+
+    .nav-icon {
+        width: 1.1875rem; /* 19px */
+        height: 1.1875rem; /* 19px */
+    }
+
+    .nav-text {
+        font-size: 0.875rem; /* 14px */
+    }
+
+    .sidebar-toggle {
+        top: 0.75rem; /* 12px */
+        left: 0.75rem; /* 12px */
+        padding: 0.5rem 0.625rem; /* 8px 10px */
+    }
+
+    .sidebar-toggle span {
+        width: 1.25rem; /* 20px */
+    }
+
+    .logout-btn {
+        padding: 0.625rem 0.875rem; /* 10px 14px */
+        font-size: 0.875rem; /* 14px */
+    }
+}
+
+/* ===================================
+   VERY SMALL MOBILE (max-width: 375px)
+   =================================== */
+
+@media (max-width: 375px) {
+    :root {
+        --sidebar-width: 15rem; /* 240px */
+    }
+
+    .sidebar-header .logo img {
+        max-width: 6.25rem; /* 100px */
+    }
+
+    .sidebar-header {
+        padding: 1rem 0.875rem; /* 16px 14px */
+    }
+
+    .nav-item {
+        padding: 0.625rem 0.75rem; /* 10px 12px */
+        font-size: 0.8125rem; /* 13px */
+        gap: 0.625rem; /* 10px */
+    }
+
+    .nav-icon {
+        width: 1.125rem; /* 18px */
+        height: 1.125rem; /* 18px */
+    }
+
+    .nav-text {
+        font-size: 0.8125rem; /* 13px */
+    }
+
+    .logout-btn {
+        padding: 0.5625rem 0.75rem; /* 9px 12px */
+        font-size: 0.8125rem; /* 13px */
+        gap: 0.625rem; /* 10px */
+    }
+
+    .logout-btn svg {
+        width: 1.125rem; /* 18px */
+        height: 1.125rem; /* 18px */
+    }
+}
+
+/* ===================================
+   LANDSCAPE MODE - MOBILE (max-height: 500px)
+   =================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+    :root {
+        --sidebar-width: 14rem; /* 224px */
+    }
+
+    .sidebar-header {
+        padding: 0.75rem 0.875rem; /* 12px 14px */
+    }
+
+    .sidebar-header .logo img {
+        max-width: 5.625rem; /* 90px */
+    }
+
+    .sidebar-nav {
+        padding: 0.625rem 0.5rem; /* 10px 8px */
+    }
+
+    .nav-item {
+        padding: 0.5rem 0.75rem; /* 8px 12px */
+        font-size: 0.8125rem; /* 13px */
+        margin-bottom: 0.25rem; /* 4px */
+        gap: 0.625rem; /* 10px */
+    }
+
+    .nav-icon {
+        width: 1rem; /* 16px */
+        height: 1rem; /* 16px */
+    }
+
+    .nav-text {
+        font-size: 0.8125rem; /* 13px */
+    }
+
+    .sidebar-footer {
+        padding: 0.625rem 0.5rem; /* 10px 8px */
+    }
+
+    .logout-btn {
+        padding: 0.5rem 0.75rem; /* 8px 12px */
+        font-size: 0.8125rem; /* 13px */
+        gap: 0.5rem; /* 8px */
+    }
+
+    .logout-btn svg {
+        width: 1rem; /* 16px */
+        height: 1rem; /* 16px */
+    }
+
+    .sidebar-toggle {
+        top: 0.5rem; /* 8px */
+        left: 0.5rem; /* 8px */
+        padding: 0.375rem 0.5rem; /* 6px 8px */
+    }
+
+    .sidebar-toggle span {
+        width: 1.125rem; /* 18px */
+    }
+}
+
+/* ===================================
+   TABLET LANDSCAPE (768px - 1024px) and (orientation: landscape)
+   =================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    :root {
+        --sidebar-width: 15rem; /* 240px */
+    }
+
+    .sidebar-header {
+        padding: 1rem 1rem; /* 16px 16px */
+    }
+
+    .sidebar-header .logo img {
+        max-width: 6.875rem; /* 110px */
+    }
+
+    .nav-item {
+        padding: 0.625rem 0.75rem; /* 10px 12px */
+        font-size: 0.8125rem; /* 13px */
+        margin-bottom: 0.3125rem; /* 5px */
+    }
+
+    .nav-icon {
+        width: 1.125rem; /* 18px */
+        height: 1.125rem; /* 18px */
+    }
+
+    .nav-text {
+        font-size: 0.8125rem; /* 13px */
+    }
+
+    .logout-btn {
+        padding: 0.625rem 0.75rem; /* 10px 12px */
+        font-size: 0.8125rem; /* 13px */
+    }
+}

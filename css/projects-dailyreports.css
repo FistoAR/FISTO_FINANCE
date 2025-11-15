@@ -1,0 +1,1111 @@
+/* ===================================
+   DAILY REPORTS CONTAINER
+   =================================== */
+
+.daily-reports-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Vertical timeline line */
+.daily-reports-container::before {
+    content: '';
+    position: absolute;
+    left: 1.2vw;
+    top: 3.3vw;
+    bottom: 1.7vw;
+    width: 0.1vw;
+    background-image: repeating-linear-gradient(to bottom,
+            var(--color-primary) 0,
+            var(--color-primary) 0.4vw,
+            transparent 0.4vw,
+            transparent 0.8vw);
+    z-index: 0;
+}
+
+/* ===================================
+   REPORT CARD WRAPPER (Contains number + card)
+   =================================== */
+
+.report-card-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    position: relative;
+    padding: 0.5vw 0;
+}
+
+/* ===================================
+   TIMELINE NUMBER (Outside on left)
+   =================================== */
+
+.timeline-number {
+    width: 2.5vw;
+    height: 2.5vw;
+    background: white;
+    border: 0.1vw solid var(--color-primary);
+    border-radius: 1.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1vw;
+    font-weight: 700;
+    color: var(--color-primary);
+    flex-shrink: 0;
+    box-shadow: 0 0.1vw 0.4vw rgba(59, 130, 246, 0.15);
+    z-index: 2;
+    position: relative;
+}
+
+/* ===================================
+   TIMELINE CONNECTOR (Dotted line)
+   =================================== */
+
+.timeline-connector {
+    width: 1vw;
+    height: 0.1vw;
+    align-self: center;
+    margin-top: -1.7vw;
+    flex-shrink: 0;
+    z-index: 1;
+}
+
+/* ===================================
+   REPORT CARD
+   =================================== */
+
+.report-card {
+    background: white;
+    border-radius: 1.5vw;
+    overflow: hidden;
+    box-shadow: 0 0.1vw 0.3vw rgba(0, 0, 0, 0.25);
+    border: 0.05vw solid rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.report-card.collapsed {
+    box-shadow: 0 0.1vw 0.3vw rgba(0, 0, 0, 0.25);
+}
+
+.report-card:hover {
+    cursor: pointer;
+}
+
+/* ===================================
+   REPORT HEADER (Clickable)
+   =================================== */
+
+.report-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8vw 1vw;
+    cursor: pointer;
+    background: white;
+    transition: background 0.2s ease;
+    border-bottom: 0.05vw solid rgba(0, 0, 0, 0.04);
+}
+
+.report-header:hover {
+    background: rgba(59, 130, 246, 0.02);
+}
+
+.report-header-left {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+.report-info {
+    display: flex;
+    gap: 2vw;
+}
+
+.report-title {
+    font-size: 0.8vw;
+    font-weight: 600;
+    color: var(--color-text);
+    padding: 0.5vw 0;
+}
+
+.report-date {
+    font-size: 0.8vw;
+    color: var(--color-text-secondary);
+    background: rgba(59, 130, 246, 0.1);
+    padding: 0.5vw 0.8vw;
+    border-radius: 1.5vw;
+}
+
+.report-toggle {
+    width: 1.7vw;
+    height: 1.7vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.report-toggle svg {
+    width: 0.9vw;
+    height: 0.9vw;
+    color: var(--color-primary);
+    transition: transform 0.3s ease;
+}
+
+.report-card.collapsed .report-toggle svg {
+    transform: rotate(180deg);
+}
+
+/* ===================================
+   REPORT CONTENT (Collapsible)
+   =================================== */
+
+.report-content {
+    max-height: 104vw;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.report-card.collapsed .report-content {
+    max-height: 0;
+    padding: 0;
+}
+
+/* ===================================
+   TASKS TABLE
+   =================================== */
+.tasks-table-wrapper {
+    padding: 1vw;
+    overflow-x: auto;
+}
+
+.tasks-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 0.8vw;
+    overflow: hidden;
+    border: 0.05vw solid #E5E7EB;
+}
+
+.tasks-table thead {
+    background: linear-gradient(135deg, #E0E7FF 0%, #DDD6FE 100%);
+}
+
+.tasks-table thead th {
+    padding: 0.8vw 1vw;
+    text-align: left;
+    font-size: 0.8vw;
+    font-weight: 600;
+    color: #1F2937;
+    white-space: nowrap;
+    border-right: 0.05vw solid #9CC4FF;
+    border-bottom: 0.05vw solid #9CC4FF;
+}
+
+.tasks-table thead th:first-child {
+    border-top-left-radius: 0.8vw;
+}
+
+.tasks-table thead th:last-child {
+    border-top-right-radius: 0.8vw;
+    border-right: none;
+}
+
+.tasks-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+/* Alternating row colors */
+.tasks-table tbody tr:nth-child(odd) {
+    background: white;
+}
+
+.tasks-table tbody tr:nth-child(even) {
+    background: #F9FAFB;
+}
+
+.tasks-table tbody tr:hover {
+    background: #EEF2FF;
+}
+
+.tasks-table tbody td {
+    padding: 0.9vw 1vw;
+    border-right: 0.05vw solid #9CC4FF;
+    border-bottom: 0.05vw solid #9CC4FF;
+    font-size: 0.85vw;
+    color: var(--color-text);
+}
+
+.tasks-table tbody td:last-child {
+    border-right: none;
+}
+
+.tasks-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.tasks-table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 0.8vw;
+}
+
+.tasks-table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 0.8vw;
+}
+
+
+
+/* Employee Name with Avatar */
+.employee-name {
+    display: flex;
+    align-items: center;
+    gap: 0.6vw;
+}
+
+.employee-avatar {
+    width: 2.1vw;
+    height: 2.1vw;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.8vw;
+    color: white;
+    flex-shrink: 0;
+    overflow: hidden; /* ✅ Important for image clipping */
+    position: relative;
+}
+
+/* ✅ Avatar Image Styles */
+.employee-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.employee-name-text {
+    font-size: 0.85vw;
+    color: #1F2937;
+    font-weight: 500;
+}
+
+/* Task Inputs */
+.task-input {
+    width: 100%;
+    padding: 0.6vw 0.7vw;
+    border: 0.05vw solid #E5E7EB;
+    border-radius: 0.4vw;
+    font-size: 0.85vw;
+    color: var(--color-text);
+    transition: all 0.2s ease;
+    font-family: inherit;
+    background: white;
+}
+
+.task-input:focus {
+    outline: none;
+    border-color: #6366F1;
+    box-shadow: 0 0 0 0.15vw rgba(99, 102, 241, 0.1);
+    background: white;
+}
+
+.task-input::placeholder {
+    color: #9CA3AF;
+    opacity: 1;
+}
+
+/* ===================================
+   PERCENTAGE INPUT
+   =================================== */
+
+.percentage-input {
+    width: 100%;
+    max-width: 7.3vw;
+    text-align: center;
+}
+
+/* Links */
+.figma-link {
+    color: #6366F1;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.figma-link:hover {
+    text-decoration: underline;
+    color: #4F46E5;
+}
+
+/* ===================================
+   SAVE BUTTON
+   =================================== */
+
+.save-button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.8vw 0 0 0;
+    border-top: 0.05vw solid rgba(0, 0, 0, 0.04);
+    margin-top: 0.8vw;
+}
+
+.save-btn {
+    padding: 0.5vw 1.7vw;
+    background: #2D6BFF;
+    color: white;
+    border: none;
+    border-radius: 1.5vw;
+    font-size: 0.8vw;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 0.1vw 0.2vw rgba(45, 107, 255, 0.2);
+}
+
+.save-btn:hover {
+    background: #1e5aee;
+    transform: translateY(-0.05vw);
+    box-shadow: 0 0.2vw 0.4vw rgba(45, 107, 255, 0.3);
+}
+
+.save-btn:active {
+    transform: translateY(0);
+}
+
+/* ===================================
+   EMPTY STATE
+   =================================== */
+
+.empty-state {
+    text-align: center;
+    padding: 3.1vw 1vw;
+    color: var(--color-text-secondary);
+    font-size: 0.8vw;
+}
+
+/* ===================================
+   MEDIA QUERIES - RESPONSIVE DESIGN (REM UNITS)
+   =================================== */
+
+/* Tablet (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .daily-reports-container::before {
+        left: 1.125rem;
+        top: 3.5rem;
+        width: 0.125rem;
+        background-image: repeating-linear-gradient(to bottom,
+                var(--color-primary) 0,
+                var(--color-primary) 0.5rem,
+                transparent 0.5rem,
+                transparent 1rem);
+    }
+
+    .report-card-wrapper {
+        padding: 0.5rem 0;
+    }
+
+    .timeline-number {
+        width: 2.625rem;
+        height: 2.625rem;
+        font-size: 0.875rem;
+        border-radius: 1.875rem;
+        border-width: 0.125rem;
+        box-shadow: 0 0.125rem 0.5rem rgba(59, 130, 246, 0.15);
+    }
+
+    .timeline-connector {
+        width: 0.75rem;
+        height: 0.125rem;
+        margin-top: -2rem;
+    }
+
+    .report-card {
+        border-radius: 1.5rem;
+        box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.25);
+        border-width: 0.0625rem;
+    }
+
+    .report-header {
+        padding: 0.875rem 1rem;
+        border-bottom-width: 0.0625rem;
+    }
+
+    .report-header-left {
+        gap: 1rem;
+    }
+
+    .report-info {
+        gap: 1.25rem;
+    }
+
+    .report-title {
+        font-size: 0.8125rem;
+        padding: 0.625rem 0;
+    }
+
+    .report-date {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.75rem;
+        border-radius: 1.875rem;
+    }
+
+    .report-toggle {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .report-toggle svg {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+
+    .tasks-table-wrapper {
+        padding: 1rem;
+    }
+
+    .tasks-table {
+        border-radius: 1rem;
+        border-width: 0.0625rem;
+    }
+
+    .tasks-table thead th {
+        padding: 0.875rem 1rem;
+        font-size: 0.75rem;
+        border-width: 0.0625rem;
+    }
+
+    .tasks-table thead th:first-child {
+        border-top-left-radius: 1rem;
+    }
+
+    .tasks-table thead th:last-child {
+        border-top-right-radius: 1rem;
+    }
+
+    .tasks-table tbody td {
+        padding: 0.875rem 1rem;
+        font-size: 0.75rem;
+        border-width: 0.0625rem;
+    }
+
+    .tasks-table tbody tr:last-child td:first-child {
+        border-bottom-left-radius: 1rem;
+    }
+
+    .tasks-table tbody tr:last-child td:last-child {
+        border-bottom-right-radius: 1rem;
+    }
+
+    .employee-avatar {
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.75rem;
+    }
+    
+    .employee-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .employee-name-text {
+        font-size: 0.8125rem;
+    }
+
+    .employee-name {
+        gap: 0.75rem;
+    }
+
+    .task-input {
+        padding: 0.625rem 0.75rem;
+        font-size: 0.75rem;
+        border-radius: 0.5rem;
+        border-width: 0.0625rem;
+    }
+
+    .task-input:focus {
+        box-shadow: 0 0 0 0.1875rem rgba(99, 102, 241, 0.1);
+    }
+
+    .percentage-input {
+        max-width: 8.75rem;
+    }
+
+    .save-button-wrapper {
+        padding: 1rem 0 0 0;
+        margin-top: 1rem;
+        border-top-width: 0.0625rem;
+    }
+
+    .save-btn {
+        font-size: 0.8125rem;
+        padding: 0.5625rem 1.75rem;
+        border-radius: 1.875rem;
+        box-shadow: 0 0.125rem 0.25rem rgba(45, 107, 255, 0.2);
+    }
+
+    .save-btn:hover {
+        transform: translateY(-0.0625rem);
+        box-shadow: 0 0.25rem 0.5rem rgba(45, 107, 255, 0.3);
+    }
+
+    .empty-state {
+        font-size: 0.8125rem;
+        padding: 3.125rem 1rem;
+    }
+}
+
+/* Mobile & Small Tablet (max-width: 768px) */
+@media (max-width: 768px) {
+    .daily-reports-container::before {
+        left: 0.9375rem;
+        top: 3rem;
+        bottom: 2rem;
+        width: 0.125rem;
+        background-image: repeating-linear-gradient(to bottom,
+                var(--color-primary) 0,
+                var(--color-primary) 0.5rem,
+                transparent 0.5rem,
+                transparent 1rem);
+    }
+
+    .report-card-wrapper {
+        padding: 0.5rem 0;
+    }
+
+    .timeline-number {
+        width: 2.25rem;
+        height: 2.25rem;
+        font-size: 0.8125rem;
+        border-width: 0.125rem;
+        border-radius: 1.125rem;
+        box-shadow: 0 0.125rem 0.5rem rgba(59, 130, 246, 0.15);
+    }
+
+    .timeline-connector {
+        width: 0.625rem;
+        height: 0.125rem;
+        margin-top: -2rem;
+    }
+
+    .report-card {
+        border-radius: 1.25rem;
+        box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.25);
+        border-width: 0.0625rem;
+    }
+
+    .report-header {
+        padding: 0.75rem 0.875rem;
+        flex-wrap: wrap;
+        border-bottom-width: 0.0625rem;
+    }
+
+    .report-header-left {
+        gap: 0.75rem;
+        flex: 1;
+    }
+
+    .report-info {
+        gap: 1rem;
+    }
+
+    .report-title {
+        font-size: 0.875rem;
+        padding: 0.375rem 0;
+    }
+
+    .report-date {
+        font-size: 0.75rem;
+        padding: 0.375rem 0.75rem;
+        border-radius: 1.25rem;
+        display: inline-block;
+    }
+
+    .report-toggle {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+
+    .report-toggle svg {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .tasks-table-wrapper {
+        padding: 0.75rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tasks-table {
+        min-width: 43.75rem;
+        border-radius: 0.75rem;
+        border-width: 0.0625rem;
+    }
+
+    .tasks-table thead th {
+        padding: 0.75rem 0.875rem;
+        font-size: 0.75rem;
+        border-width: 0.0625rem;
+    }
+
+    .tasks-table thead th:first-child {
+        border-top-left-radius: 0.75rem;
+    }
+
+    .tasks-table thead th:last-child {
+        border-top-right-radius: 0.75rem;
+    }
+
+    .tasks-table tbody td {
+        padding: 0.75rem 0.875rem;
+        font-size: 0.75rem;
+        border-width: 0.0625rem;
+    }
+
+    .tasks-table tbody tr:last-child td:first-child {
+        border-bottom-left-radius: 0.75rem;
+    }
+
+    .tasks-table tbody tr:last-child td:last-child {
+        border-bottom-right-radius: 0.75rem;
+    }
+
+    .employee-avatar {
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.75rem;
+    }
+
+    .employee-name {
+        gap: 0.5rem;
+    }
+
+    .task-input {
+        padding: 0.625rem 0.75rem;
+        font-size: 0.8125rem;
+        border-radius: 0.5rem;
+        border-width: 0.0625rem;
+    }
+
+    .task-input:focus {
+        box-shadow: 0 0 0 0.1875rem rgba(99, 102, 241, 0.1);
+    }
+
+    .percentage-input {
+        max-width: 7.5rem;
+    }
+
+    .save-button-wrapper {
+        padding: 0.75rem 0 0 0;
+        margin-top: 0.75rem;
+        border-top-width: 0.0625rem;
+    }
+
+    .save-btn {
+        font-size: 0.8125rem;
+        padding: 0.625rem 1.75rem;
+        border-radius: 1.5rem;
+        box-shadow: 0 0.125rem 0.25rem rgba(45, 107, 255, 0.2);
+    }
+
+    .save-btn:hover {
+        transform: translateY(-0.0625rem);
+        box-shadow: 0 0.25rem 0.5rem rgba(45, 107, 255, 0.3);
+    }
+
+    .empty-state {
+        font-size: 0.8125rem;
+        padding: 2.5rem 1rem;
+    }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    .daily-reports-container::before {
+        left: 0.75rem;
+        top: 2.625rem;
+        bottom: 1.5rem;
+        width: 0.125rem;
+        background-image: repeating-linear-gradient(to bottom,
+                var(--color-primary) 0,
+                var(--color-primary) 0.5rem,
+                transparent 0.5rem,
+                transparent 1rem);
+    }
+
+    .report-card-wrapper {
+        padding: 0.375rem 0;
+    }
+
+    .timeline-number {
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.75rem;
+        border-width: 0.125rem;
+        border-radius: 1rem;
+        box-shadow: 0 0.125rem 0.5rem rgba(59, 130, 246, 0.15);
+    }
+
+    .timeline-connector {
+        width: 0.5rem;
+        height: 0.125rem;
+        margin-top: -2rem;
+    }
+
+    .report-card {
+        border-radius: 1rem;
+        box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.25);
+        border-width: 0.0625rem;
+    }
+
+    .report-header {
+        padding: 0.625rem 0.75rem;
+        gap: 0.5rem;
+        border-bottom-width: 0.0625rem;
+    }
+
+    .report-header-left {
+        flex-direction: column;
+        gap: 0.625rem;
+        align-items: flex-start;
+    }
+
+    .report-info {
+        width: 100%;
+    }
+
+    .report-title {
+        font-size: 0.8125rem;
+        padding: 0.25rem 0;
+    }
+
+    .report-date {
+        font-size: 0.6875rem;
+        padding: 0.3125rem 0.625rem;
+        border-radius: 1rem;
+    }
+
+    .report-toggle {
+        width: 1.625rem;
+        height: 1.625rem;
+    }
+
+    .report-toggle svg {
+        width: 0.875rem;
+        height: 0.875rem;
+    }
+
+    .tasks-table-wrapper {
+        padding: 0.625rem;
+    }
+
+    .tasks-table {
+        min-width: 40.625rem;
+        border-radius: 0.625rem;
+        border-width: 0.0625rem;
+    }
+
+    .tasks-table thead th {
+        padding: 0.625rem 0.75rem;
+        font-size: 0.6875rem;
+        border-width: 0.0625rem;
+    }
+
+    .tasks-table thead th:first-child {
+        border-top-left-radius: 0.625rem;
+    }
+
+    .tasks-table thead th:last-child {
+        border-top-right-radius: 0.625rem;
+    }
+
+    .tasks-table tbody td {
+        padding: 0.625rem 0.75rem;
+        font-size: 0.6875rem;
+        border-width: 0.0625rem;
+    }
+
+    .tasks-table tbody tr:last-child td:first-child {
+        border-bottom-left-radius: 0.625rem;
+    }
+
+    .tasks-table tbody tr:last-child td:last-child {
+        border-bottom-right-radius: 0.625rem;
+    }
+
+       .employee-avatar {
+        width: 1.75rem;
+        height: 1.75rem;
+        font-size: 0.6875rem;
+    }
+    
+    .employee-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .employee-name-text {
+        font-size: 0.75rem;
+    }
+
+    .employee-name {
+        gap: 0.375rem;
+    }
+
+    .task-input {
+        padding: 0.5rem 0.625rem;
+        font-size: 0.75rem;
+        border-radius: 0.375rem;
+        border-width: 0.0625rem;
+    }
+
+    .task-input:focus {
+        box-shadow: 0 0 0 0.1875rem rgba(99, 102, 241, 0.1);
+    }
+
+    .percentage-input {
+        max-width: 6.25rem;
+    }
+
+    .save-button-wrapper {
+        padding: 0.625rem 0 0 0;
+        margin-top: 0.625rem;
+        border-top-width: 0.0625rem;
+    }
+
+    .save-btn {
+        width: 100%;
+        font-size: 0.8125rem;
+        padding: 0.625rem 1.25rem;
+        border-radius: 1.25rem;
+        box-shadow: 0 0.125rem 0.25rem rgba(45, 107, 255, 0.2);
+    }
+
+    .save-btn:hover {
+        transform: translateY(-0.0625rem);
+        box-shadow: 0 0.25rem 0.5rem rgba(45, 107, 255, 0.3);
+    }
+
+    .empty-state {
+        font-size: 0.75rem;
+        padding: 2rem 0.75rem;
+    }
+}
+
+/* Extra Small Mobile (max-width: 375px) */
+@media (max-width: 375px) {
+    .daily-reports-container::before {
+        left: 0.625rem;
+        top: 2.375rem;
+        bottom: 1.25rem;
+        width: 0.125rem;
+    }
+
+    .timeline-number {
+        width: 1.75rem;
+        height: 1.75rem;
+        font-size: 0.6875rem;
+        border-radius: 0.875rem;
+    }
+
+    .timeline-connector {
+        width: 0.375rem;
+    }
+
+    .report-card {
+        border-radius: 0.875rem;
+    }
+
+    .report-header {
+        padding: 0.5rem 0.625rem;
+    }
+
+    .report-title {
+        font-size: 0.75rem;
+    }
+
+    .report-date {
+        font-size: 0.625rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .report-toggle {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .tasks-table-wrapper {
+        padding: 0.5rem;
+    }
+
+    .tasks-table {
+        min-width: 37.5rem;
+        border-radius: 0.5rem;
+    }
+
+    .tasks-table thead th {
+        padding: 0.5rem 0.625rem;
+        font-size: 0.625rem;
+    }
+
+    .tasks-table thead th:first-child {
+        border-top-left-radius: 0.5rem;
+    }
+
+    .tasks-table thead th:last-child {
+        border-top-right-radius: 0.5rem;
+    }
+
+    .tasks-table tbody td {
+        padding: 0.5rem 0.625rem;
+        font-size: 0.625rem;
+    }
+
+    .tasks-table tbody tr:last-child td:first-child {
+        border-bottom-left-radius: 0.5rem;
+    }
+
+    .tasks-table tbody tr:last-child td:last-child {
+        border-bottom-right-radius: 0.5rem;
+    }
+
+     .employee-avatar {
+        width: 1.625rem;
+        height: 1.625rem;
+        font-size: 0.625rem;
+    }
+    
+    .employee-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    .employee-name-text {
+        font-size: 0.6875rem;
+    }
+
+    .task-input {
+        padding: 0.4375rem 0.5625rem;
+        font-size: 0.6875rem;
+    }
+
+    .save-btn {
+        font-size: 0.75rem;
+        padding: 0.5625rem 1.125rem;
+    }
+}
+
+/* Landscape Mobile (max-height: 500px) */
+@media (max-height: 500px) and (orientation: landscape) {
+    .report-card-wrapper {
+        padding: 0.375rem 0;
+    }
+
+    .timeline-number {
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.75rem;
+    }
+
+    .report-header {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .report-title {
+        font-size: 0.75rem;
+        padding: 0.25rem 0;
+    }
+
+    .report-date {
+        font-size: 0.6875rem;
+        padding: 0.25rem 0.625rem;
+    }
+
+    .tasks-table-wrapper {
+        padding: 0.625rem;
+    }
+
+    .tasks-table thead th,
+    .tasks-table tbody td {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.6875rem;
+    }
+
+    .employee-avatar {
+        width: 1.75rem;
+        height: 1.75rem;
+        font-size: 0.6875rem;
+    }
+
+    .task-input {
+        padding: 0.375rem 0.625rem;
+        font-size: 0.6875rem;
+    }
+
+    .save-btn {
+        padding: 0.4375rem 1.5rem;
+        font-size: 0.75rem;
+    }
+
+    .empty-state {
+        padding: 1.5rem 0.75rem;
+        font-size: 0.75rem;
+    }
+}
+
+/* Tablet Landscape (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .report-header-left {
+        gap: 0.875rem;
+    }
+
+    .report-info {
+        gap: 1.125rem;
+    }
+
+    .report-title {
+        font-size: 0.8125rem;
+    }
+
+    .report-date {
+        font-size: 0.75rem;
+    }
+
+    .tasks-table-wrapper {
+        padding: 0.875rem;
+    }
+
+    .tasks-table thead th,
+    .tasks-table tbody td {
+        padding: 0.75rem 0.875rem;
+        font-size: 0.75rem;
+    }
+
+    .employee-avatar {
+        width: 2.125rem;
+        height: 2.125rem;
+        font-size: 0.75rem;
+    }
+
+    .task-input {
+        padding: 0.5625rem 0.6875rem;
+        font-size: 0.75rem;
+    }
+
+    .save-btn {
+        padding: 0.5rem 1.625rem;
+        font-size: 0.8125rem;
+    }
+}

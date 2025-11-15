@@ -1,0 +1,1591 @@
+/* ===================================
+   PROJECT BUDGET - COMPLETE CSS
+   Updated with File Display & Fixed Layout
+   =================================== */
+
+/* ===================================
+   MAIN TABLE CONTAINER
+   =================================== */
+
+.project-budget-table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 1.5vw;
+  background: white;
+  border-radius: 1vw;
+  box-shadow: 0 0.05vw 0.15vw rgba(0, 0, 0, 0.1);
+  border: 0.05vw solid #9CC4FF;
+}
+
+.project-budget-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 52vw;
+}
+
+/* ===================================
+   TABLE HEADER - BLUE THEME
+   =================================== */
+
+.project-budget-table thead {
+  background: #DEE7FF;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.project-budget-table thead th {
+  padding: 1vw 1.25vw;
+  text-align: left;
+  font-family: 'Gilroy-SemiBold', sans-serif;
+  font-size: 0.9vw;
+  font-weight: 600;
+  color: #1F2937;
+  text-transform: capitalize;
+  border-right: 0.05vw solid #9CC4FF;
+  border-bottom: 0.1vw solid #9CC4FF;
+  word-break: break-word;
+}
+
+.project-budget-table thead th:last-child {
+  border-right: none;
+}
+
+/* ===================================
+   TABLE BODY - WHITE THEME
+   =================================== */
+
+.project-budget-table tbody tr {
+  transition: background 0.2s ease;
+  background: white;
+  border-bottom: 0.05vw solid #9CC4FF;
+}
+
+.project-budget-table tbody tr:hover {
+  background: #F8FAFC;
+}
+
+.project-budget-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.project-budget-table tbody td {
+  padding: 1vw 1.25vw;
+  font-size: 0.85vw;
+  font-family: 'Gilroy-Medium', sans-serif;
+  color: #334155;
+  vertical-align: middle;
+  border-right: 0.05vw solid #9CC4FF;
+}
+
+.project-budget-table tbody td:last-child {
+  border-right: none;
+}
+
+/* ===================================
+   ACTION BUTTONS IN TABLE
+   =================================== */
+
+.project-budget-add-btn {
+  padding: 0.5vw 1.25vw;
+  background: #2D6BFF;
+  color: white;
+  border: none;
+  border-radius: 1.3vw;
+  cursor: pointer;
+  font-family: 'Gilroy-SemiBold', sans-serif;
+  font-size: 0.9vw;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4vw;
+}
+
+.project-budget-add-btn:hover {
+  background: #0052CC;
+  transform: translateY(-0.1vw);
+  box-shadow: 0 0.2vw 0.6vw rgba(45, 107, 255, 0.3);
+}
+
+.project-budget-view-btn,
+.project-budget-delete-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4vw;
+  border-radius: 0.3vw;
+  margin: 0 auto;
+}
+
+.project-budget-view-btn:hover {
+  background: #C7D2FE;
+  transform: scale(1.1);
+}
+
+.project-budget-view-btn img {
+  width: 1vw;
+  height: 1vw;
+  display: block;
+}
+
+.project-budget-delete-btn:hover {
+  background: #fee2e2;
+  transform: scale(1.1);
+}
+
+.project-budget-delete-btn img {
+  width: 1vw;
+  height: 1vw;
+  display: block;
+}
+
+/* ===================================
+   MODAL OVERLAY
+   =================================== */
+
+.project-budget-modal-overlay {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(0.4vw);
+  animation: fadeIn 0.3s ease;
+}
+
+.project-budget-modal-overlay.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===================================
+   MODAL CONTAINER - FIXED HEADER/FOOTER
+   =================================== */
+
+.project-budget-modal {
+  background: white;
+  border-radius: 0.8vw;
+  width: 90%;
+  max-width: 47vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1vw 3vw rgba(0, 0, 0, 0.2);
+  animation: slideDown 0.3s ease;
+  overflow: hidden;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-2.6vw);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ===================================
+   MODAL HEADER - FIXED AT TOP
+   =================================== */
+
+.project-budget-modal-header {
+  background: white;
+  padding: 1.25vw 1.5vw;
+  border-bottom: 0.05vw solid #E5E7EB;
+  border-radius: 0.8vw 0.8vw 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.project-budget-modal-header h3 {
+  font-size: 1.5vw;
+  color: #1a1a1a;
+  margin: 0;
+  font-family: 'Gilroy-Bold', sans-serif;
+}
+
+.modal-close-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.4vw;
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease;
+  border-radius: 50%;
+}
+
+.modal-close-btn:hover {
+  background: #F3F4F6;
+  transform: rotate(90deg);
+}
+
+.modal-close-btn svg {
+  width: 1.25vw;
+  height: 1.25vw;
+  stroke: #666;
+}
+
+/* ===================================
+   MODAL BODY - SCROLLABLE CONTENT ONLY
+   =================================== */
+
+.project-budget-modal-body {
+  padding: 0 1.5vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1;
+  background: white;
+  max-height: calc(90vh - 8.3vw);
+}
+
+.project-budget-modal-body::-webkit-scrollbar {
+  width: 0.4vw;
+}
+
+.project-budget-modal-body::-webkit-scrollbar-track {
+  background: #F3F4F6;
+  border-radius: 0.5vw;
+}
+
+.project-budget-modal-body::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 0.5vw;
+}
+
+.project-budget-modal-body::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* ===================================
+   SECTIONS WITH ICONS
+   =================================== */
+
+.project-budget-section {
+  margin-bottom: 1.5vw;
+}
+
+.project-budget-section:last-child {
+  margin-bottom: 0;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6vw;
+  margin-bottom: 1vw;
+  padding-bottom: 0.6vw;
+  border-bottom: 0.1vw solid #2D6BFF;
+}
+
+.section-header img {
+  width: 1.15vw;
+  height: 1.15vw;
+  flex-shrink: 0;
+}
+
+.section-header h4 {
+  font-size: 1.1vw;
+  color: #2D6BFF;
+  margin: 0;
+  font-family: 'Gilroy-SemiBold', sans-serif;
+  font-weight: 600;
+}
+
+/* ===================================
+   FORM GRID LAYOUTS
+   =================================== */
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1vw;
+}
+
+.form-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1vw;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.4vw;
+  font-size: 0.9vw;
+  font-family: 'Gilroy-SemiBold', sans-serif;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.required {
+  color: #ef4444;
+  margin-left: 0.1vw;
+}
+
+/* ===================================
+   INPUT FIELDS - ROUNDED PILLS
+   =================================== */
+
+.form-group input,
+.form-group select {
+  padding: 0.6vw 0.9vw;
+  border: 0.05vw solid #D1D5DB;
+  border-radius: 1.3vw;
+  font-size: 0.9vw;
+  font-family: 'Gilroy-Medium', sans-serif;
+  background: white;
+  transition: all 0.3s ease;
+  color: #4B5563;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #2D6BFF;
+  box-shadow: 0 0 0 0.15vw rgba(45, 107, 255, 0.1);
+}
+
+.form-group input::placeholder {
+  color: #9CA3AF;
+  font-size: 0.85vw;
+}
+
+/* SELECT DROPDOWN */
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234b5563' d='M10.293 3.293L6 7.586 1.707 3.293A1 1 0 00.293 4.707l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z'%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.9vw center;
+  padding-right: 2.3vw;
+  cursor: pointer;
+}
+
+/* ===================================
+   FILE UPLOAD - DOCUMENT DISPLAY STYLE
+   Matching Screenshot Design
+   =================================== */
+
+.file-upload-wrapper {
+  position: relative;
+}
+
+.file-upload-btn {
+  width: 100%;
+  padding: 0.6vw 1vw;
+  background: #2563EB;
+  color: white;
+  border: none;
+  border-radius: 1.3vw;
+  font-size: 0.9vw;
+  font-family: 'Gilroy-SemiBold', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5vw;
+}
+
+.file-upload-btn:hover {
+  background: #1D4ED8;
+  transform: translateY(-0.1vw);
+  box-shadow: 0 0.2vw 0.6vw rgba(37, 99, 235, 0.3);
+}
+
+.file-upload-btn svg {
+  width: 0.9vw;
+  height: 0.9vw;
+  flex-shrink: 0;
+}
+
+.file-display {
+  margin-top: 0.6vw;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vw;
+}
+
+/* ===================================
+   FILE DISPLAY ITEM - DOCUMENT STYLE
+   With icon on left, name in center, X on right
+   =================================== */
+
+.file-display-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6vw;
+  padding: 0.5vw 0.8vw 0.5vw 0.7vw;
+  background: white;
+  border: 0.05vw solid #9CC4FF;
+  border-radius: 1.5vw;
+  font-size: 0.9vw;
+  font-family: 'Gilroy-Medium', sans-serif;
+  color: #334155;
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  min-width: 13vw;
+  transition: all 0.2s ease;
+}
+
+.file-display-item:hover {
+  border-color: #2D6BFF;
+  box-shadow: 0 0.1vw 0.4vw rgba(45, 107, 255, 0.1);
+}
+
+/* Document Icon Container */
+.file-display-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.7vw;
+  height: 1.7vw;
+  background: #EFF6FF;
+  border-radius: 0.4vw;
+  flex-shrink: 0;
+}
+
+/* Document Icon SVG */
+.file-display-item-icon svg {
+  width: 1vw;
+  height: 1vw;
+  color: #2D6BFF;
+}
+
+/* File Content - Icon + Name */
+.file-display-item-content {
+  display: flex;
+  align-items: center;
+  gap: 0.6vw;
+  flex: 1;
+  overflow: hidden;
+  min-width: 0;
+}
+
+/* File Name Text */
+.file-display-item-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  font-size: 0.9vw;
+  color: #1F2937;
+}
+
+/* X Button - Close Icon */
+.file-remove-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-left: 0.4vw;
+}
+
+.file-remove-btn:hover {
+  background: #FEE2E2;
+}
+
+.file-remove-btn svg {
+  width: 0.9vw;
+  height: 0.9vw;
+  stroke: #EF4444;
+  stroke-width: 2.5;
+}
+
+/* Alternative X icon style - using × character */
+.file-remove-btn-text {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.1vw 0.3vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  border-radius: 50%;
+  flex-shrink: 0;
+  font-size: 1vw;
+  line-height: 1;
+  color: #9CA3AF;
+  font-weight: 400;
+}
+
+.file-remove-btn-text:hover {
+  background: #FEE2E2;
+  color: #EF4444;
+}
+
+/* ===================================
+   DOCUMENT ICON STYLES
+   Red icon for Purchase Order, Blue for Invoice
+   =================================== */
+
+/* Red Document Icon */
+.file-display-item.document-red .file-display-item-icon {
+  background: #FEF2F2;
+}
+
+.file-display-item.document-red .file-display-item-icon svg {
+  color: #EF4444;
+}
+
+/* Blue Document Icon */
+.file-display-item.document-blue .file-display-item-icon {
+  background: #EFF6FF;
+}
+
+.file-display-item.document-blue .file-display-item-icon svg {
+  color: #3B82F6;
+}
+
+/* ===================================
+   FILE DISPLAY GRID - TWO COLUMNS
+   For side-by-side display like screenshot
+   =================================== */
+
+.file-display-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6vw;
+  margin-top: 0.6vw;
+}
+
+.file-display-grid .file-display-item {
+  width: 100%;
+  min-width: 0;
+}
+
+/* ===================================
+   DATE INPUT STYLING
+   =================================== */
+
+.form-group input[type="date"] {
+  position: relative;
+  cursor: pointer;
+}
+
+.form-group input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+/* ===================================
+   PAYMENT TABLE - NO SCROLLING
+   =================================== */
+
+.payment-table-container {
+  overflow-x: auto;
+  border: 0.05vw solid #9CC4FF;
+  border-radius: 0.6vw;
+  margin-bottom: 0;
+  background: white;
+}
+
+.payment-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 36.5vw;
+}
+
+.payment-table thead {
+  background: #DEE7FF;
+}
+
+.payment-table thead th {
+  padding: 0.7vw 0.8vw;
+  text-align: left;
+  font-family: 'Gilroy-SemiBold', sans-serif;
+  font-size: 0.9vw;
+  font-weight: 600;
+  color: #1F2937;
+  border-right: 0.05vw solid #9CC4FF;
+  border-bottom: 0.1vw solid #9CC4FF;
+}
+
+.payment-table thead th:last-child {
+  border-right: none;
+}
+
+.payment-table tbody tr {
+  background: white;
+  border-bottom: 0.05vw solid #9CC4FF;
+  transition: background 0.2s ease;
+}
+
+.payment-table tbody tr:hover {
+  background: #F8FAFC;
+}
+
+.payment-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.payment-table tbody td {
+  padding: 0.6vw 0.8vw;
+  border-right: 0.05vw solid #9CC4FF;
+}
+
+.payment-table tbody td:last-child {
+  border-right: none;
+}
+
+/* ===================================
+   PAYMENT INPUT FIELDS
+   =================================== */
+
+.payment-input {
+  width: 100%;
+  padding: 0.5vw 0.7vw;
+  border: 0.05vw solid #D1D5DB;
+  border-radius: 0.4vw;
+  font-size: 0.85vw;
+  font-family: 'Gilroy-Medium', sans-serif;
+  transition: all 0.2s ease;
+}
+
+.payment-input:focus {
+  outline: none;
+  border-color: #2D6BFF;
+  box-shadow: 0 0 0 0.1vw rgba(45, 107, 255, 0.1);
+}
+
+.payment-input[readonly] {
+  background: #F9FAFB;
+  cursor: not-allowed;
+  color: #6B7280;
+}
+
+/* ===================================
+   PAYMENT MODE SELECT
+   =================================== */
+
+.payment-select {
+  width: 100%;
+  padding: 0.5vw 0.7vw;
+  border: 0.05vw solid #D1D5DB;
+  border-radius: 0.4vw;
+  font-size: 0.85vw;
+  font-family: 'Gilroy-Medium', sans-serif;
+  appearance: none;
+  background-color: white;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234b5563' d='M10.293 3.293L6 7.586 1.707 3.293A1 1 0 00.293 4.707l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z'%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.7vw center;
+  padding-right: 2vw;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.payment-select:focus {
+  outline: none;
+  border-color: #2D6BFF;
+  box-shadow: 0 0 0 0.1vw rgba(45, 107, 255, 0.1);
+}
+
+/* ===================================
+   ADD PAYMENT BUTTON - BELOW TABLE
+   =================================== */
+
+.payment-add-btn-wrapper {
+  display: flex;
+  margin-top: 0.8vw;
+  padding-top: 0;
+}
+
+.payment-add-btn {
+  padding: 0.5vw 1.25vw;
+  background: #0052CC;
+  color: white;
+  border: none;
+  border-radius: 1.3vw;
+  font-size: 0.9vw;
+  font-family: 'Gilroy-SemiBold', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.4vw;
+}
+
+.payment-add-btn:hover {
+  background: #059669;
+  transform: translateY(-0.1vw);
+  box-shadow: 0 0.2vw 0.6vw rgba(16, 185, 129, 0.3);
+}
+
+.payment-add-btn svg {
+  width: 0.8vw;
+  height: 0.8vw;
+}
+
+/* ===================================
+   HIDE ADD BUTTON IN VIEW MODE
+   =================================== */
+
+.project-budget-modal.view-mode .payment-add-btn-wrapper {
+  display: none;
+}
+
+/* Alternative: Add a class to hide just the button */
+.payment-add-btn.hidden {
+  display: none !important;
+}
+
+/* ===================================
+   MODAL FOOTER - FIXED AT BOTTOM
+   =================================== */
+
+.project-budget-modal-footer {
+  padding: 1.25vw 1.5vw;
+  border-top: 0.05vw solid #E5E7EB;
+  background: white;
+  border-radius: 0 0 0.8vw 0.8vw;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+}
+
+/* ===================================
+   SUBMIT BUTTON - BLUE THEME
+   =================================== */
+
+.submit-btn {
+  padding: 0.7vw 3.1vw;
+  background: #2D6BFF;
+  color: white;
+  border: none;
+  border-radius: 1.5vw;
+  font-size: 1.05vw;
+  font-family: 'Gilroy-Bold', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0.2vw 0.8vw rgba(45, 107, 255, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.025vw;
+}
+
+.submit-btn:hover {
+  background: #0052CC;
+  transform: translateY(-0.1vw);
+  box-shadow: 0 0.3vw 1vw rgba(45, 107, 255, 0.4);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+/* ===================================
+   RESPONSIVE - TABLET (769px - 1024px)
+   =================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .project-budget-table-container {
+    margin-top: 1.875rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.1);
+    border-width: 0.0625rem;
+  }
+
+  .project-budget-table {
+    min-width: 50rem;
+  }
+
+  .project-budget-table thead th {
+    padding: 0.875rem 1rem;
+    font-size: 0.8125rem;
+    border-width: 0.0625rem 0.0625rem 0.125rem 0;
+  }
+
+  .project-budget-table tbody tr {
+    border-bottom-width: 0.0625rem;
+  }
+
+  .project-budget-table tbody td {
+    padding: 0.875rem 1rem;
+    font-size: 0.8125rem;
+    border-width: 0 0.0625rem 0 0;
+  }
+
+  .project-budget-add-btn {
+    padding: 0.625rem 1.5rem;
+    border-radius: 1.5625rem;
+    font-size: 0.875rem;
+    gap: 0.5rem;
+  }
+
+  .project-budget-add-btn:hover {
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.75rem rgba(45, 107, 255, 0.3);
+  }
+
+  .project-budget-view-btn,
+  .project-budget-delete-btn {
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+  }
+
+  .project-budget-view-btn img,
+  .project-budget-delete-btn img {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .project-budget-modal-overlay {
+    backdrop-filter: blur(0.5rem);
+  }
+
+  .project-budget-modal {
+    max-width: 85%;
+    border-radius: 1rem;
+    box-shadow: 0 1.25rem 3.75rem rgba(0, 0, 0, 0.2);
+  }
+
+  .project-budget-modal-header {
+    padding: 1.125rem 1.875rem;
+    border-bottom-width: 0.0625rem;
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  .project-budget-modal-header h3 {
+    font-size: 1.25rem;
+  }
+
+  .modal-close-btn {
+    padding: 0.5rem;
+  }
+
+  .modal-close-btn svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .project-budget-modal-body {
+    padding: 0 1.875rem;
+    max-height: calc(90vh - 9.375rem);
+  }
+
+  .project-budget-modal-body::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  .project-budget-modal-body::-webkit-scrollbar-track {
+    border-radius: 0.625rem;
+  }
+
+  .project-budget-modal-body::-webkit-scrollbar-thumb {
+    border-radius: 0.625rem;
+  }
+
+  .project-budget-section {
+    margin-bottom: 1.875rem;
+  }
+
+  .section-header {
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom-width: 0.125rem;
+  }
+
+  .section-header img {
+    width: 1.375rem;
+    height: 1.375rem;
+  }
+
+  .section-header h4 {
+    font-size: 1rem;
+  }
+
+  .form-grid-2,
+  .form-grid-3 {
+    gap: 1.25rem;
+  }
+
+  .form-grid-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form-group label {
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .required {
+    margin-left: 0.125rem;
+  }
+
+  .form-group input,
+  .form-group select {
+    padding: 0.75rem 1.125rem;
+    border-width: 0.0625rem;
+    border-radius: 1.5625rem;
+    font-size: 0.875rem;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus {
+    box-shadow: 0 0 0 0.1875rem rgba(45, 107, 255, 0.1);
+  }
+
+  .form-group input::placeholder {
+    font-size: 0.8125rem;
+  }
+
+  .form-group select {
+    background-position: right 1.125rem center;
+    padding-right: 2.8125rem;
+  }
+
+  .file-upload-btn {
+    padding: 0.75rem 1.25rem;
+    border-radius: 1.5625rem;
+    font-size: 0.875rem;
+    gap: 0.625rem;
+  }
+
+  .file-upload-btn:hover {
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.75rem rgba(37, 99, 235, 0.3);
+  }
+
+  .file-upload-btn svg {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+
+  .file-display {
+    margin-top: 0.75rem;
+    gap: 0.625rem;
+  }
+
+  .file-display-item {
+    gap: 0.75rem;
+    padding: 0.625rem 1rem 0.625rem 0.875rem;
+    border-width: 0.0625rem;
+    border-radius: 1.875rem;
+    font-size: 0.875rem;
+    min-width: 15.625rem;
+  }
+
+  .file-display-item:hover {
+    box-shadow: 0 0.125rem 0.5rem rgba(45, 107, 255, 0.1);
+  }
+
+  .file-display-item-icon {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0.5rem;
+  }
+
+  .file-display-item-icon svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .file-display-item-content {
+    gap: 0.75rem;
+  }
+
+  .file-display-item-name {
+    font-size: 0.875rem;
+  }
+
+  .file-remove-btn {
+    padding: 0.25rem;
+    margin-left: 0.5rem;
+  }
+
+  .file-remove-btn svg {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+
+  .file-remove-btn-text {
+    padding: 0.125rem 0.375rem;
+    font-size: 1.25rem;
+  }
+
+  .file-display-grid {
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  .payment-table-container {
+    border-width: 0.0625rem;
+    border-radius: 0.75rem;
+  }
+
+  .payment-table {
+    min-width: 40.625rem;
+  }
+
+  .payment-table thead th {
+    padding: 0.875rem 1rem;
+    font-size: 0.875rem;
+    border-width: 0.0625rem 0.0625rem 0.125rem 0;
+  }
+
+  .payment-table tbody tr {
+    border-bottom-width: 0.0625rem;
+  }
+
+  .payment-table tbody td {
+    padding: 0.75rem 1rem;
+    border-width: 0 0.0625rem 0 0;
+  }
+
+  .payment-input {
+    padding: 0.625rem 0.875rem;
+    border-width: 0.0625rem;
+    border-radius: 0.5rem;
+    font-size: 0.8125rem;
+  }
+
+  .payment-input:focus {
+    box-shadow: 0 0 0 0.125rem rgba(45, 107, 255, 0.1);
+  }
+
+  .payment-select {
+    padding: 0.625rem 0.875rem;
+    border-width: 0.0625rem;
+    border-radius: 0.5rem;
+    font-size: 0.8125rem;
+    background-position: right 0.875rem center;
+    padding-right: 2.5rem;
+  }
+
+  .payment-select:focus {
+    box-shadow: 0 0 0 0.125rem rgba(45, 107, 255, 0.1);
+  }
+
+  .payment-add-btn-wrapper {
+    margin-top: 0.9375rem;
+  }
+
+  .payment-add-btn {
+    padding: 0.625rem 1.5rem;
+    border-radius: 1.5625rem;
+    font-size: 0.875rem;
+    gap: 0.5rem;
+  }
+
+  .payment-add-btn:hover {
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.75rem rgba(16, 185, 129, 0.3);
+  }
+
+  .payment-add-btn svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .project-budget-modal-footer {
+    padding: 1.5rem 1.875rem;
+    border-top-width: 0.0625rem;
+    border-radius: 0 0 1rem 1rem;
+  }
+
+  .submit-btn {
+    padding: 0.875rem 3.75rem;
+    border-radius: 1.875rem;
+    font-size: 1rem;
+    box-shadow: 0 0.25rem 1rem rgba(45, 107, 255, 0.3);
+    letter-spacing: 0.03125rem;
+  }
+
+  .submit-btn:hover {
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.375rem 1.25rem rgba(45, 107, 255, 0.4);
+  }
+}
+
+/* ===================================
+   RESPONSIVE - MOBILE (max-width: 768px)
+   =================================== */
+
+@media (max-width: 768px) {
+  .project-budget-table-container {
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .project-budget-table {
+    min-width: 43.75rem;
+  }
+
+  .project-budget-table thead th,
+  .project-budget-table tbody td {
+    font-size: 0.75rem;
+    padding: 0.75rem 0.875rem;
+  }
+
+  .project-budget-add-btn {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.8125rem;
+    gap: 0.5rem;
+  }
+
+  .project-budget-view-btn,
+  .project-budget-delete-btn {
+    padding: 0.5rem;
+  }
+
+  .project-budget-view-btn img,
+  .project-budget-delete-btn img {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+
+  .project-budget-modal {
+    width: 95%;
+    max-height: 95vh;
+  }
+
+  .project-budget-modal-header {
+    padding: 1.125rem 1.25rem;
+  }
+
+  .project-budget-modal-header h3 {
+    font-size: 1.15rem;
+  }
+
+  .modal-close-btn svg {
+    width: 1.375rem;
+    height: 1.375rem;
+  }
+
+  .project-budget-modal-body {
+    padding: 0 1.25rem;
+    max-height: calc(95vh - 8.75rem);
+  }
+
+  .project-budget-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .section-header {
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.625rem;
+  }
+
+  .section-header img {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .section-header h4 {
+    font-size: 0.9375rem;
+  }
+
+  .form-grid-2,
+  .form-grid-3 {
+    grid-template-columns: 1fr;
+    gap: 0.9375rem;
+  }
+
+  .form-group label {
+    font-size: 0.875rem;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 0.875rem;
+    padding: 0.75rem 1.125rem;
+  }
+
+  .file-upload-btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  .file-display-item {
+    max-width: 100%;
+    min-width: 0;
+    padding: 0.625rem 0.875rem 0.625rem 0.75rem;
+  }
+
+  .payment-table {
+    min-width: 34.375rem;
+  }
+
+  .payment-table thead th {
+    padding: 0.75rem 0.875rem;
+    font-size: 0.8125rem;
+  }
+
+  .payment-table tbody td {
+    padding: 0.625rem 0.875rem;
+  }
+
+  .payment-input,
+  .payment-select {
+    font-size: 0.8125rem;
+    padding: 0.625rem 0.875rem;
+  }
+
+  .project-budget-modal-footer {
+    padding: 1.125rem 1.25rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 0.75rem 2.5rem;
+  }
+
+  .project-budget-table-container::-webkit-scrollbar,
+  .payment-table-container::-webkit-scrollbar {
+    height: 0.5rem;
+  }
+
+  .project-budget-table-container::-webkit-scrollbar-track,
+  .payment-table-container::-webkit-scrollbar-track {
+    background: #F1F5F9;
+    border-radius: 0.25rem;
+  }
+
+  .project-budget-table-container::-webkit-scrollbar-thumb,
+  .payment-table-container::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 0.25rem;
+  }
+}
+
+/* ===================================
+   RESPONSIVE - SMALL MOBILE (max-width: 480px)
+   =================================== */
+
+@media (max-width: 480px) {
+  .project-budget-table {
+    min-width: 37.5rem;
+  }
+
+  .project-budget-table thead th,
+  .project-budget-table tbody td {
+    font-size: 0.6875rem;
+    padding: 0.625rem 0.75rem;
+  }
+
+  .project-budget-add-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+  }
+
+  .project-budget-modal {
+    max-width: 80%;
+    max-height: 98vh;
+  }
+
+  .project-budget-modal-header {
+    padding: 0.875rem 1rem;
+  }
+
+  .project-budget-modal-header h3 {
+    font-size: 1rem;
+  }
+
+  .modal-close-btn {
+    padding: 0.375rem;
+  }
+
+  .modal-close-btn svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .project-budget-modal-body {
+    padding: 0 1rem;
+    max-height: calc(98vh - 8.125rem);
+  }
+
+  .project-budget-section {
+    margin-bottom: 1.25rem;
+  }
+
+  .section-header {
+    gap: 0.625rem;
+    margin-bottom: 0.875rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .section-header img {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+
+  .section-header h4 {
+    font-size: 0.95rem;
+  }
+
+  .form-grid-2,
+  .form-grid-3 {
+    gap: 0.875rem;
+  }
+
+  .form-group label {
+    font-size: 0.8125rem;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 0.8125rem;
+    padding: 0.625rem 1rem;
+  }
+
+  .file-upload-btn {
+    font-size: 0.8125rem;
+    padding: 0.625rem 1rem;
+  }
+
+  .file-display-item {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .file-display-item-content svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .file-remove-btn svg {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+
+  .payment-table {
+    min-width: 31.25rem;
+  }
+
+  .payment-table thead th {
+    padding: 0.625rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .payment-table tbody td {
+    padding: 0.5625rem 0.75rem;
+  }
+
+  .payment-input,
+  .payment-select {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .payment-add-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8125rem;
+  }
+
+  .project-budget-modal-footer {
+    padding: 0.875rem 1rem;
+  }
+
+  .submit-btn {
+    font-size: 0.9rem;
+    padding: 0.75rem 1.875rem;
+  }
+}
+
+/* ===================================
+   RESPONSIVE - EXTRA SMALL MOBILE (max-width: 375px)
+   =================================== */
+
+@media (max-width: 375px) {
+  .project-budget-table {
+    min-width: 34.375rem;
+  }
+
+  .project-budget-table thead th,
+  .project-budget-table tbody td {
+    font-size: 0.625rem;
+    padding: 0.5rem 0.625rem;
+  }
+
+  .project-budget-add-btn {
+    padding: 0.4375rem 0.875rem;
+    font-size: 0.6875rem;
+  }
+
+  .project-budget-modal-header h3 {
+    font-size: 0.9375rem;
+  }
+
+  .section-header h4 {
+    font-size: 0.875rem;
+  }
+
+  .form-group label {
+    font-size: 0.75rem;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 0.75rem;
+    padding: 0.5625rem 0.875rem;
+  }
+
+  .file-upload-btn {
+    font-size: 0.75rem;
+    padding: 0.5625rem 0.875rem;
+  }
+
+  .payment-table {
+    min-width: 28.125rem;
+  }
+
+  .payment-table thead th {
+    font-size: 0.6875rem;
+    padding: 0.5625rem 0.625rem;
+  }
+
+  .payment-table tbody td {
+    padding: 0.5rem 0.625rem;
+  }
+
+  .payment-input,
+  .payment-select {
+    font-size: 0.6875rem;
+    padding: 0.4375rem 0.625rem;
+  }
+
+  .submit-btn {
+    font-size: 0.8125rem;
+    padding: 0.6875rem 1.5rem;
+  }
+}
+
+/* ===================================
+   RESPONSIVE - LANDSCAPE MOBILE (max-height: 500px)
+   =================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .project-budget-modal {
+    max-height: 98vh;
+  }
+
+  .project-budget-modal-header {
+    padding: 0.75rem 1.25rem;
+  }
+
+  .project-budget-modal-body {
+    padding: 0 1.25rem;
+    max-height: calc(98vh - 7.5rem);
+  }
+
+  .project-budget-section {
+    margin-bottom: 1rem;
+  }
+
+  .section-header {
+    gap: 0.625rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .form-grid-2,
+  .form-grid-3 {
+    gap: 0.75rem;
+  }
+
+  .form-group label {
+    margin-bottom: 0.375rem;
+    font-size: 0.75rem;
+  }
+
+  .form-group input,
+  .form-group select {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.875rem;
+  }
+
+  .payment-table thead th {
+    padding: 0.625rem 0.75rem;
+  }
+
+  .payment-table tbody td {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .project-budget-modal-footer {
+    padding: 0.75rem 1.25rem;
+  }
+
+  .submit-btn {
+    padding: 0.625rem 2.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* ===================================
+   RESPONSIVE - TABLET LANDSCAPE (768px - 1024px)
+   =================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .project-budget-modal {
+    max-width: 75%;
+    max-height: 92vh;
+  }
+
+  .project-budget-modal-header {
+    padding: 1rem 1.5rem;
+  }
+
+  .project-budget-modal-body {
+    padding: 0 1.5rem;
+    max-height: calc(92vh - 9rem);
+  }
+
+  .form-grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form-grid-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .project-budget-modal-footer {
+    padding: 1rem 1.5rem;
+  }
+}

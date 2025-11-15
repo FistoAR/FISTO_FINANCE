@@ -1,0 +1,1408 @@
+/* ===================================
+   SECOND FOLLOW UP - COMPLETE CSS
+   =================================== */
+
+/* ===================================
+   TABLE WRAPPER & TABLE
+   =================================== */
+
+.second-followup-table-wrapper {
+    background: white;
+    border-radius: 1vw;
+    overflow: visible;
+    box-shadow: 0 0.05vw 0.15vw rgba(0, 0, 0, 0.1);
+    width: 100%;
+    border: 0.05vw solid #9CC4FF;
+}
+
+.second-followup-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+/* ===================================
+   TABLE HEADER
+   =================================== */
+
+.second-followup-table thead {
+    background: #DEE7FF;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.second-followup-table th {
+    padding: 1vw 1.25vw;
+    text-align: left;
+    font-size: 0.8vw;
+    font-weight: 600;
+    color: #1F2937;
+    border-right: 0.05vw solid #9CC4FF;
+    border-bottom: 0.05vw solid #9CC4FF;
+    word-break: break-word;
+    text-transform: capitalize;
+}
+
+.second-followup-table th:last-child {
+    border-right: none;
+}
+
+/* ===================================
+   TABLE BODY
+   =================================== */
+
+.second-followup-table tbody tr {
+    border-bottom: 0.05vw solid #9CC4FF;
+    transition: background 0.2s ease;
+}
+
+.second-followup-table tbody tr:hover {
+    background: #F8FAFC;
+}
+
+.second-followup-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.second-followup-table td {
+    padding: 1vw 1.25vw;
+    border-right: 0.05vw solid #9CC4FF;
+    font-size: 0.8vw;
+    color: #334155;
+    word-break: break-word;
+    vertical-align: middle;
+}
+
+.second-followup-table td:last-child {
+    border-right: none;
+}
+
+.second-followup-table th:nth-child(1) {
+    width: 12vw;
+    min-width: 12vw;
+}
+
+/* ===================================
+   SECOND FOLLOW-UP HISTORY TABLE
+   =================================== */
+
+.second-followup-history-table-wrapper {
+    background: white;
+    border-radius: 0.5vw;
+    overflow: auto;
+    border: 0.05vw solid #9CC4FF;
+    margin-top: 1vw;
+}
+
+.second-followup-history-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.second-followup-history-table thead {
+    background: #DEE7FF;
+}
+
+.second-followup-history-table th {
+    padding: 0.75vw 1vw;
+    text-align: left;
+    font-size: 0.75vw;
+    font-weight: 600;
+    color: #1F2937;
+    border-right: 0.05vw solid #9CC4FF;
+    border-bottom: 0.05vw solid #9CC4FF;
+    text-transform: capitalize;
+}
+
+.second-followup-history-table th:last-child {
+    border-right: none;
+}
+
+.second-followup-history-table td {
+    padding: 0.75vw 1vw;
+    border-right: 0.05vw solid #9CC4FF;
+    border-bottom: 0.05vw solid #9CC4FF;
+    font-size: 0.75vw;
+    color: #334155;
+    vertical-align: middle;
+}
+
+.second-followup-history-table td:last-child {
+    border-right: none;
+}
+
+.second-followup-history-table tbody tr:last-child td {
+    border-bottom: none;
+    overflow-wrap: anywhere;
+}
+
+.second-followup-history-table tbody tr:hover {
+    background: #F8FAFC;
+}
+
+/* ===================================
+   MODAL STYLES
+   =================================== */
+
+.second-followup-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(0.2vw);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    padding: 1vw;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeInSecond {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.second-followup-modal-content {
+    background: white;
+    border-radius: 0.8vw;
+    max-width: 50vw;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: hidden;
+    box-shadow: 0 1vw 3vw rgba(0, 0, 0, 0.3);
+    animation: slideUpSecond 0.3s ease;
+}
+
+@keyframes slideUpSecond {
+    from {
+        transform: translateY(1.5vw);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Update modal - smaller width */
+#updateSecondFollowupModal .second-followup-modal-content {
+    max-width: 35vw;
+    overflow: auto;
+}
+
+/* View modal - larger width */
+#secondfollowupdetailsModal .second-followup-modal-content {
+    max-width: 50vw;
+}
+
+.second-followup-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5vw 2vw;
+    border-bottom: 0.05vw solid #E2E8F0;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 10;
+}
+
+.second-followup-modal-header h2 {
+    font-size: 1.3vw;
+    font-weight: 600;
+    color: #1F2937;
+    margin: 0;
+}
+
+.second-followup-close-btn {
+    background: none;
+    border: none;
+    font-size: 2vw;
+    color: #64748B;
+    cursor: pointer;
+    padding: 0;
+    width: 2.5vw;
+    height: 2.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+    line-height: 1;
+}
+
+.second-followup-close-btn:hover {
+    background: #F1F5F9;
+    color: #1F2937;
+}
+
+.second-followup-modal-body {
+    max-height: calc(80vh - 7.3vw);
+    overflow-y: auto;
+}
+
+.second-followup-modal-footer {
+    padding: 1.2vw 2vw;
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+    border-top: 0.05vw solid #E2E8F0;
+    position: sticky;
+    bottom: 0;
+    background: white;
+}
+
+/* ===================================
+   COLLAPSIBLE SECTIONS
+   =================================== */
+
+.second-followup-section {
+    margin-bottom: 1vw;
+    background: white;
+    border: 0.05vw solid #E5E7EB;
+    border-radius: 0.4vw;
+    overflow: hidden;
+}
+
+.second-followup-section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.8vw;
+    padding: 1vw 1.25vw;
+    background: #F9FAFB;
+    cursor: pointer;
+    transition: background 0.2s;
+    user-select: none;
+    border-bottom: 0.05vw solid #2D6BFF;
+}
+
+.second-followup-section-title:hover {
+    background: #F3F4F6;
+}
+
+.second-followup-section-title img {
+    width: 1vw;
+    height: 1vw;
+    flex-shrink: 0;
+}
+
+.second-followup-section-title span {
+    font-weight: 600;
+    font-size: 1vw;
+    color: #2D6BFF;
+    flex: 1;
+}
+
+.second-followup-chevron {
+    width: 1.2vw;
+    height: 1.2vw;
+    color: #2D6BFF;
+    transition: transform 0.3s ease;
+}
+
+.second-followup-section.collapsed .second-followup-chevron {
+    transform: rotate(-90deg);
+}
+
+.second-followup-section-content {
+    padding: 1.5vw;
+    max-height: 52vw;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.second-followup-section.collapsed .second-followup-section-content {
+    max-height: 0;
+    padding: 0 1.5vw;
+}
+
+/* ===================================
+   FORM GROUPS
+   =================================== */
+
+.second-followup-form-section {
+    padding: 1.5vw 2vw;
+}
+
+.second-followup-section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8vw;
+    margin-bottom: 1vw;
+    padding-bottom: 0.8vw;
+    border-bottom: 0.05vw solid #2D6BFF;
+}
+
+.second-followup-section-header img {
+    color: #2D6BFF;
+    flex-shrink: 0;
+    width: min(1.5vw, 40px);
+}
+
+.second-followup-form-group {
+    margin-bottom: 1vw;
+}
+
+.second-contact-radio-group{
+    display: flex;
+    gap: 1vw;
+}
+
+.second-followup-form-group label {
+    font-size: 0.8vw;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 0.5vw;
+    display: flex;
+}
+
+.second-followup-form-group input,
+.second-followup-form-group textarea {
+    width: 100%;
+    padding: 0.6vw 1vw;
+    border: 0.05vw solid #9CC4FF;
+    border-radius: 1vw;
+    font-size: 0.8vw;
+    color: #1F2937;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.second-followup-form-group input:focus,
+.second-followup-form-group textarea:focus {
+    outline: none;
+    border-color: #2D6BFF;
+    box-shadow: 0 0 0 0.15vw rgba(45, 107, 255, 0.1);
+}
+
+.second-followup-form-group input[readonly],
+.second-followup-form-group textarea[readonly] {
+    background: #F9FAFB;
+    cursor: not-allowed;
+    color: #000000;
+}
+
+.second-followup-form-group input::placeholder,
+.second-followup-form-group textarea::placeholder {
+    color: #9CA3AF;
+    font-size: 0.75vw;
+}
+
+.second-followup-form-group textarea {
+    resize: vertical;
+    min-height: 5vw;
+}
+
+/* ===================================
+   FORM GRIDS
+   =================================== */
+
+.second-followup-form-grid {
+    display: grid;
+    gap: 1vw;
+}
+
+.second-followup-form-grid-2 {
+    display: grid;
+    gap: 1vw;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.second-followup-form-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.second-followup-form-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.second-followup-full-width {
+    grid-column: 1 / -1;
+}
+
+/* ===================================
+   BUTTONS
+   =================================== */
+
+.second-followup-btn {
+    padding: 0.8vw 3vw;
+    border: none;
+    border-radius: 1.5vw;
+    font-size: 0.9vw;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 0.05vw;
+}
+
+.second-followup-btn-submit {
+    background: #2D6BFF;
+    color: white;
+    box-shadow: 0 0.1vw 0.3vw rgba(45, 107, 255, 0.25);
+}
+
+.second-followup-btn-submit:hover {
+    background: #1e5dd4;
+    transform: translateY(-0.1vw);
+    box-shadow: 0 0.2vw 0.6vw rgba(45, 107, 255, 0.3);
+}
+
+.second-followup-btn-submit:active {
+    transform: translateY(0);
+}
+
+/* ===================================
+   CONTACT BLOCKS
+   =================================== */
+
+.second-followup-contact-card {
+    margin-bottom: 1.2vw;
+    padding: 1vw;
+    background: #F8FAFC;
+    border: 0.05vw solid #E2E8F0;
+    border-radius: 0.4vw;
+}
+
+.second-followup-contact-title {
+    font-size: 0.75vw;
+    font-weight: 600;
+    color: #64748B;
+    margin-bottom: 0.8vw;
+    text-transform: uppercase;
+    letter-spacing: 0.05vw;
+}
+
+.second-followup-contact-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1vw;
+}
+
+.second-followup-contact-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.second-followup-contact-group label {
+    font-size: 0.8vw;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 0.5vw;
+}
+
+.second-followup-contact-group input {
+    padding: 0.6vw 1vw;
+    border: 0.05vw solid #9CC4FF;
+    border-radius: 1vw;
+    font-size: 0.8vw;
+    color: #1F2937;
+}
+
+/* ===================================
+   SCROLLBAR STYLING
+   =================================== */
+
+.second-followup-modal-content::-webkit-scrollbar {
+    width: 0.3vw;
+}
+
+.second-followup-modal-content::-webkit-scrollbar-track {
+    background: #F1F5F9;
+}
+
+.second-followup-modal-content::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 0.15vw;
+}
+
+.second-followup-modal-content::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
+}
+
+/* ===================================
+   ACTION RADIO BUTTONS
+   =================================== */
+
+.second-action-radio-group {
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+    padding-top: 0.5vw;
+}
+
+.second-action-radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+    margin: 0;
+    cursor: pointer;
+    font-size: 0.8vw;
+    color: #1a1a1a;
+    transition: all 0.2s ease;
+    padding: 0.6vw 1.2vw;
+    border: 0.1vw solid #E5E7EB;
+    border-radius: 0.5vw;
+    background: white;
+}
+
+.second-action-radio-label:hover {
+    border-color: #2563eb;
+    background: #EFF6FF;
+}
+
+.second-action-radio-label input[type="radio"] {
+    cursor: pointer;
+    width: 1vw;
+    height: 1vw;
+    accent-color: #2563eb;
+}
+
+.second-action-radio-label input[type="radio"]:checked + span {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.second-action-radio-label:has(input[type="radio"]:checked) {
+    border-color: #2563eb;
+    background: #EFF6FF;
+}
+
+/* ===================================
+   INFORMATION SHARED CHECKBOXES
+   =================================== */
+
+.second-info-checkbox-group {
+    display: flex;
+    gap: 1.5vw;
+    align-items: center;
+    padding-top: 0.5vw;
+}
+
+.second-info-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+    margin: 0;
+    cursor: pointer;
+    font-size: 0.8vw;
+    color: #1a1a1a;
+    transition: all 0.2s ease;
+    padding: 0.5vw 1vw;
+    border: 0.1vw solid #E5E7EB;
+    border-radius: 0.5vw;
+    background: white;
+}
+
+.second-info-checkbox-label:hover {
+    border-color: #10b981;
+    background: #F0FDF4;
+}
+
+.second-info-checkbox-label input[type="checkbox"] {
+    cursor: pointer;
+    width: 1vw;
+    height: 1vw;
+    accent-color: #10b981;
+}
+
+.second-info-checkbox-label input[type="checkbox"]:checked + span {
+    color: #10b981;
+    font-weight: 600;
+}
+
+.second-info-checkbox-label:has(input[type="checkbox"]:checked) {
+    border-color: #10b981;
+    background: #F0FDF4;
+}
+
+/* Disabled state for checkboxes */
+.second-info-checkbox-label input[type="checkbox"]:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.second-info-checkbox-label:has(input[type="checkbox"]:disabled) {
+    cursor: not-allowed;
+    opacity: 0.7;
+    background: #F9FAFB;
+}
+
+.second-info-checkbox-label input[type="checkbox"]:disabled + span {
+    cursor: not-allowed;
+}
+
+.second-followup-info-shared-checkboxes label {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 1rem;
+  font-size: 0.9em;
+  color: #4a5568; /* grayish text */
+}
+
+.second-followup-info-shared-checkboxes label input[type="checkbox"] {
+  margin-right: 6px;
+  cursor: not-allowed;
+}
+
+
+
+/* ===================================
+   RESPONSIVE - TABLET (769px - 1024px)
+   =================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .second-followup-table-wrapper {
+        border-radius: 1rem;
+        box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.1);
+        border-width: 0.0625rem;
+    }
+
+    .second-followup-table th,
+    .second-followup-table td {
+        padding: 0.875rem 1rem;
+        font-size: 0.8125rem;
+        border-width: 0.0625rem;
+    }
+
+    .second-followup-history-table-wrapper {
+        border-radius: 0.5rem;
+        border-width: 0.0625rem;
+        margin-top: 1rem;
+    }
+
+    .second-followup-history-table th {
+        padding: 0.625rem 0.875rem;
+        font-size: 0.75rem;
+        border-width: 0.0625rem;
+    }
+
+    .second-followup-history-table td {
+        padding: 0.625rem 0.875rem;
+        font-size: 0.75rem;
+        border-width: 0.0625rem;
+    }
+
+    .second-followup-modal {
+        padding: 1rem;
+        backdrop-filter: blur(0.25rem);
+    }
+
+    .second-followup-modal-content {
+        max-width: 70%;
+        border-radius: 0.75rem;
+        box-shadow: 0 1.25rem 3.75rem rgba(0, 0, 0, 0.3);
+    }
+
+    #updateSecondFollowupModal .second-followup-modal-content {
+        max-width: 45%;
+    }
+
+    #secondfollowupdetailsModal .second-followup-modal-content {
+        max-width: 70%;
+    }
+
+    .second-followup-modal-header {
+        padding: 1.25rem 1.5rem;
+        border-bottom-width: 0.0625rem;
+    }
+
+    .second-followup-modal-header h2 {
+        font-size: 1.125rem;
+    }
+
+    .second-followup-close-btn {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.75rem;
+    }
+
+    .second-followup-modal-body {
+        max-height: calc(90vh - 9.375rem);
+    }
+
+    .second-followup-section {
+        margin-bottom: 1rem;
+        border-width: 0.0625rem;
+        border-radius: 0.5rem;
+    }
+
+    .second-followup-section-title {
+        padding: 1rem 1.25rem;
+        gap: 0.75rem;
+        border-bottom-width: 0.0625rem;
+    }
+
+    .second-followup-section-title img {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+
+    .second-followup-section-title span {
+        font-size: 0.875rem;
+    }
+
+    .second-followup-chevron {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+
+    .second-followup-section-content {
+        padding: 1.25rem;
+        max-height: 62.5rem;
+    }
+
+    .second-followup-section.collapsed .second-followup-section-content {
+        padding: 0 1.25rem;
+    }
+
+    .second-followup-form-section {
+        padding: 1.25rem 1.5rem;
+    }
+
+    .second-followup-section-header {
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.75rem;
+        border-bottom-width: 0.0625rem;
+    }
+
+    .second-followup-section-header img {
+        width: 1.125rem;
+    }
+
+    .second-followup-form-group {
+        margin-bottom: 1rem;
+    }
+
+    .second-followup-form-group label {
+        font-size: 0.8125rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .second-followup-form-group input,
+    .second-followup-form-group textarea {
+        font-size: 0.8125rem;
+        padding: 0.625rem 0.875rem;
+        border-width: 0.0625rem;
+        border-radius: 1.25rem;
+    }
+
+    .second-followup-form-group input:focus,
+    .second-followup-form-group textarea:focus {
+        box-shadow: 0 0 0 0.1875rem rgba(45, 107, 255, 0.1);
+    }
+
+    .second-followup-form-group input::placeholder,
+    .second-followup-form-group textarea::placeholder {
+        font-size: 0.75rem;
+    }
+
+    .second-followup-form-group textarea {
+        min-height: 4.375rem;
+    }
+
+    .second-followup-form-grid {
+        gap: 1rem;
+    }
+
+    .second-followup-btn {
+        font-size: 0.875rem;
+        padding: 0.625rem 2.5rem;
+        border-radius: 1.875rem;
+    }
+
+    .second-followup-btn-submit {
+        box-shadow: 0 0.125rem 0.375rem rgba(45, 107, 255, 0.25);
+    }
+
+    .second-followup-btn-submit:hover {
+        transform: translateY(-0.125rem);
+        box-shadow: 0 0.25rem 0.75rem rgba(45, 107, 255, 0.3);
+    }
+
+    .second-followup-contact-card {
+        margin-bottom: 1rem;
+        padding: 1rem;
+        border-width: 0.0625rem;
+        border-radius: 0.5rem;
+    }
+
+    .second-followup-contact-title {
+        font-size: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .second-followup-contact-row {
+        gap: 1rem;
+    }
+
+    .second-followup-modal-footer {
+        padding: 1rem 1.5rem;
+        gap: 1rem;
+        border-top-width: 0.0625rem;
+    }
+
+    .second-followup-modal-content::-webkit-scrollbar {
+        width: 0.375rem;
+    }
+
+    .second-followup-modal-content::-webkit-scrollbar-thumb {
+        border-radius: 0.1875rem;
+    }
+
+     .second-action-radio-group {
+        gap: 1.5rem;
+        padding-top: 0.5rem;
+    }
+
+    .second-action-radio-label {
+        font-size: 0.8125rem;
+        gap: 0.5rem;
+        padding: 0.625rem 1rem;
+        border-width: 0.0625rem;
+        border-radius: 0.5rem;
+    }
+
+    .second-action-radio-label input[type="radio"] {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .second-info-checkbox-group {
+        gap: 1.25rem;
+        padding-top: 0.5rem;
+    }
+
+    .second-info-checkbox-label {
+        font-size: 0.8125rem;
+        gap: 0.5rem;
+        padding: 0.5rem 0.875rem;
+        border-width: 0.0625rem;
+        border-radius: 0.5rem;
+    }
+
+    .second-info-checkbox-label input[type="checkbox"] {
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+/* ===================================
+   RESPONSIVE - MOBILE (max-width: 768px)
+   =================================== */
+
+@media (max-width: 768px) {
+    .second-followup-table-wrapper {
+        overflow-x: auto;
+        border-radius: 0.75rem;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .second-followup-table {
+        min-width: 56.25rem;
+    }
+
+    .second-followup-table th,
+    .second-followup-table td {
+        padding: 0.75rem 0.875rem;
+        font-size: 0.75rem;
+    }
+
+    .second-followup-history-table-wrapper {
+        overflow-x: auto;
+    }
+
+    .second-followup-history-table {
+        min-width: 43.75rem;
+    }
+
+    .second-followup-history-table th,
+    .second-followup-history-table td {
+        padding: 0.625rem 0.75rem;
+        font-size: 0.6875rem;
+    }
+
+    .second-followup-modal {
+        padding: 1.5rem;
+    }
+
+    .second-followup-modal-content {
+        max-width: 90%;
+        border-radius: 0.75rem;
+    }
+
+    #updateSecondFollowupModal .second-followup-modal-content,
+    #secondfollowupdetailsModal .second-followup-modal-content {
+        max-width: 90%;
+    }
+
+    .second-followup-modal-header {
+        padding: 1.25rem;
+    }
+
+    .second-followup-modal-header h2 {
+        font-size: 1.125rem;
+    }
+
+    .second-followup-close-btn {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.75rem;
+    }
+
+    .second-followup-section {
+        margin-bottom: 1rem;
+        border-radius: 0.5rem;
+    }
+
+    .second-followup-section-title {
+        padding: 0.875rem 1rem;
+        gap: 0.75rem;
+    }
+
+    .second-followup-section-title img {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+
+    .second-followup-section-title span {
+        font-size: 0.875rem;
+    }
+
+    .second-followup-chevron {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+
+    .second-followup-section-content {
+        padding: 1.25rem;
+    }
+
+    .second-followup-form-section {
+        padding: 1.25rem;
+    }
+
+    .second-followup-form-group label {
+        font-size: 0.8125rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .second-followup-form-group input,
+    .second-followup-form-group textarea {
+        font-size: 0.8125rem;
+        padding: 0.625rem 0.875rem;
+    }
+
+    .second-followup-form-group textarea {
+        min-height: 5rem;
+    }
+
+    .second-followup-form-grid,
+    .second-followup-form-grid-3,
+    .second-followup-form-grid-4 {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .second-followup-contact-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .second-followup-btn {
+        font-size: 0.8125rem;
+        padding: 0.625rem 2rem;
+    }
+
+    .second-followup-contact-card {
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+
+    .second-followup-contact-title {
+        font-size: 0.75rem;
+    }
+
+    .second-followup-modal-footer {
+        padding: 1rem 1.25rem;
+    }
+
+    .second-followup-table-wrapper::-webkit-scrollbar,
+    .second-followup-history-table-wrapper::-webkit-scrollbar {
+        height: 0.5rem;
+    }
+
+    .second-followup-table-wrapper::-webkit-scrollbar-track,
+    .second-followup-history-table-wrapper::-webkit-scrollbar-track {
+        background: #F1F5F9;
+        border-radius: 0.25rem;
+    }
+
+    .second-followup-table-wrapper::-webkit-scrollbar-thumb,
+    .second-followup-history-table-wrapper::-webkit-scrollbar-thumb {
+        background: #CBD5E1;
+        border-radius: 0.25rem;
+    }
+
+    .second-followup-table-wrapper::-webkit-scrollbar-thumb:hover,
+    .second-followup-history-table-wrapper::-webkit-scrollbar-thumb:hover {
+        background: #94A3B8;
+    }
+
+     .second-action-radio-group {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+        padding-top: 0.75rem;
+    }
+
+    .second-action-radio-label {
+        font-size: 0.8125rem;
+        gap: 0.625rem;
+        padding: 0.75rem 1rem;
+        justify-content: flex-start;
+    }
+
+    .second-action-radio-label input[type="radio"] {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+
+    .second-info-checkbox-group {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+        padding-top: 0.75rem;
+    }
+
+    .second-info-checkbox-label {
+        font-size: 0.8125rem;
+        gap: 0.625rem;
+        padding: 0.625rem 1rem;
+        justify-content: flex-start;
+    }
+
+    .second-info-checkbox-label input[type="checkbox"] {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+}
+
+/* ===================================
+   RESPONSIVE - SMALL MOBILE (max-width: 480px)
+   =================================== */
+
+@media (max-width: 480px) {
+    .second-followup-table-wrapper {
+        border-radius: 0.5rem;
+    }
+
+    .second-followup-table {
+        min-width: 50rem;
+    }
+
+    .second-followup-table th,
+    .second-followup-table td {
+        padding: 0.625rem 0.75rem;
+        font-size: 0.6875rem;
+    }
+
+    .second-followup-history-table {
+        min-width: 40.625rem;
+    }
+
+    .second-followup-history-table th,
+    .second-followup-history-table td {
+        padding: 0.5rem 0.625rem;
+        font-size: 0.625rem;
+    }
+
+    .second-followup-modal {
+        padding: 1rem;
+    }
+
+    .second-followup-modal-content {
+        max-width: 100%;
+        border-radius: 0.75rem;
+        max-height: 90vh;
+    }
+
+    .second-followup-modal-header {
+        padding: 1rem;
+    }
+
+    .second-followup-modal-header h2 {
+        font-size: 1rem;
+    }
+
+    .second-followup-close-btn {
+        width: 1.75rem;
+        height: 1.75rem;
+        font-size: 1.5rem;
+    }
+
+    .second-followup-section {
+        margin-bottom: 0.875rem;
+    }
+
+    .second-followup-section-title {
+        padding: 0.75rem 0.875rem;
+        gap: 0.625rem;
+    }
+
+    .second-followup-section-title img {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .second-followup-section-title span {
+        font-size: 0.8125rem;
+    }
+
+    .second-followup-chevron {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+
+    .second-followup-section-content {
+        padding: 1rem;
+    }
+
+    .second-followup-form-section {
+        padding: 1rem;
+    }
+
+    .second-followup-form-group label {
+        font-size: 0.75rem;
+        margin-bottom: 0.375rem;
+    }
+
+    .second-followup-form-group input,
+    .second-followup-form-group textarea {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.75rem;
+        border-radius: 1rem;
+    }
+
+    .second-followup-form-group textarea {
+        min-height: 4.375rem;
+    }
+
+    .second-followup-btn {
+        font-size: 0.75rem;
+        padding: 0.5rem 1.5rem;
+        width: 100%;
+    }
+
+    .second-followup-contact-card {
+        margin-bottom: 0.875rem;
+        padding: 0.875rem;
+    }
+
+    .second-followup-contact-title {
+        font-size: 0.6875rem;
+        margin-bottom: 0.625rem;
+    }
+
+    .second-followup-modal-footer {
+        padding: 0.875rem 1rem;
+    }
+
+    .second-followup-modal-content::-webkit-scrollbar {
+        width: 0.25rem;
+    }
+       .second-action-radio-group,
+    .second-info-checkbox-group {
+        gap: 0.875rem;
+    }
+
+    .second-action-radio-label,
+    .second-info-checkbox-label {
+        font-size: 0.75rem;
+        gap: 0.5rem;
+        padding: 0.625rem 0.875rem;
+    }
+
+    .second-action-radio-label input[type="radio"],
+    .second-info-checkbox-label input[type="checkbox"] {
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+/* ===================================
+   RESPONSIVE - EXTRA SMALL MOBILE (max-width: 375px)
+   =================================== */
+
+@media (max-width: 375px) {
+    .second-followup-table {
+        min-width: 46.875rem;
+    }
+
+    .second-followup-table th,
+    .second-followup-table td {
+        padding: 0.5rem 0.625rem;
+        font-size: 0.625rem;
+    }
+
+    .second-followup-history-table {
+        min-width: 37.5rem;
+    }
+
+    .second-followup-history-table th,
+    .second-followup-history-table td {
+        padding: 0.4375rem 0.5rem;
+        font-size: 0.5625rem;
+    }
+
+    .second-followup-modal-header,
+    .second-followup-modal-footer {
+        padding: 0.875rem;
+    }
+
+    .second-followup-modal-header h2 {
+        font-size: 0.9375rem;
+    }
+
+    .second-followup-close-btn {
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 1.25rem;
+    }
+
+    .second-followup-section-title {
+        padding: 0.625rem 0.75rem;
+    }
+
+    .second-followup-section-title span {
+        font-size: 0.75rem;
+    }
+
+    .second-followup-section-content {
+        padding: 0.875rem;
+    }
+
+    .second-followup-form-section {
+        padding: 0.875rem;
+    }
+
+    .second-followup-form-group label {
+        font-size: 0.6875rem;
+    }
+
+    .second-followup-form-group input,
+    .second-followup-form-group textarea {
+        font-size: 0.6875rem;
+        padding: 0.4375rem 0.625rem;
+    }
+
+    .second-followup-btn {
+        font-size: 0.6875rem;
+        padding: 0.4375rem 1.25rem;
+    }
+}
+
+/* ===================================
+   RESPONSIVE - LANDSCAPE MOBILE (max-height: 500px)
+   =================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .second-followup-modal {
+        padding: 0.5rem;
+        align-items: flex-start;
+    }
+
+    .second-followup-modal-content {
+        max-height: 98vh;
+        max-width: 70%;
+        margin: 0.5rem auto;
+    }
+
+    .second-followup-modal-header {
+        padding: 0.75rem 1.5rem;
+    }
+
+    .second-followup-modal-header h2 {
+        font-size: 1rem;
+    }
+
+    .second-followup-close-btn {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .second-followup-section {
+        margin-bottom: 0.75rem;
+    }
+
+    .second-followup-section-title {
+        padding: 0.625rem 1rem;
+        gap: 0.625rem;
+    }
+
+    .second-followup-section-title img {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .second-followup-section-title span {
+        font-size: 0.875rem;
+    }
+
+    .second-followup-chevron {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .second-followup-section-content {
+        padding: 1rem;
+    }
+
+    .second-followup-form-group label {
+        font-size: 0.75rem;
+    }
+
+    .second-followup-form-group input,
+    .second-followup-form-group textarea {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .second-followup-form-group textarea {
+        min-height: 4rem;
+    }
+
+    .second-followup-form-grid {
+        gap: 0.75rem;
+    }
+
+    .second-followup-contact-card {
+        margin-bottom: 0.75rem;
+        padding: 0.625rem 0.75rem;
+    }
+
+    .second-followup-contact-title {
+        font-size: 0.6875rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .second-followup-modal-footer {
+        padding: 0.75rem 1.5rem;
+    }
+
+    .second-followup-btn {
+        font-size: 0.75rem;
+        padding: 0.625rem 2rem;
+    }
+}

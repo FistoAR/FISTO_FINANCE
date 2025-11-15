@@ -1,0 +1,2616 @@
+/* ===================================
+   EMPLOYEE DETAILS - COMPLETE CSS
+   Updated to match blue/white theme
+   =================================== */
+
+/* ===================================
+   HEADER & BUTTON
+   =================================== */
+
+.employee-details-content h2 {
+    font-size: 2vw;
+    font-family: 'Gilroy-Bold', sans-serif;
+    color: #1a1a1a;
+}
+
+#addEmployeeBtn {
+    font-size: 1vw;
+    padding: 0.5vw 1vw;
+    background-color: #2D6BFF;
+    color: white;
+    border: none;
+    border-radius: 1vw;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Gilroy-Bold', sans-serif;
+    margin-bottom: 1vw;
+}
+
+#addEmployeeBtn:hover {
+    transform: translateY(-0.1vw);
+    box-shadow: 0 0.2vw 0.4vw rgba(0, 82, 204, 0.3);
+}
+
+/* ===================================
+   EMPLOYEE TABLE (BLUE HEADER THEME)
+   =================================== */
+
+.employee-table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 1.5vw;
+    background: white;
+    border-radius: 1vw;
+    box-shadow: 0 0.05vw 0.15vw rgba(0, 0, 0, 0.1);
+    border: 0.05vw solid #9CC4FF;
+}
+
+.employee-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 62.5vw;
+}
+
+/* Blue Header Background */
+.employee-table thead {
+    background: #DEE7FF;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.employee-table thead th {
+    padding: 1vw 1.25vw;
+    text-align: left;
+    font-family: 'Gilroy-SemiBold', sans-serif;
+    font-size: 0.8vw;
+    font-weight: 600;
+    color: #1F2937;
+    text-transform: capitalize;
+    letter-spacing: 0;
+    border-right: 0.05vw solid #9CC4FF;
+    border-bottom: 0.05vw solid #9CC4FF;
+    word-break: break-word;
+}
+
+.employee-table thead th:last-child {
+    border-right: none;
+}
+
+/* White Body Background */
+.employee-table tbody tr {
+    transition: background 0.2s ease;
+    background: white;
+    border-bottom: 0.05vw solid #9CC4FF;
+}
+
+.employee-table tbody tr:hover {
+    background: #F8FAFC;
+}
+
+.employee-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.employee-table tbody td {
+    padding: 1vw 1.25vw;
+    font-size: 0.8vw;
+    font-family: 'Gilroy-Medium', sans-serif;
+    color: #334155;
+    vertical-align: middle;
+    border-right: 0.05vw solid #9CC4FF;
+}
+
+.employee-table tbody td:last-child {
+    border-right: none;
+}
+
+/* Employee Name Cell with Photo */
+.employee-name-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.625vw;
+}
+
+.employee-avatar {
+    width: 2.5vw;
+    height: 2.5vw;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #2D6BFF;
+}
+
+.employee-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 0.8vw;
+    font-family: 'Gilroy-Bold', sans-serif;
+}
+
+.employee-name-cell span {
+    font-weight: 500;
+    color: #334155;
+}
+
+/* Job Role Badges */
+.job-role-badge {
+    display: inline-block;
+    padding: 0.4vw 0.8vw;
+    border-radius: 1vw;
+    font-size: 0.7vw;
+    font-family: 'Gilroy-SemiBold', sans-serif;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.job-role-onrole {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.job-role-intern {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+/* Status Badge */
+.status-badge {
+    display: inline-block;
+    padding: 0.4vw 0.8vw;
+    border-radius: 1vw;
+    font-size: 0.7vw;
+    font-family: 'Gilroy-SemiBold', sans-serif;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.status-working {
+    background: #dae8f5;
+    color: #0f4c7a;
+}
+
+/* Contact Cell with Icons */
+.contact-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.4vw;
+    color: #334155;
+    font-family: 'Gilroy-Medium', sans-serif;
+}
+
+.contact-icon {
+    width: 100%;
+    height: auto;
+    max-width: 1.1vw;
+}
+
+/* Table Action Buttons */
+.table-view-btn,
+.table-delete-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4vw;
+    border-radius: 0.3vw;
+    margin: 0 auto;
+}
+
+.table-view-btn:hover {
+    background: #C7D2FE;
+    transform: scale(1.1);
+}
+
+.table-view-btn img {
+    width: 1vw;
+    height: 1vw;
+    display: block;
+}
+
+.table-delete-btn:hover {
+    background: #fee2e2;
+    transform: scale(1.1);
+}
+
+.table-delete-btn img {
+    width: 1vw;
+    height: 1vw;
+    display: block;
+}
+
+/* Column Widths */
+.employee-table thead th:nth-child(1),
+.employee-table tbody td:nth-child(1) { width: 6vw; }
+
+.employee-table thead th:nth-child(2),
+.employee-table tbody td:nth-child(2) { width: 9.4vw; }
+
+.employee-table thead th:nth-child(3),
+.employee-table tbody td:nth-child(3) { width: 7.8vw; }
+
+.employee-table thead th:nth-child(4),
+.employee-table tbody td:nth-child(4) { width: 5.7vw; }
+
+.employee-table thead th:nth-child(5),
+.employee-table tbody td:nth-child(5) { width: 6.25vw; }
+
+.employee-table thead th:nth-child(6),
+.employee-table tbody td:nth-child(6) { width: 10.4vw; }
+
+.employee-table thead th:nth-child(7),
+.employee-table tbody td:nth-child(7) { width: 8.3vw; }
+
+.employee-table thead th:nth-child(8),
+.employee-table tbody td:nth-child(8) {
+    width: 5.5vw;
+    text-align: center;
+}
+
+.employee-table thead th:nth-child(9),
+.employee-table tbody td:nth-child(9) {
+    width: 5.1vw;
+    text-align: center;
+}
+
+/* ===================================
+   ADD EMPLOYEE MODAL (WHITE THEME)
+   =================================== */
+
+.emp-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(0.25vw);
+    -webkit-backdrop-filter: blur(0.25vw);
+    animation: empFadeIn 0.3s ease;
+}
+
+@keyframes empFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.emp-modal-content {
+    background-color: #ffffff;
+    margin: 2% auto;
+    border-radius: 0.625vw;
+    width: 90%;
+    max-width: 60vw;
+    max-height: 90vh;
+    box-shadow: 0 0.5vw 2vw rgba(0, 0, 0, 0.15);
+    animation: empSlideDown 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes empSlideDown {
+    from {
+        transform: translateY(-2.6vw);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* White Header */
+.emp-modal-header {
+    background: white;
+    color: #1a1a1a;
+    padding: 1vw 1.5vw;
+    border-bottom: 0.05vw solid #e5e7eb;
+    border-radius: 0.625vw 0.625vw 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.emp-modal-header h2 {
+    font-size: 1.4vw;
+    color: #1a1a1a;
+    margin: 0;
+    font-family: 'Gilroy-Bold', sans-serif;
+}
+
+.emp-modal-close {
+    color: #1a1a1a;
+    font-size: 1.45vw;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    line-height: 1;
+}
+
+.emp-modal-close:hover {
+    transform: scale(1.1);
+    color: #666;
+}
+
+/* Scrollable Body */
+.emp-modal-body {
+    padding: 1.3vw 1.5vw;
+    overflow-y: auto;
+    flex: 1;
+    background: white;
+}
+
+.emp-modal-body::-webkit-scrollbar {
+    width: 0.4vw;
+}
+
+.emp-modal-body::-webkit-scrollbar-track {
+    background: #f3f4f6;
+    border-radius: 0.5vw;
+}
+
+.emp-modal-body::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 0.5vw;
+}
+
+.emp-modal-body::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Form Sections */
+.emp-form-section {
+    margin-bottom: 1.3vw;
+}
+
+.emp-form-section:last-of-type {
+    margin-bottom: 0;
+}
+
+/* Blue Section Titles with Bottom Border */
+.emp-section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+    padding-bottom: 0.8vw;
+    margin-bottom: 1vw;
+    border-bottom: 0.1vw solid #2563eb;
+    color: #2563eb;
+    font-size: 1.2vw;
+    font-family: 'Gilroy-SemiBold', sans-serif;
+    font-weight: 600;
+}
+
+.emp-section-icon img {
+    display: flex;
+    align-items: center;
+    width: 1.5vw;
+}
+
+.employee-important-fill {
+    color: #ef4444;
+}
+
+.emp-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1vw;
+    margin-bottom: 0.9vw;
+}
+
+.emp-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.emp-form-group.emp-full-width {
+    grid-column: 1 / -1;
+}
+
+.emp-label {
+    margin-bottom: 0.8vw;
+    font-size: 0.9vw;
+    font-family: 'Gilroy-SemiBold', sans-serif;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+/* White Rounded Inputs */
+.emp-input,
+.emp-select,
+.emp-textarea {
+    padding: 0.625vw 0.8vw;
+    border: 0.05vw solid #9CC4FF;
+    border-radius: 1.3vw;
+    font-size: 0.9vw;
+    font-family: 'Gilroy-Medium', sans-serif;
+    background: white;
+    transition: all 0.3s ease;
+    color: #4b5563;
+}
+
+.emp-input::placeholder,
+.emp-select::placeholder,
+.emp-textarea::placeholder {
+    color: #9ca3af;
+}
+
+.emp-input:focus,
+.emp-select:focus,
+.emp-textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 0.15vw rgba(37, 99, 235, 0.1);
+}
+
+.emp-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234b5563' d='M10.293 3.293L6 7.586 1.707 3.293A1 1 0 00.293 4.707l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.8vw center;
+    padding-right: 2vw;
+}
+
+.emp-radio-group {
+    display: flex;
+    gap: 1vw;
+    align-items: center;
+    padding-top: 0.25vw;
+}
+
+.emp-radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.4vw;
+    margin: 0;
+    cursor: pointer;
+    font-size: 0.9vw;
+    font-family: 'Gilroy-Medium', sans-serif;
+    color: #1a1a1a;
+}
+
+.emp-radio {
+    cursor: pointer;
+    width: 0.9vw;
+    height: 0.9vw;
+    accent-color: #2563eb;
+}
+
+/* Document Upload Styles */
+.emp-upload-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8vw;
+}
+
+.emp-upload-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 0.1vw dashed #2563eb;
+    border-radius: 0.625vw;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    width: 100%;
+    height: 40vh;
+    overflow: hidden;
+}
+
+.emp-upload-item:hover {
+    border-color: #1d4ed8;
+    background-color: #eff6ff;
+    box-shadow: 0 0.1vw 0.4vw rgba(37, 99, 235, 0.15);
+}
+
+/* Fixed Header at Top */
+.emp-upload-head {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+    padding: 0.8vw 0.8vw 0.5vw 0.8vw;
+    background-color: #f9f9f9;
+}
+
+.emp-upload-icon img {
+    width: 100%;
+    height: auto;
+    max-width: 1vw;
+}
+
+.emp-upload-label,
+.emp-upload-label-new-doc {
+    font-size: 1vw;
+    text-align: center;
+    font-family: 'Gilroy-medium', sans-serif;
+    color: #333;
+}
+
+.emp-file-input {
+    display: none;
+}
+
+/* Scrollable Preview Container */
+.emp-preview-container {
+    flex: 1;
+    width: 100%;
+    padding: 0.5vw 0.8vw;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.emp-preview-container::-webkit-scrollbar {
+    width: 0.3vw;
+}
+
+.emp-preview-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 0.5vw;
+}
+
+.emp-preview-container::-webkit-scrollbar-thumb {
+    background: #2563eb;
+    border-radius: 0.5vw;
+}
+
+.emp-preview-container::-webkit-scrollbar-thumb:hover {
+    background: #1d4ed8;
+}
+
+/* Fixed Button Container at Bottom */
+.emp-button-container {
+    position: sticky;
+    bottom: 0;
+    z-index: 5;
+    display: flex;
+    flex-direction: row;
+    gap: 0.4vw;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0.5vw 0.8vw 0.8vw 0.8vw;
+    background-color: #f9f9f9;
+}
+
+.emp-upload-btn {
+    padding: 0.47vw 1vw;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 1vw;
+    font-size: 0.625vw;
+    font-family: 'Gilroy-Bold', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3vw;
+}
+
+.emp-upload-btn img {
+    width: 0.8vw;
+    height: 0.8vw;
+    filter: brightness(0) invert(1);
+}
+
+.emp-upload-btn:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-0.1vw);
+}
+
+.emp-file-name {
+    font-size: 0.57vw;
+    color: #666;
+    margin-top: 0.25vw;
+    text-align: center;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Preview Item */
+.emp-preview-item {
+    position: relative;
+    width: 100%;
+    border: 0.05vw solid #e0e0e0;
+    border-radius: 0.3vw;
+    background-color: #fff;
+    margin-bottom: 5%;
+}
+
+.emp-preview-image {
+    width: 100%;
+    height: 6.25vw;
+    object-fit: cover;
+    display: block;
+    border-radius: 0.3vw 0.3vw 0 0;
+}
+
+.emp-preview-file {
+    padding: 0.625vw;
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+    background-color: #f5f5f5;
+}
+
+.emp-preview-file-icon {
+    font-size: 1.25vw;
+    color: #2563eb;
+}
+
+.emp-preview-file-name {
+    flex: 1;
+    font-size: 0.57vw;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: 'Gilroy-medium', sans-serif;
+}
+
+.emp-preview-cancel {
+    position: absolute;
+    top: 0.25vw;
+    right: 0.25vw;
+    width: 1.25vw;
+    height: 1.25vw;
+    background-color: rgba(239, 68, 68, 0.9);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8vw;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    z-index: 5;
+}
+
+.emp-preview-cancel:hover {
+    background-color: rgba(239, 68, 68, 1);
+    transform: scale(1.1);
+}
+
+/* Password field wrapper with eye icon */
+.emp-password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.emp-password-wrapper .emp-input {
+    width: 100%;
+    padding-right: 2vw;
+}
+
+.emp-eye-icon {
+    position: absolute;
+    right: 0.8vw;
+    cursor: pointer;
+    width: 1vw;
+    height: 1vw;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.emp-eye-icon:hover {
+    opacity: 1;
+}
+
+/* Fixed Footer */
+.emp-modal-footer {
+    padding: 1vw 1.5vw;
+    border-top: 0.05vw solid #e5e7eb;
+    background-color: #ffffff;
+    border-radius: 0 0 0.625vw 0.625vw;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+}
+
+.emp-form-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.625vw;
+}
+
+.emp-btn-submit,
+.emp-btn-cancel {
+    padding: 0.625vw 2.6vw;
+    border: none;
+    border-radius: 1.5vw;
+    font-size: 1.2vw;
+    font-family: 'Gilroy-Bold', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.emp-btn-submit {
+    background: #2563eb;
+    color: white;
+    box-shadow: 0 0.2vw 0.625vw rgba(37, 99, 235, 0.25);
+}
+
+.emp-btn-submit:hover {
+    background: #1d4ed8;
+    transform: translateY(-0.1vw);
+    box-shadow: 0 0.3vw 0.8vw rgba(37, 99, 235, 0.35);
+}
+
+.emp-btn-submit:active {
+    transform: translateY(0);
+}
+
+.emp-btn-cancel {
+    background-color: #f3f4f6;
+    color: #374151;
+}
+
+.emp-btn-cancel:hover {
+    background-color: #e5e7eb;
+}
+
+/* ===================================
+   UPDATE EMPLOYEE MODAL
+   =================================== */
+
+.update-emp-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(0.25vw);
+    animation: empFadeIn 0.3s ease;
+}
+
+.update-emp-modal-content {
+    background-color: #ffffff;
+    margin: 2% auto;
+    border-radius: 0.625vw;
+    width: 90%;
+    max-width: 60vw;
+    max-height: 90vh;
+    box-shadow: 0 0.5vw 2vw rgba(0, 0, 0, 0.15);
+    animation: empSlideDown 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.update-emp-modal-header {
+    background: white;
+    color: #1a1a1a;
+    padding: 1vw 1.5vw;
+    border-bottom: 0.05vw solid #e5e7eb;
+    border-radius: 0.625vw 0.625vw 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.update-emp-modal-header h2 {
+    font-size: 1.4vw;
+    color: #1a1a1a;
+    margin: 0;
+    font-family: 'Gilroy-Bold', sans-serif;
+}
+
+.update-emp-modal-close {
+    color: #1a1a1a;
+    font-size: 1.45vw;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    line-height: 1;
+}
+
+.update-emp-modal-close:hover {
+    transform: scale(1.1);
+    color: #666;
+}
+
+.update-emp-modal-body {
+    padding: 1.3vw 1.5vw;
+    overflow-y: auto;
+    flex: 1;
+    background: white;
+}
+
+.update-emp-modal-body::-webkit-scrollbar {
+    width: 0.4vw;
+}
+
+.update-emp-modal-body::-webkit-scrollbar-track {
+    background: #f3f4f6;
+    border-radius: 0.5vw;
+}
+
+.update-emp-modal-body::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 0.5vw;
+}
+
+/* Copy all form styling from add modal */
+.update-emp-form-section {
+    margin-bottom: 1.3vw;
+}
+
+.update-emp-section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+    padding-bottom: 0.8vw;
+    margin-bottom: 1vw;
+    border-bottom: 0.1vw solid #2563eb;
+    color: #2563eb;
+    font-size: 1.2vw;
+    font-family: 'Gilroy-SemiBold', sans-serif;
+    font-weight: 600;
+}
+
+.update-emp-section-icon img {
+    display: flex;
+    align-items: center;
+    width: 1.5vw;
+}
+
+.update-emp-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1vw;
+    margin-bottom: 0.9vw;
+}
+
+.update-emp-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.update-emp-form-group.update-emp-full-width {
+    grid-column: 1 / -1;
+}
+
+.update-emp-label {
+    margin-bottom: 0.8vw;
+    font-size: 0.9vw;
+    font-family: 'Gilroy-SemiBold', sans-serif;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.update-emp-input,
+.update-emp-select,
+.update-emp-textarea {
+    padding: 0.625vw 0.8vw;
+    border: 0.05vw solid #d1d5db;
+    border-radius: 1.3vw;
+    font-size: 0.9vw;
+    font-family: 'Gilroy-Medium', sans-serif;
+    background: white;
+    transition: all 0.3s ease;
+    color: #4b5563;
+}
+
+.update-emp-input::placeholder,
+.update-emp-select::placeholder,
+.update-emp-textarea::placeholder {
+    color: #9ca3af;
+}
+
+.update-emp-input:focus,
+.update-emp-select:focus,
+.update-emp-textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 0.15vw rgba(37, 99, 235, 0.1);
+}
+
+.update-emp-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%234b5563' d='M10.293 3.293L6 7.586 1.707 3.293A1 1 0 00.293 4.707l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.8vw center;
+    padding-right: 2vw;
+}
+
+.update-emp-radio-group {
+    display: flex;
+    gap: 1vw;
+    align-items: center;
+    padding-top: 0.25vw;
+}
+
+.update-emp-radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.4vw;
+    margin: 0;
+    cursor: pointer;
+    font-size: 0.9vw;
+    font-family: 'Gilroy-Medium', sans-serif;
+    color: #1a1a1a;
+}
+
+.update-emp-radio {
+    cursor: pointer;
+    width: 0.9vw;
+    height: 0.9vw;
+    accent-color: #2563eb;
+}
+
+/* Update modal upload styles */
+.update-emp-upload-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8vw;
+}
+
+.update-emp-upload-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 0.1vw dashed #2563eb;
+    border-radius: 0.625vw;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    width: 100%;
+    height: 40vh;
+    overflow: hidden;
+}
+
+.update-emp-upload-item:hover {
+    border-color: #1d4ed8;
+    background-color: #eff6ff;
+}
+
+.update-emp-upload-head {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+    padding: 0.8vw 0.8vw 0.5vw 0.8vw;
+    background-color: #f9f9f9;
+}
+
+.update-emp-upload-icon img {
+    width: 100%;
+    height: auto;
+    max-width: 1vw;
+}
+
+.update-emp-upload-label {
+    font-size: 1vw;
+    text-align: center;
+    font-family: 'Gilroy-medium', sans-serif;
+    color: #333;
+}
+
+.update-emp-file-input {
+    display: none;
+}
+
+.update-emp-preview-container {
+    flex: 1;
+    width: 100%;
+    padding: 0.5vw 0.8vw;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.update-emp-preview-container::-webkit-scrollbar {
+    width: 0.3vw;
+}
+
+.update-emp-preview-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 0.5vw;
+}
+
+.update-emp-preview-container::-webkit-scrollbar-thumb {
+    background: #2563eb;
+    border-radius: 0.5vw;
+}
+
+.update-emp-button-container {
+    position: sticky;
+    bottom: 0;
+    z-index: 5;
+    display: flex;
+    flex-direction: row;
+    gap: 0.4vw;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0.5vw 0.8vw 0.8vw 0.8vw;
+    background-color: #f9f9f9;
+}
+
+.update-emp-upload-btn {
+    padding: 0.47vw 1vw;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 1vw;
+    font-size: 0.625vw;
+    font-family: 'Gilroy-Bold', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3vw;
+}
+
+.update-emp-upload-btn img {
+    width: 0.8vw;
+    height: 0.8vw;
+    filter: brightness(0) invert(1);
+}
+
+.update-emp-upload-btn:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-0.1vw);
+}
+
+.update-emp-preview-item {
+    position: relative;
+    width: 100%;
+    border: 0.05vw solid #e0e0e0;
+    border-radius: 0.3vw;
+    background-color: #fff;
+    margin-bottom: 5%;
+}
+
+.update-emp-preview-image {
+    width: 100%;
+    height: 6.25vw;
+    object-fit: cover;
+    display: block;
+    border-radius: 0.3vw 0.3vw 0 0;
+}
+
+.update-emp-preview-file {
+    padding: 0.625vw;
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+    background-color: #f5f5f5;
+}
+
+.update-emp-preview-file-icon {
+    font-size: 1.25vw;
+    color: #2563eb;
+}
+
+.update-emp-preview-file-name {
+    flex: 1;
+    font-size: 0.57vw;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: 'Gilroy-medium', sans-serif;
+}
+
+.update-emp-preview-x-btn {
+    position: absolute;
+    top: 0.25vw;
+    right: 0.25vw;
+    width: 1.25vw;
+    height: 1.25vw;
+    background-color: rgba(239, 68, 68, 0.9);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8vw;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    z-index: 5;
+}
+
+.update-emp-preview-x-btn:hover {
+    background-color: rgba(239, 68, 68, 1);
+    transform: scale(1.1);
+}
+
+.update-emp-preview-actions {
+    display: flex;
+    gap: 0.25vw;
+    padding: 0.4vw;
+    background-color: #f5f5f5;
+    border-radius: 0 0 0.3vw 0.3vw;
+}
+
+.update-emp-preview-view-btn,
+.update-emp-preview-download-btn-inline {
+    flex: 1;
+    padding: 0.3vw 0.625vw;
+    border: none;
+    border-radius: 0.2vw;
+    font-size: 0.57vw;
+    font-family: 'Gilroy-SemiBold', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.update-emp-preview-view-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.update-emp-preview-view-btn:hover {
+    background: #1d4ed8;
+}
+
+.update-emp-preview-download-btn-inline {
+    background: #10b981;
+    color: white;
+}
+
+.update-emp-preview-download-btn-inline:hover {
+    background: #059669;
+}
+
+.update-emp-modal-footer {
+    padding: 1vw 1.5vw;
+    border-top: 0.05vw solid #e5e7eb;
+    background-color: #ffffff;
+    border-radius: 0 0 0.625vw 0.625vw;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+}
+
+.update-emp-form-actions {
+    display: flex;
+    justify-content: center;
+    gap: 0.625vw;
+}
+
+.update-emp-btn-submit {
+    padding: 0.625vw 2.6vw;
+    border: none;
+    border-radius: 1.5vw;
+    font-size: 1.2vw;
+    font-family: 'Gilroy-Bold', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #2563eb;
+    color: white;
+    box-shadow: 0 0.2vw 0.625vw rgba(37, 99, 235, 0.25);
+}
+
+.update-emp-btn-submit:hover {
+    background: #1d4ed8;
+    transform: translateY(-0.1vw);
+    box-shadow: 0 0.3vw 0.8vw rgba(37, 99, 235, 0.35);
+}
+
+/* File View Modal */
+.update-emp-view-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    animation: empFadeIn 0.3s ease;
+}
+
+.update-emp-view-modal-content {
+    position: relative;
+    margin: 2% auto;
+    width: 90%;
+    max-width: 80vw;
+    max-height: 90vh;
+    overflow: auto;
+}
+
+.update-emp-view-modal-close {
+    position: absolute;
+    top: 0.8vw;
+    right: 1.8vw;
+    color: #f1f1f1;
+    font-size: 2vw;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2001;
+}
+
+.update-emp-view-modal-close:hover {
+    color: #bbb;
+}
+
+.update-emp-download-btn {
+    padding: 0.625vw 1.5vw;
+    background: #10b981;
+    color: white;
+    border: none;
+    border-radius: 0.3vw;
+    font-size: 1vw;
+    font-family: 'Gilroy-Bold', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1vw;
+}
+
+.update-emp-download-btn:hover {
+    background: #059669;
+    transform: translateY(-0.1vw);
+}
+
+/* File Preview Modal */
+.file-view-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  animation: empFadeIn 0.3s ease;
+}
+
+.file-view-modal-content {
+  position: relative;
+  margin: 2% auto;
+  width: 90%;
+  max-width: 80vw;
+  max-height: 90vh;
+  overflow: auto;
+  background: white;
+  border-radius: 0.625vw;
+  padding: 1.5vw;
+}
+
+.file-view-modal-close {
+  position: absolute;
+  top: 1vw;
+  right: 1.5vw;
+  color: #333;
+  font-size: 2vw;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 2001;
+  transition: color 0.3s ease;
+}
+
+.file-view-modal-close:hover {
+  color: #ef4444;
+}
+
+#fileViewTitle {
+  margin: 0 0 1vw 0;
+  font-size: 1.2vw;
+  font-family: 'Gilroy-Bold', sans-serif;
+  color: #1a1a1a;
+  padding-bottom: 0.8vw;
+  border-bottom: 0.1vw solid #e5e7eb;
+}
+
+#fileViewContent {
+  text-align: center;
+  padding: 1vw;
+}
+
+#fileViewContent img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+#fileViewContent iframe {
+  width: 100%;
+  height: 70vh;
+  border: none;
+  border-radius: 0.3vw;
+}
+
+/* Preview Action Buttons */
+.emp-preview-actions {
+  display: flex;
+  gap: 0.4vw;
+  margin-top: 0.5vw;
+  justify-content: center;
+}
+
+.emp-preview-view-btn,
+.emp-preview-download-btn {
+  padding: 0.4vw 0.8vw;
+  border: none;
+  border-radius: 0.5vw;
+  font-size: 0.7vw;
+  font-family: 'Gilroy-SemiBold', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.3vw;
+}
+
+.emp-preview-view-btn {
+  background: #2563eb;
+  color: white;
+}
+
+.emp-preview-view-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-0.1vw);
+}
+
+.emp-preview-download-btn {
+  background: #10b981;
+  color: white;
+}
+
+.emp-preview-download-btn:hover {
+  background: #059669;
+  transform: translateY(-0.1vw);
+}
+
+/* File Preview Styling */
+.emp-preview-item {
+  position: relative;
+  margin-bottom: 0.8vw;
+  border: 0.05vw solid #e0e0e0;
+  border-radius: 0.5vw;
+  padding: 0.5vw;
+  background: white;
+}
+
+.emp-preview-image {
+  width: 100%;
+  height: auto;
+  max-height: 12vw;
+  object-fit: cover;
+  border-radius: 0.3vw;
+  border: 0.05vw solid #e0e0e0;
+}
+
+.emp-preview-file {
+  display: flex;
+  align-items: center;
+  gap: 0.8vw;
+  padding: 0.8vw;
+  background: #f5f5f5;
+  border-radius: 0.3vw;
+}
+
+.emp-preview-file-icon {
+  font-size: 2vw;
+  flex-shrink: 0;
+}
+
+.emp-preview-file-details {
+  flex: 1;
+}
+
+.emp-preview-file-name {
+  font-size: 0.75vw;
+  color: #333;
+  font-family: 'Gilroy-Medium', sans-serif;
+  word-break: break-word;
+  margin-bottom: 0.4vw;
+}
+
+.emp-preview-delete-btn {
+  position: absolute;
+  top: 0.3vw;
+  right: 0.3vw;
+  width: 1.5vw;
+  height: 1.5vw;
+  background-color: rgba(239, 68, 68, 0.9);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2vw;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  z-index: 10;
+  line-height: 1;
+  padding: 0;
+}
+
+.emp-preview-delete-btn:hover {
+  background-color: rgba(239, 68, 68, 1);
+  transform: scale(1.15);
+  box-shadow: 0 0.2vw 0.5vw rgba(239, 68, 68, 0.5);
+}
+
+.emp-preview-delete-btn:active {
+  transform: scale(0.95);
+}
+
+.emp-preview-item {
+  position: relative;
+  margin-bottom: 0.8vw;
+  border: 0.05vw solid #e0e0e0;
+  border-radius: 0.5vw;
+  padding: 0.5vw;
+  background: white;
+}
+
+
+/* ===================================
+   RESPONSIVE - TABLET (769px - 1024px)
+   =================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .employee-details-content h2 {
+        font-size: 1.5rem;
+    }
+
+    #addEmployeeBtn {
+        font-size: 0.875rem;
+        padding: 0.75rem 1.5rem;
+        margin-bottom: 1.5rem;
+        border-radius: 1.25rem;
+    }
+
+    #addEmployeeBtn:hover {
+        transform: translateY(-0.125rem);
+        box-shadow: 0 0.25rem 0.5rem rgba(0, 82, 204, 0.3);
+    }
+
+    .employee-table-container {
+        margin-top: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.1);
+        border-width: 0.0625rem;
+    }
+
+    .employee-table {
+        min-width: 56.25rem;
+    }
+
+    .employee-table thead th {
+        font-size: 0.8125rem;
+        padding: 0.875rem 1rem;
+        border-width: 0.0625rem;
+    }
+
+    .employee-table tbody td {
+        font-size: 0.8125rem;
+        padding: 0.875rem 1rem;
+        border-width: 0.0625rem;
+    }
+
+    .job-role-badge,
+    .status-badge {
+        font-size: 0.75rem;
+        padding: 0.375rem 0.75rem;
+        border-radius: 1.25rem;
+    }
+
+    .contact-icon {
+        max-width: 1rem;
+    }
+
+    .employee-avatar {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .avatar-placeholder {
+        font-size: 0.875rem;
+    }
+
+    .table-view-btn,
+    .table-delete-btn {
+        padding: 0.5rem;
+        border-radius: 0.375rem;
+    }
+
+    .table-view-btn img,
+    .table-delete-btn img {
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+
+    .emp-modal-content,
+    .update-emp-modal-content {
+        max-width: 80%;
+        margin: 5% auto;
+        border-radius: 0.75rem;
+        box-shadow: 0 0.625rem 2.5rem rgba(0, 0, 0, 0.15);
+    }
+
+    .emp-modal-header,
+    .update-emp-modal-header {
+        padding: 1.25rem 1.5rem;
+        border-bottom-width: 0.0625rem;
+        border-radius: 0.75rem 0.75rem 0 0;
+    }
+
+    .emp-modal-header h2,
+    .update-emp-modal-header h2 {
+        font-size: 1.125rem;
+    }
+
+    .emp-modal-close,
+    .update-emp-modal-close {
+        font-size: 1.75rem;
+    }
+
+    .emp-modal-body,
+    .update-emp-modal-body {
+        padding: 1.5625rem 1.875rem;
+    }
+
+    .emp-modal-body::-webkit-scrollbar,
+    .update-emp-modal-body::-webkit-scrollbar {
+        width: 0.5rem;
+    }
+
+    .emp-modal-body::-webkit-scrollbar-track,
+    .update-emp-modal-body::-webkit-scrollbar-track {
+        border-radius: 0.625rem;
+    }
+
+    .emp-modal-body::-webkit-scrollbar-thumb,
+    .update-emp-modal-body::-webkit-scrollbar-thumb {
+        border-radius: 0.625rem;
+    }
+
+    .emp-form-section,
+    .update-emp-form-section {
+        margin-bottom: 1.5625rem;
+    }
+
+    .emp-section-title,
+    .update-emp-section-title {
+        font-size: 1rem;
+        gap: 0.625rem;
+        padding-bottom: 0.9375rem;
+        margin-bottom: 1.25rem;
+        border-bottom-width: 0.125rem;
+    }
+
+    .emp-section-icon img,
+    .update-emp-section-icon img {
+        width: 1.125rem;
+    }
+
+    .emp-form-row,
+    .update-emp-form-row {
+        gap: 1.25rem;
+        margin-bottom: 1.125rem;
+    }
+
+    .emp-label,
+    .update-emp-label {
+        margin-bottom: 0.5rem;
+        font-size: 0.875rem;
+    }
+
+    .emp-input,
+    .emp-select,
+    .emp-textarea,
+    .update-emp-input,
+    .update-emp-select,
+    .update-emp-textarea {
+        font-size: 0.875rem;
+        padding: 0.75rem;
+        border-width: 0.0625rem;
+        border-radius: 1.5625rem;
+    }
+
+    .emp-input:focus,
+    .emp-select:focus,
+    .emp-textarea:focus,
+    .update-emp-input:focus,
+    .update-emp-select:focus,
+    .update-emp-textarea:focus {
+        box-shadow: 0 0 0 0.1875rem rgba(37, 99, 235, 0.1);
+    }
+
+    .emp-select,
+    .update-emp-select {
+        background-position: right 1rem center;
+        padding-right: 2.5rem;
+    }
+
+    .emp-radio-group,
+    .update-emp-radio-group {
+        gap: 1.25rem;
+    }
+
+    .emp-radio-label,
+    .update-emp-radio-label {
+        font-size: 0.875rem;
+        gap: 0.5rem;
+    }
+
+    .emp-radio,
+    .update-emp-radio {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+
+    .emp-upload-grid,
+    .update-emp-upload-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.9375rem;
+    }
+
+    .emp-upload-item,
+    .update-emp-upload-item {
+        border-width: 0.125rem;
+        border-radius: 0.75rem;
+    }
+
+    .emp-upload-item:hover,
+    .update-emp-upload-item:hover {
+        box-shadow: 0 0.125rem 0.5rem rgba(37, 99, 235, 0.15);
+    }
+
+    .emp-upload-head,
+    .update-emp-upload-head {
+        padding: 0.9375rem 0.9375rem 0.625rem 0.9375rem;
+        gap: 1rem;
+    }
+
+    .emp-upload-icon img,
+    .update-emp-upload-icon img {
+        max-width: 1.25rem;
+    }
+
+    .emp-upload-label,
+    .update-emp-upload-label {
+        font-size: 0.8125rem;
+    }
+
+    .emp-preview-container,
+    .update-emp-preview-container {
+        padding: 0.625rem 0.9375rem;
+        gap: 0.5rem;
+    }
+
+    .emp-preview-container::-webkit-scrollbar,
+    .update-emp-preview-container::-webkit-scrollbar {
+        width: 0.375rem;
+    }
+
+    .emp-preview-container::-webkit-scrollbar-track,
+    .update-emp-preview-container::-webkit-scrollbar-track {
+        border-radius: 0.625rem;
+    }
+
+    .emp-preview-container::-webkit-scrollbar-thumb,
+    .update-emp-preview-container::-webkit-scrollbar-thumb {
+        border-radius: 0.625rem;
+    }
+
+    .emp-button-container,
+    .update-emp-button-container {
+        padding: 0.625rem 0.9375rem 0.9375rem 0.9375rem;
+        gap: 0.5rem;
+    }
+
+    .emp-upload-btn,
+    .update-emp-upload-btn {
+        padding: 0.5625rem 1.25rem;
+        font-size: 0.75rem;
+        gap: 0.375rem;
+        border-radius: 1.25rem;
+    }
+
+    .emp-upload-btn img,
+    .update-emp-upload-btn img {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .emp-upload-btn:hover,
+    .update-emp-upload-btn:hover {
+        transform: translateY(-0.125rem);
+    }
+
+    .emp-file-name,
+    .emp-preview-file-name,
+    .update-emp-preview-file-name {
+        font-size: 0.6875rem;
+    }
+
+    .emp-preview-item,
+    .update-emp-preview-item {
+        border-width: 0.0625rem;
+        border-radius: 0.375rem;
+    }
+
+    .emp-preview-image,
+    .update-emp-preview-image {
+        height: 7.5rem;
+        border-radius: 0.375rem 0.375rem 0 0;
+    }
+
+    .emp-preview-file,
+    .update-emp-preview-file {
+        padding: 0.75rem;
+        gap: 0.625rem;
+    }
+
+    .emp-preview-file-icon,
+    .update-emp-preview-file-icon {
+        font-size: 1.5rem;
+    }
+
+    .emp-preview-cancel,
+    .update-emp-preview-x-btn {
+        top: 0.3125rem;
+        right: 0.3125rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 1rem;
+    }
+
+    .update-emp-preview-actions {
+        gap: 0.3125rem;
+        padding: 0.5rem;
+        border-radius: 0 0 0.375rem 0.375rem;
+    }
+
+    .update-emp-preview-view-btn,
+    .update-emp-preview-download-btn-inline {
+        padding: 0.375rem 0.75rem;
+        border-radius: 0.25rem;
+        font-size: 0.6875rem;
+    }
+
+    .emp-password-wrapper .emp-input,
+    .update-emp-password-wrapper .update-emp-input {
+        padding-right: 2.5rem;
+    }
+
+    .emp-eye-icon {
+        right: 1rem;
+        width: 1.25rem;
+        height: 1.25rem;
+    }
+
+    .emp-modal-footer,
+    .update-emp-modal-footer {
+        padding: 1.25rem 1.875rem;
+        border-top-width: 0.0625rem;
+        border-radius: 0 0 0.75rem 0.75rem;
+    }
+
+    .emp-form-actions,
+    .update-emp-form-actions {
+        gap: 0.75rem;
+    }
+
+    .emp-btn-submit,
+    .emp-btn-cancel,
+    .update-emp-btn-submit {
+        font-size: 1rem;
+        padding: 0.75rem 3.125rem;
+        border-radius: 1.875rem;
+    }
+
+    .emp-btn-submit,
+    .update-emp-btn-submit {
+        box-shadow: 0 0.25rem 0.75rem rgba(37, 99, 235, 0.25);
+    }
+
+    .emp-btn-submit:hover,
+    .update-emp-btn-submit:hover {
+        transform: translateY(-0.125rem);
+        box-shadow: 0 0.375rem 1rem rgba(37, 99, 235, 0.35);
+    }
+
+    .update-emp-view-modal-close {
+        top: 0.9375rem;
+        right: 2.1875rem;
+        font-size: 2.5rem;
+    }
+
+    .update-emp-download-btn {
+        padding: 0.75rem 1.875rem;
+        border-radius: 0.375rem;
+        font-size: 1rem;
+        margin-top: 1.25rem;
+    }
+
+    .update-emp-download-btn:hover {
+        transform: translateY(-0.125rem);
+    }
+}
+
+/* ===================================
+   RESPONSIVE - MOBILE (max-width: 768px)
+   =================================== */
+
+@media (max-width: 768px) {
+    .employee-details-content h2 {
+        font-size: 1.25rem;
+    }
+
+    #addEmployeeBtn {
+        font-size: 0.8125rem;
+        padding: 0.625rem 1.25rem;
+        margin-top: 1.25rem;
+        border-radius: 1.25rem;
+    }
+
+    .employee-table-container {
+        margin-top: 1.25rem;
+        border-radius: 0.5rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .employee-table {
+        min-width: 50rem;
+        font-size: 0.75rem;
+    }
+
+    .employee-table thead th {
+        font-size: 0.75rem;
+        padding: 0.75rem 0.875rem;
+        white-space: nowrap;
+    }
+
+    .employee-table tbody td {
+        font-size: 0.75rem;
+        padding: 0.75rem 0.875rem;
+    }
+
+    .employee-avatar {
+        width: 2.25rem;
+        height: 2.25rem;
+    }
+
+    .avatar-placeholder {
+        font-size: 0.8125rem;
+    }
+
+    .employee-name-cell {
+        gap: 0.5rem;
+    }
+
+    .job-role-badge,
+    .status-badge {
+        font-size: 0.6875rem;
+        padding: 0.375rem 0.625rem;
+    }
+
+    .contact-cell {
+        gap: 0.5rem;
+    }
+
+    .contact-icon {
+        max-width: 0.875rem;
+    }
+
+    .table-view-btn,
+    .table-delete-btn {
+        padding: 0.5rem;
+    }
+
+    .table-view-btn img,
+    .table-delete-btn img {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+
+    .emp-modal-content,
+    .update-emp-modal-content {
+        width: 95%;
+        margin: 2% auto;
+        max-height: 95vh;
+    }
+
+    .emp-modal-header,
+    .update-emp-modal-header {
+        padding: 0.9375rem 1.25rem;
+    }
+
+    .emp-modal-header h2,
+    .update-emp-modal-header h2 {
+        font-size: 1rem;
+    }
+
+    .emp-modal-close,
+    .update-emp-modal-close {
+        font-size: 1.5rem;
+    }
+
+    .emp-modal-body,
+    .update-emp-modal-body {
+        padding: 0.9375rem;
+    }
+
+    .emp-form-section,
+    .update-emp-form-section {
+        padding: 0.9375rem;
+        margin-bottom: 0.9375rem;
+    }
+
+    .emp-section-title,
+    .update-emp-section-title {
+        font-size: 0.9375rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .emp-form-row,
+    .update-emp-form-row {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .emp-label,
+    .update-emp-label {
+        margin-bottom: 0.375rem;
+        font-size: 0.8125rem;
+    }
+
+    .emp-input,
+    .emp-select,
+    .emp-textarea,
+    .update-emp-input,
+    .update-emp-select,
+    .update-emp-textarea {
+        font-size: 0.8125rem;
+        padding: 0.625rem;
+        border-radius: 1.125rem;
+    }
+
+    .emp-radio-label,
+    .update-emp-radio-label {
+        font-size: 0.8125rem;
+    }
+
+    .emp-upload-grid,
+    .update-emp-upload-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .emp-upload-item,
+    .update-emp-upload-item {
+        height: 35vh;
+    }
+
+    .emp-upload-head,
+    .update-emp-upload-head {
+        padding: 0.75rem 0.75rem 0.5rem 0.75rem;
+    }
+
+    .emp-upload-label,
+    .update-emp-upload-label {
+        font-size: 0.8125rem;
+    }
+
+    .emp-upload-btn,
+    .update-emp-upload-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+    }
+
+    .emp-upload-btn img,
+    .update-emp-upload-btn img {
+        width: 0.875rem;
+        height: 0.875rem;
+    }
+
+    .emp-button-container,
+    .update-emp-button-container {
+        padding: 0.5rem 0.75rem 0.75rem 0.75rem;
+    }
+
+    .emp-modal-footer,
+    .update-emp-modal-footer {
+        padding: 0.9375rem 1.25rem;
+    }
+
+    .emp-form-actions,
+    .update-emp-form-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .emp-btn-submit,
+    .emp-btn-cancel,
+    .update-emp-btn-submit {
+        width: 100%;
+        font-size: 0.9375rem;
+        padding: 0.75rem;
+        border-radius: 1.5625rem;
+    }
+
+    .emp-preview-image,
+    .update-emp-preview-image {
+        height: 6.25rem;
+    }
+
+    .emp-file-name,
+    .emp-preview-file-name,
+    .update-emp-preview-file-name {
+        font-size: 0.6875rem;
+    }
+
+    .employee-table-container::-webkit-scrollbar {
+        height: 0.5rem;
+    }
+
+    .employee-table-container::-webkit-scrollbar-track {
+        background: #F1F5F9;
+        border-radius: 0.25rem;
+    }
+
+    .employee-table-container::-webkit-scrollbar-thumb {
+        background: #CBD5E1;
+        border-radius: 0.25rem;
+    }
+}
+
+/* ===================================
+   RESPONSIVE - SMALL MOBILE (max-width: 480px)
+   =================================== */
+
+@media (max-width: 480px) {
+    .employee-details-content h2 {
+        font-size: 1.125rem;
+    }
+
+    #addEmployeeBtn {
+        font-size: 0.75rem;
+        padding: 0.5rem 1rem;
+        margin-top: 1rem;
+        width: 40%;
+    }
+
+    .employee-table-container {
+        margin-top: 0.75rem;
+        border-radius: 0.375rem;
+    }
+
+    .employee-table {
+        min-width: 43.75rem;
+    }
+
+    .employee-table thead th {
+        font-size: 0.6875rem;
+        padding: 0.625rem 0.75rem;
+    }
+
+    .employee-table tbody td {
+        font-size: 0.6875rem;
+        padding: 0.625rem 0.75rem;
+    }
+
+    .employee-avatar {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .avatar-placeholder {
+        font-size: 0.75rem;
+    }
+
+    .job-role-badge,
+    .status-badge {
+        font-size: 0.625rem;
+        padding: 0.375rem 0.625rem;
+    }
+
+    .contact-cell {
+        font-size: 0.75rem;
+    }
+
+    .contact-icon {
+        max-width: 0.75rem;
+    }
+
+    .table-view-btn,
+    .table-delete-btn {
+        padding: 0.375rem;
+    }
+
+    .table-view-btn img,
+    .table-delete-btn img {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .emp-modal-content,
+    .update-emp-modal-content {
+        max-width: 80vw;
+        margin: 2% auto;
+        max-height: 95vh;
+    }
+
+    .emp-modal-header,
+    .update-emp-modal-header {
+        padding: 0.75rem 0.9375rem;
+    }
+
+    .emp-modal-header h2,
+    .update-emp-modal-header h2 {
+        font-size: 0.875rem;
+    }
+
+    .emp-modal-close,
+    .update-emp-modal-close {
+        font-size: 1.375rem;
+    }
+
+    .emp-modal-body,
+    .update-emp-modal-body {
+        padding: 0.75rem;
+    }
+
+    .emp-form-section,
+    .update-emp-form-section {
+        padding: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .emp-section-title,
+    .update-emp-section-title {
+        font-size: 0.875rem;
+        margin-bottom: 0.625rem;
+        gap: 0.375rem;
+    }
+
+    .emp-section-icon img,
+    .update-emp-section-icon img {
+        width: 1rem;
+    }
+
+    .emp-form-row,
+    .update-emp-form-row {
+        gap: 0.625rem;
+        margin-bottom: 0.625rem;
+    }
+
+    .emp-label,
+    .update-emp-label {
+        margin-bottom: 0.3125rem;
+        font-size: 0.75rem;
+    }
+
+    .emp-input,
+    .emp-select,
+    .emp-textarea,
+    .update-emp-input,
+    .update-emp-select,
+    .update-emp-textarea {
+        font-size: 0.75rem;
+        padding: 0.5rem;
+        border-radius: 0.9375rem;
+    }
+
+    .emp-radio-group,
+    .update-emp-radio-group {
+        gap: 0.9375rem;
+    }
+
+    .emp-radio-label,
+    .update-emp-radio-label {
+        font-size: 0.75rem;
+        gap: 0.25rem;
+    }
+
+    .emp-upload-grid,
+    .update-emp-upload-grid {
+        grid-template-columns: 1fr;
+        gap: 0.625rem;
+    }
+
+    .emp-upload-item,
+    .update-emp-upload-item {
+        height: 30vh;
+    }
+
+    .emp-upload-head,
+    .update-emp-upload-head {
+        padding: 0.625rem 0.625rem 0.5rem 0.625rem;
+        gap: 0.5rem;
+    }
+
+    .emp-upload-icon img,
+    .update-emp-upload-icon img {
+        max-width: 1rem;
+    }
+
+    .emp-upload-label,
+    .update-emp-upload-label {
+        font-size: 0.75rem;
+    }
+
+    .emp-button-container,
+    .update-emp-button-container {
+        gap: 0.375rem;
+        padding: 0.5rem 0.625rem 0.625rem 0.625rem;
+    }
+
+    .emp-upload-btn,
+    .update-emp-upload-btn {
+        padding: 0.4375rem 0.75rem;
+        font-size: 0.6875rem;
+        gap: 0.25rem;
+        border-radius: 0.9375rem;
+    }
+
+    .emp-upload-btn img,
+    .update-emp-upload-btn img {
+        width: 0.75rem;
+        height: 0.75rem;
+    }
+
+    .emp-preview-image,
+    .update-emp-preview-image {
+        height: 5rem;
+    }
+
+    .emp-preview-cancel,
+    .update-emp-preview-x-btn {
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 1.125rem;
+    }
+
+    .emp-file-name,
+    .emp-preview-file-name,
+    .update-emp-preview-file-name {
+        font-size: 0.625rem;
+    }
+
+    .emp-preview-file-icon,
+    .update-emp-preview-file-icon {
+        font-size: 1.25rem;
+    }
+
+    .emp-modal-footer,
+    .update-emp-modal-footer {
+        padding: 0.75rem 0.9375rem;
+    }
+
+    .emp-form-actions,
+    .update-emp-form-actions {
+        gap: 0.625rem;
+    }
+
+    .emp-btn-submit,
+    .emp-btn-cancel,
+    .update-emp-btn-submit {
+        width: 100%;
+        font-size: 0.875rem;
+        padding: 0.625rem;
+        border-radius: 1.25rem;
+    }
+
+    .emp-eye-icon {
+        width: 1.125rem;
+        height: 1.125rem;
+        right: 0.625rem;
+    }
+}
+
+/* ===================================
+   RESPONSIVE - EXTRA SMALL MOBILE (max-width: 375px)
+   =================================== */
+
+@media (max-width: 375px) {
+    .emp-modal-header h2,
+    .update-emp-modal-header h2 {
+        font-size: 0.8125rem;
+    }
+
+    .employee-table-container {
+        margin-top: 0.625rem;
+    }
+
+    .employee-table {
+        min-width: 37.5rem;
+    }
+
+    .employee-table thead th {
+        font-size: 0.625rem;
+        padding: 0.5rem 0.625rem;
+    }
+
+    .employee-table tbody td {
+        font-size: 0.625rem;
+        padding: 0.5rem 0.625rem;
+    }
+
+    .employee-avatar {
+        width: 1.75rem;
+        height: 1.75rem;
+    }
+
+    .avatar-placeholder {
+        font-size: 0.6875rem;
+    }
+
+    .job-role-badge,
+    .status-badge {
+        font-size: 0.5625rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .contact-cell {
+        font-size: 0.6875rem;
+    }
+
+    .contact-icon {
+        max-width: 0.625rem;
+    }
+
+    .emp-section-title,
+    .update-emp-section-title {
+        font-size: 0.8125rem;
+    }
+
+    .emp-label,
+    .update-emp-label {
+        font-size: 0.6875rem;
+    }
+
+    .emp-input,
+    .emp-select,
+    .emp-textarea,
+    .update-emp-input,
+    .update-emp-select,
+    .update-emp-textarea {
+        font-size: 0.6875rem;
+        padding: 0.4375rem;
+    }
+
+    .emp-radio-label,
+    .update-emp-radio-label {
+        font-size: 0.6875rem;
+    }
+
+    .emp-upload-item,
+    .update-emp-upload-item {
+        height: 28vh;
+    }
+
+    .emp-upload-label,
+    .update-emp-upload-label {
+        font-size: 0.6875rem;
+    }
+
+    .emp-upload-btn,
+    .update-emp-upload-btn {
+        padding: 0.375rem 0.625rem;
+        font-size: 0.625rem;
+    }
+
+    .emp-btn-submit,
+    .emp-btn-cancel,
+    .update-emp-btn-submit {
+        font-size: 0.8125rem;
+        padding: 0.5625rem;
+    }
+
+    .emp-file-name,
+    .emp-preview-file-name,
+    .update-emp-preview-file-name {
+        font-size: 0.5625rem;
+    }
+}
+
+/* ===================================
+   RESPONSIVE - LANDSCAPE MOBILE (max-height: 500px)
+   =================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .emp-modal-content,
+    .update-emp-modal-content {
+        max-height: 98vh;
+        margin: 1% auto;
+    }
+
+    .emp-modal-header,
+    .update-emp-modal-header {
+        padding: 0.625rem 1.25rem;
+    }
+
+    .emp-modal-body,
+    .update-emp-modal-body {
+        padding: 0.75rem 1.25rem;
+    }
+
+    .emp-form-section,
+    .update-emp-form-section {
+        margin-bottom: 0.75rem;
+    }
+
+    .emp-section-title,
+    .update-emp-section-title {
+        font-size: 0.875rem;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.625rem;
+    }
+
+    .emp-form-row,
+    .update-emp-form-row {
+        gap: 0.75rem;
+        margin-bottom: 0.625rem;
+    }
+
+    .emp-label,
+    .update-emp-label {
+        margin-bottom: 0.375rem;
+        font-size: 0.75rem;
+    }
+
+    .emp-input,
+    .emp-select,
+    .emp-textarea,
+    .update-emp-input,
+    .update-emp-select,
+    .update-emp-textarea {
+        font-size: 0.75rem;
+        padding: 0.5rem;
+    }
+
+    .emp-upload-item,
+    .update-emp-upload-item {
+        height: 30vh;
+    }
+
+    .emp-modal-footer,
+    .update-emp-modal-footer {
+        padding: 0.625rem 1.25rem;
+    }
+
+    .emp-btn-submit,
+    .emp-btn-cancel,
+    .update-emp-btn-submit {
+        font-size: 0.875rem;
+        padding: 0.625rem 2.5rem;
+    }
+}
+
+/* ===================================
+   RESPONSIVE - TABLET LANDSCAPE (768px - 1024px)
+   =================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .emp-modal-content,
+    .update-emp-modal-content {
+        max-width: 75%;
+        max-height: 92vh;
+    }
+
+    .emp-modal-header,
+    .update-emp-modal-header {
+        padding: 1rem 1.5rem;
+    }
+
+    .emp-modal-header h2,
+    .update-emp-modal-header h2 {
+        font-size: 1.125rem;
+    }
+
+    .emp-modal-body,
+    .update-emp-modal-body {
+        padding: 1.25rem 1.5rem;
+    }
+
+    .emp-form-row,
+    .update-emp-form-row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .emp-upload-grid,
+    .update-emp-upload-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .emp-upload-item,
+    .update-emp-upload-item {
+        height: 35vh;
+    }
+}
+
+/* ===================================
+   TOUCH DEVICE OPTIMIZATION
+   =================================== */
+
+@media (hover: none) and (pointer: coarse) {
+    #addEmployeeBtn,
+    .table-view-btn,
+    .table-delete-btn {
+        min-height: 2.75rem;
+    }
+
+    .emp-input,
+    .emp-select,
+    .update-emp-input,
+    .update-emp-select {
+        min-height: 2.75rem;
+    }
+
+    .emp-btn-submit,
+    .emp-btn-cancel,
+    .update-emp-btn-submit {
+        min-height: 2.75rem;
+    }
+
+    #addEmployeeBtn:hover,
+    .table-view-btn:hover,
+    .table-delete-btn:hover {
+        transform: none;
+    }
+
+    #addEmployeeBtn:active,
+    .table-view-btn:active,
+    .table-delete-btn:active {
+        transform: scale(0.97);
+    }
+
+    .emp-btn-submit:hover,
+    .emp-btn-cancel:hover,
+    .update-emp-btn-submit:hover {
+        transform: none;
+    }
+
+    .emp-btn-submit:active,
+    .update-emp-btn-submit:active {
+        transform: scale(0.97);
+    }
+}
