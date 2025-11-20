@@ -1,0 +1,647 @@
+/* ===================================
+   HEADER.CSS - Top Header Bar
+   =================================== */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-shrink: 0;
+  padding: 20px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+/* ===================================
+   USER INFO
+   =================================== */
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.welcome-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.role-text {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+/* ===================================
+   HEADER RIGHT SECTION
+   =================================== */
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-left: auto;
+}
+
+/* ===================================
+   DATE TIME DISPLAY
+   =================================== */
+
+.datetime-display {
+  display: flex;
+  align-items: center;
+}
+
+.datetime-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+/* ===================================
+   HEADER ACTIONS (Icon Buttons)
+   =================================== */
+
+/* ===================================
+   HEADER ACTIONS (Icon Buttons)
+   Enhanced Design with Images
+   =================================== */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.625vw;
+}
+
+.icon-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5vw;
+  height: 2.5vw;
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+  border: 0.05vw solid rgba(0, 0, 0, 0.06);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+  box-shadow: 0 0.1vw 0.2vw rgba(0, 0, 0, 0.04);
+  padding: 0.5vw;
+}
+
+.icon-btn img {
+  width: 1.5vw;
+  height: 1.5vw;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  filter: grayscale(0%) opacity(0.7);
+}
+
+.attendance img{
+  width: 1.2vw;
+  height: 1.2vw;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  filter: grayscale(0%) opacity(0.7);
+}
+
+.contact img{
+  width: 1.8vw;
+  height: 1.8vw;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  filter: grayscale(0%) opacity(0.7);
+}
+
+/* Hover Effect - Blue Gradient */
+.icon-btn:hover {
+  background: linear-gradient(135deg, #3B82F6 0%, #2D6BFF 100%);
+  border-color: transparent;
+  transform: translateY(-0.15vw) scale(1.05);
+  box-shadow: 0 0.4vw 1.2vw rgba(45, 107, 255, 0.35);
+}
+
+.icon-btn:hover img {
+  filter: brightness(0) invert(1);
+  /* Makes image white on hover */
+  transform: scale(1.05);
+}
+
+/* Active/Click Effect */
+.icon-btn:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 0.1vw 0.3vw rgba(45, 107, 255, 0.2);
+}
+
+/* Focus State (Accessibility) */
+.icon-btn:focus-visible {
+  outline: 0.15vw solid rgba(45, 107, 255, 0.5);
+  outline-offset: 0.2vw;
+}
+
+/* Notification Badge */
+.notification-badge {
+  position: absolute;
+  top: -0.25vw;
+  right: -0.25vw;
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+  color: white;
+  font-size: 0.55vw;
+  font-weight: 700;
+  padding: 0.15vw 0.35vw;
+  border-radius: 1vw;
+  min-width: 1.1vw;
+  height: 1.1vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.125vw solid white;
+  box-shadow: 0 0.15vw 0.4vw rgba(239, 68, 68, 0.4);
+  animation: badgePulse 2s ease-in-out infinite;
+  font-family: 'Gilroy-Bold', sans-serif;
+  line-height: 1;
+}
+
+/* Badge Pulse Animation */
+@keyframes badgePulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0.15vw 0.4vw rgba(239, 68, 68, 0.4);
+  }
+
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0.2vw 0.6vw rgba(239, 68, 68, 0.6);
+  }
+}
+
+/* Hide Badge when empty */
+.notification-badge:empty {
+  display: none;
+}
+
+/* Individual Button Hover Colors (Optional) */
+#notificationBtn:hover {
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+}
+
+#messageBtn:hover {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  box-shadow: 0 0.4vw 1.2vw rgba(16, 185, 129, 0.35);
+}
+
+#settingsBtn:hover {
+  background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+  box-shadow: 0 0.4vw 1.2vw rgba(99, 102, 241, 0.35);
+}
+
+/* ===================================
+   PAGE TITLE
+   =================================== */
+
+.title {
+  font-size: 30px;
+  font-family: 'Gilroy-SemiBold', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+/* ===================================
+   RESPONSIVE - TABLET (769px - 1024px)
+   =================================== */
+
+/* ===================================
+   RESPONSIVE - TABLET (769px - 1024px)
+   =================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .header {
+    padding: 1.125rem 1.5rem;
+    /* 18px 24px */
+    gap: 0.875rem;
+    /* 14px */
+  }
+
+  .header-content {
+    gap: 1.25rem;
+    padding-left: 7vw;
+  }
+
+  .welcome-text {
+    font-size: 1.0625rem;
+    /* 17px */
+  }
+
+  .role-text {
+    font-size: 0.78125rem;
+    /* 12.5px */
+  }
+
+  .datetime-text {
+    font-size: 0.8125rem;
+    /* 13px */
+  }
+
+  .header-right {
+    gap: 1.25rem;
+    /* 20px */
+  }
+
+  .header-actions {
+    gap: 0.5rem;
+    /* 8px */
+  }
+
+  .icon-btn {
+    width: 2.5rem;
+    /* 40px */
+    height: 2.5rem;
+    /* 40px */
+  }
+
+  .icon-btn img {
+    width: 1.1875rem;
+    /* 19px */
+  }
+
+  .icon-btn svg {
+    width: 1.1875rem;
+    /* 19px */
+    height: 1.1875rem;
+    /* 19px */
+  }
+
+  .title {
+    font-size: 1.75rem;
+    /* 28px */
+  }
+}
+
+/* ===================================
+   RESPONSIVE - MOBILE (max-width: 768px)
+   =================================== */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem 1.125rem;
+    /* 16px 18px */
+    gap: 0.75rem;
+    /* 12px */
+  }
+
+  .header-content {
+    flex-wrap: wrap;
+    gap: 0.875rem;
+    /* 14px */
+    justify-content: center;
+  }
+
+  .user-info {
+    order: 1;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+
+  .header-right {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+    gap: 1rem;
+    /* 16px */
+    flex-wrap: wrap;
+  }
+
+  .datetime-display {
+    order: -1;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .welcome-text {
+    font-size: 1rem;
+    /* 16px */
+  }
+
+  .role-text {
+    font-size: 0.75rem;
+    /* 12px */
+  }
+
+  .datetime-text {
+    font-size: 0.8125rem;
+    /* 13px */
+  }
+
+  .header-actions {
+    gap: 0.5rem;
+    /* 8px */
+  }
+
+  .icon-btn {
+    width: 2.375rem;
+    /* 38px */
+    height: 2.375rem;
+    /* 38px */
+  }
+
+  .icon-btn img {
+    width: 1.125rem;
+    /* 18px */
+  }
+
+  .icon-btn svg {
+    width: 1.125rem;
+    /* 18px */
+    height: 1.125rem;
+    /* 18px */
+  }
+
+  .title {
+    font-size: 1.5rem;
+    /* 24px */
+    text-align: center;
+  }
+}
+
+/* ===================================
+   RESPONSIVE - SMALL MOBILE (max-width: 480px)
+   =================================== */
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0.875rem 1rem;
+    /* 14px 16px */
+    gap: 0.625rem;
+    /* 10px */
+  }
+
+  .header-content {
+    gap: 0.75rem;
+    /* 12px */
+  }
+
+  .header-right {
+    gap: 0.75rem;
+    /* 12px */
+  }
+
+  .header-actions {
+    gap: 0.5rem;
+    /* 8px */
+  }
+
+  .welcome-text {
+    font-size: 0.9375rem;
+    /* 15px */
+  }
+
+  .role-text {
+    font-size: 0.6875rem;
+    /* 11px */
+  }
+
+  .datetime-text {
+    font-size: 0.75rem;
+    /* 12px */
+  }
+
+  .icon-btn {
+    width: 2.25rem;
+    /* 36px */
+    height: 2.25rem;
+    /* 36px */
+  }
+
+  .icon-btn img {
+    width: 1.0625rem;
+    /* 17px */
+  }
+
+  .icon-btn svg {
+    width: 1.0625rem;
+    /* 17px */
+    height: 1.0625rem;
+    /* 17px */
+  }
+
+  .notification-badge {
+    font-size: 0.5625rem;
+    /* 9px */
+    min-width: 1.125rem;
+    /* 18px */
+    height: 1.125rem;
+    /* 18px */
+    padding: 0.125rem 0.3125rem;
+    /* 2px 5px */
+  }
+
+  .title {
+    font-size: 1.375rem;
+    /* 22px */
+  }
+}
+
+/* ===================================
+   LANDSCAPE MODE - MOBILE (max-height: 500px)
+   =================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .header {
+    padding: 0.625rem 1rem;
+    /* 10px 16px */
+    gap: 0.5rem;
+    /* 8px */
+  }
+
+  .header-content {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    /* 16px */
+    justify-content: space-between;
+  }
+
+  .user-info {
+    order: 0;
+    width: auto;
+    text-align: left;
+    align-items: flex-start;
+    flex-shrink: 1;
+  }
+
+  .header-right {
+    order: 0;
+    width: auto;
+    justify-content: flex-end;
+    gap: 0.75rem;
+    /* 12px */
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+  }
+
+  .datetime-display {
+    order: 0;
+  }
+
+  .welcome-text {
+    font-size: 0.875rem;
+    /* 14px */
+  }
+
+  .role-text {
+    font-size: 0.6875rem;
+    /* 11px */
+  }
+
+  .datetime-text {
+    font-size: 0.75rem;
+    /* 12px */
+  }
+
+  .header-actions {
+    gap: 0.375rem;
+    /* 6px */
+  }
+
+  .icon-btn {
+    width: 2rem;
+    /* 32px */
+    height: 2rem;
+    /* 32px */
+  }
+
+  .icon-btn img {
+    width: 1rem;
+    /* 16px */
+  }
+
+  .icon-btn svg {
+    width: 1rem;
+    /* 16px */
+    height: 1rem;
+    /* 16px */
+  }
+
+  .notification-badge {
+    font-size: 0.5rem;
+    /* 8px */
+    min-width: 1rem;
+    /* 16px */
+    height: 1rem;
+    /* 16px */
+    padding: 0.125rem 0.25rem;
+    /* 2px 4px */
+    top: -0.125rem;
+    /* -2px */
+    right: -0.125rem;
+    /* -2px */
+  }
+
+  .title {
+    font-size: 1.125rem;
+    /* 18px */
+    display: none;
+    /* Hide title in landscape to save space */
+  }
+}
+
+/* ===================================
+   TABLET LANDSCAPE (768px - 1024px) and (orientation: landscape)
+   =================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .header {
+    padding: 0.875rem 1.5rem;
+    /* 14px 24px */
+    gap: 0.75rem;
+    /* 12px */
+  }
+
+  .header-content {
+    flex-wrap: nowrap;
+  }
+
+  .welcome-text {
+    font-size: 1rem;
+    /* 16px */
+  }
+
+  .role-text {
+    font-size: 0.75rem;
+    /* 12px */
+  }
+
+  .datetime-text {
+    font-size: 0.8125rem;
+    /* 13px */
+  }
+
+  .title {
+    font-size: 1.5rem;
+    /* 24px */
+  }
+}
+
+/* ===================================
+   VERY SMALL SCREENS (max-width: 375px)
+   =================================== */
+
+@media (max-width: 375px) {
+  .header {
+    padding: 0.75rem 0.875rem;
+    /* 12px 14px */
+  }
+
+  .welcome-text {
+    font-size: 0.875rem;
+    /* 14px */
+  }
+
+  .role-text {
+    font-size: 0.625rem;
+    /* 10px */
+  }
+
+  .datetime-text {
+    font-size: 0.6875rem;
+    /* 11px */
+  }
+
+  .icon-btn {
+    width: 2.125rem;
+    /* 34px */
+    height: 2.125rem;
+    /* 34px */
+  }
+
+  .icon-btn img {
+    width: 1rem;
+    /* 16px */
+  }
+
+  .title {
+    font-size: 1.25rem;
+    /* 20px */
+  }
+}

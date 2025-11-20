@@ -1,0 +1,462 @@
+.ab-dashboard-wrapper {
+  color: #262d3d;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+/* Top Stats Grid - Full Width */
+.ab-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1vw;
+  margin-bottom: 2vw;
+}
+
+.ab-stat-box {
+  background: #ffffff;
+  border-radius: 0.7vw;
+  padding: 1vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #252b45;
+  box-shadow: 0 0.09vw 0.4vw rgba(68,85,160,0.07);
+  cursor: default;
+  border: 0.05vw solid #dde3f7;
+  transition: background 0.3s;
+}
+
+.ab-stat-box:hover {
+  background: #eaf2ff;
+}
+
+#endDateBox.overdue,
+#durationBox.overdue {
+  background: #ffeded;
+  border-color: #ef4444;
+}
+
+#statEnd.danger {
+  color: #ef4444;
+  font-weight: 700;
+}
+
+.ab-stat-icon {
+  font-size: 1.4vw;
+  margin-bottom: 0.25vw;
+}
+
+.ab-stat-label {
+  font-size: 0.7vw;
+  margin-bottom: 0.15vw;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02vw;
+  color: #7c8db5;
+}
+
+.ab-stat-value {
+  font-size: 1vw;
+  font-weight: 700;
+  color: #222b45;
+  display: grid;
+  gap: 0.5vw;
+}
+
+/* Main Dashboard Grid - 2 Columns */
+.ab-dashboard-grid {
+  display: grid;
+  grid-template-columns: 2.3fr 1fr;
+  gap: 1.5vw;
+}
+
+/* Left Column */
+.ab-left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vw;
+}
+
+/* Chart Container - Now at Top of Left Column */
+.ab-chart-container {
+  background: #fff;
+  border-radius: 1.3vw;
+  padding: 2vw;
+  box-shadow: 0 0.3vw 1vw rgba(37,99,235,0.09);
+  border: 0.05vw solid #dde3f7;
+}
+
+.ab-chart-tabs {
+  display: flex;
+  gap: 0.6vw;
+  margin-bottom: 1vw;
+  padding-bottom: 0.5vw;
+  border-bottom: 0.05vw solid #dde3f7;
+}
+
+.ab-tab-btn {
+  padding: 0.9vw 2.2vw;
+  background: #f0f3fc;
+  border-radius: 1.4vw;
+  font-weight: 600;
+  color: #2563eb;
+  border: none;
+  font-size: 0.95vw;
+  cursor: pointer;
+  box-shadow: 0 0.05vw 0.15vw rgba(37,99,235,0.09);
+  transition: background 0.18s, color 0.18s;
+}
+
+.ab-tab-btn.active,
+.ab-tab-btn:hover {
+  background: #2563eb;
+  color: #fff;
+}
+
+.ab-chart-container {
+  background: #fff;
+  border-radius: 1.3vw;
+  padding: 2vw;
+  box-shadow: 0 0.3vw 1vw rgba(37,99,235,0.09);
+  border: 0.05vw solid #dde3f7;
+  transition: box-shadow 0.4s ease, transform 0.3s ease;
+  will-change: transform, box-shadow;
+}
+
+.ab-chart-container:hover {
+  box-shadow: 0 0.6vw 2vw rgba(37,99,235,0.18);
+  transform: translateY(-0.4vw);
+}
+
+
+/* Glass Card Styling */
+.ab-glass-card {
+  padding: 0 0 1vw;
+}
+
+.ab-section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.7vw;
+  font-size: 1.25vw;
+  font-weight: 700;
+  color: #21295c;
+  margin-bottom: 1vw;
+  letter-spacing: 0.02vw;
+}
+
+/* Financial Metrics */
+.ab-financial-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1vw;
+  margin-top: 1vw;
+  color: #303442;
+}
+
+.ab-metric-card {
+  background: #fff;
+  border-radius: 0.8vw;
+  padding: 1vw;
+  text-align: center;
+  box-shadow: 0 0.09vw 0.4vw rgba(68,85,160,0.07);
+  border: 0.05vw solid #dde3f7;
+}
+
+.ab-metric-card.highlight-loss {
+  border: 0.08vw solid #ef4444;
+  background: #fff7f7;
+}
+
+.ab-metric-label {
+  font-size: 0.7vw;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5vw;
+  margin-bottom: 0.5vw;
+  color: #7c8db5;
+}
+
+.ab-metric-value {
+  font-size: 1vw;
+  font-weight: 700;
+  margin-bottom: 0.2vw;
+}
+
+.ab-metric-value.positive {
+  color: #22c55e;
+}
+.ab-metric-value.negative {
+  color: #ef4444;
+}
+
+.ab-metric-badge {
+  margin-top: 0.3vw;
+  font-size: 0.8vw;
+  padding: 0.18vw 0.6vw;
+  border-radius: 0.6vw;
+  display: inline-block;
+  background: #eaf2ff;
+  color: #2563eb;
+}
+
+.ab-metric-badge.profit {
+  background: #dcfce7;
+  color: #22c55e;
+}
+.ab-metric-badge.loss {
+  background: #fee2e2;
+  color: #ef4444;
+}
+.ab-metric-badge.overdue-loss {
+  background: #fde68a;
+  color: #ff0000;
+}
+
+/* Status Alert */
+.ab-status-alert {
+  background-color: #fdeffb;
+  border-radius: 1vw;
+  padding: 1vw 1.2vw;
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+  font-weight: 700;
+  color: #a13cf0;
+  margin-bottom: 1vw;
+  border: 0.05vw solid #dde3f7;
+  box-shadow: 0 0.09vw 0.3vw rgba(68,85,160,0.07);
+}
+
+.ab-status-alert.ab-success {
+  background-color: #eaffee;
+  color: #22c55e;
+}
+
+.ab-status-alert.ab-warning {
+  background-color: #fffbe9;
+  color: #fbbf24;
+}
+
+.ab-status-alert-icon {
+  font-size: 1.18vw;
+}
+
+.ab-status-alert-title {
+  font-weight: 700;
+  font-size: 0.95vw;
+}
+
+.ab-status-alert-message {
+  opacity: 0.92;
+  font-size: 0.85vw;
+  line-height: 1.25;
+}
+
+/* Right Sidebar */
+.ab-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vw;
+}
+
+/* Project Selector Card */
+.ab-project-selector-card {
+  padding: 1vw 1.5vw;
+  background: #fff;
+  border-radius: 1.3vw;
+  box-shadow: 0 0.3vw 1vw rgba(37,99,235,0.09);
+  border: 0.05vw solid #dde3f7;
+}
+
+.ab-dropdown-label {
+  font-weight: 600;
+  font-size: 1vw;
+  color: #2563eb;
+  margin-bottom: 0.5vw;
+  display: flex;
+  align-items: center;
+  gap: 0.5vw;
+}
+
+.ab-custom-select {
+  background: #f0f3fc;
+  border-radius: 0.6vw;
+  padding: 0.4vw 0.9vw;
+}
+
+.ab-select-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #262d3d;
+  font-size: 1vw;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Total Budget Card - Now in Sidebar */
+.ab-total-budget-card {
+  background: #fff;
+  border-radius: 1.3vw;
+  box-shadow: 0 0.3vw 1vw rgba(37,99,235,0.09);
+  padding: 1.5vw;
+  text-align: center;
+  border: 0.05vw solid #dde3f7;
+}
+
+.ab-budget-label {
+  font-size: 1vw;
+  font-weight: 600;
+  color: #2563eb;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.8vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5vw;
+}
+
+.ab-budget-amount {
+  font-size: 2vw;
+  font-weight: 800;
+  color: #212c53;
+  margin-bottom: 0.6vw;
+  letter-spacing: -0.5px;
+}
+
+.ab-project-meta {
+  font-size: 0.85vw;
+  color: #7c8db5;
+  display: flex;
+  gap: 1vw;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Employee Section */
+.ab-employee-section {
+  background: #fff;
+  padding: 1vw 1.5vw;
+  border-radius: 1.3vw;
+  color: #222b45;
+  box-shadow: 0 0.3vw 1vw rgba(37,99,235,0.09);
+  border: 0.05vw solid #dde3f7;
+}
+
+.ab-employees-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1vw;
+  margin-bottom: 1vw;
+}
+
+.ab-employee-count-badge {
+  background: #2563eb;
+  border-radius: 1vw;
+  padding: 0.15vw 0.7vw;
+  color: white;
+  font-weight: 700;
+  font-size: 0.95vw;
+}
+
+.ab-employees-list {
+  background: #f0f3fc;
+  border-radius: 0.8vw;
+  padding: 1vw;
+  max-height: 20vw;
+  overflow-y: auto;
+  color: #222b45;
+}
+
+.ab-employee-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  margin-bottom: 0.5vw;
+  padding: 0.7vw 1vw;
+  border-radius: 0.8vw;
+  color: #222b45;
+  transition: background 0.2s;
+}
+
+.ab-employee-item:hover {
+  background: #f0f5ff;
+}
+
+.ab-employee-avatar {
+  background-color: #2563eb;
+  width: 2vw;
+  height: 2vw;
+  border-radius: 0.6vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1vw;
+  color: white;
+  margin-right: 0.75vw;
+  flex-shrink: 0;
+  box-shadow: 0 0.3vw 1vw rgba(37, 99, 235, 0.13);
+}
+
+.ab-employee-details {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ab-employee-name {
+  font-weight: 700;
+  font-size: 0.95vw;
+}
+
+.ab-employee-role {
+  font-size: 0.88vw;
+  color: #7c8db5;
+  opacity: 1;
+}
+
+.ab-employee-salary {
+  font-weight: 700;
+  font-size: 0.88vw;
+  color: #fbbf24;
+  white-space: nowrap;
+}
+
+.ab-salary-summary {
+  padding-top: 0.5vw;
+  border-top: 0.05vw solid #dde3f7;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  color: #fbbf24;
+  font-size: 0.98vw;
+}
+
+.ab-empty-state {
+  text-align: center;
+  color: #7c8db5;
+  font-size: 1vw;
+  padding: 2vw 1vw;
+}
+
+.ab-empty-state i {
+  font-size: 2vw;
+  opacity: 0.3;
+  margin-bottom: 0.5vw;
+}
+
+#mainChart {
+  width: 100%;
+  max-width: 400px;
+  max-height: 400px !important;
+  padding: 1vw;
+
+}

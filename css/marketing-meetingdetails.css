@@ -1,0 +1,2141 @@
+/* ===================================
+   MARKETING MEETING DETAILS - COMPLETE CSS
+   =================================== */
+
+/* ===================================
+   HEADER & BUTTON
+   =================================== */
+
+.meeting-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1vw;
+    padding: 0.5vw 0;
+}
+
+.add-meeting-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+    background: #2D6BFF;
+    color: white;
+    border: none;
+    padding: 0.75vw 1.5vw;
+    border-radius: 1.5vw;
+    font-size: 0.8vw;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0.1vw 0.3vw rgba(45, 107, 255, 0.25);
+}
+
+.add-meeting-btn span {
+    font-size: 0.8vw;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.add-meeting-btn:hover {
+    background: #1e5dd4;
+    transform: translateY(-0.1vw);
+    box-shadow: 0 0.2vw 0.6vw rgba(45, 107, 255, 0.3);
+}
+
+.add-meeting-btn:active {
+    transform: translateY(0);
+}
+
+/* ===================================
+   TABLE WRAPPER & TABLE
+   =================================== */
+
+.meeting-table-wrapper {
+    background: white;
+    border-radius: 1vw;
+    overflow: hidden;
+    box-shadow: 0 0.05vw 0.15vw rgba(0, 0, 0, 0.1);
+    width: 100%;
+    border: 0.05vw solid #9CC4FF;
+}
+
+.meeting-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+/* ===================================
+   TABLE HEADER
+   =================================== */
+
+.meeting-table thead {
+    background: #DEE7FF;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.meeting-table th {
+    padding: 1vw 1.25vw;
+    text-align: left;
+    font-size: 0.8vw;
+    font-weight: 600;
+    color: #1F2937;
+    border-right: 0.05vw solid #9CC4FF;
+    border-bottom: 0.05vw solid #9CC4FF;
+    word-break: break-word;
+    text-transform: capitalize;
+}
+
+.meeting-table th:last-child {
+    border-right: none;
+}
+
+/* ===================================
+   TABLE BODY
+   =================================== */
+
+.meeting-table tbody tr {
+    border-bottom: 0.05vw solid #9CC4FF;
+    transition: background 0.2s ease;
+}
+
+.meeting-table tbody tr:hover {
+    background: #F8FAFC;
+}
+
+.meeting-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.meeting-table td {
+    padding: 1vw 1.25vw;
+    border-right: 0.05vw solid #9CC4FF;
+    font-size: 0.8vw;
+    color: #334155;
+    word-break: break-word;
+    vertical-align: middle;
+}
+
+.meeting-table td:last-child {
+    border-right: none;
+}
+
+.meeting-table td a {
+    color: #2D6BFF;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.meeting-table td a:hover {
+    color: #1e5dd4;
+    text-decoration: underline;
+}
+
+/* ===================================
+   ACTION BUTTONS
+   =================================== */
+
+.action-btn {
+    padding: 0.5vw;
+    border: none;
+    border-radius: 0.4vw;
+    font-size: 0.8vw;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5vw;
+    white-space: nowrap;
+    min-width: 3vw;
+    min-height: 3vw;
+    background: transparent;
+}
+
+.action-btn-add {
+    background: #2D6BFF;
+    color: white;
+    padding: 0 1.1vw;
+}
+
+.action-btn-add:hover {
+    background: #1e5dd4;
+    transform: translateY(-0.1vw);
+    box-shadow: 0 0.2vw 0.4vw rgba(45, 107, 255, 0.2);
+}
+
+.action-btn-view:hover {
+    background: #C7D2FE;
+    transform: translateY(-0.1vw);
+    box-shadow: 0 0.2vw 0.4vw rgba(79, 70, 229, 0.2);
+}
+
+.action-btn-delete:hover {
+    background: #FECACA;
+    transform: translateY(-0.1vw);
+    box-shadow: 0 0.2vw 0.4vw rgba(220, 38, 38, 0.2);
+}
+
+.action-btn:active {
+    transform: translateY(0);
+}
+
+.action-btn img {
+    width: 1vw;
+    height: 1.1vw;
+    flex-shrink: 0;
+}
+
+/* ===================================
+   MODAL STYLES - ENHANCED
+   =================================== */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(0.4vw);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    padding: 2vw;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background: white;
+    border-radius: 0.6vw;
+    max-width: 55vw;
+    width: 100%;
+    max-height: 85vh;
+    overflow: hidden;
+    box-shadow: 0 1.3vw 2.6vw -0.6vw rgba(0, 0, 0, 0.25);
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(2.6vw) scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5vw 2vw;
+    border-bottom: 0.1vw solid #E2E8F0;
+    background: linear-gradient(to bottom, #ffffff 0%, #F8FAFC 100%);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.modal-header h2 {
+    font-size: 1.4vw;
+    font-weight: 700;
+    color: #2D6BFF;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.close-btn {
+    background: #F1F5F9;
+    border: none;
+    font-size: 1.8vw;
+    color: #64748B;
+    cursor: pointer;
+    padding: 0;
+    width: 2.5vw;
+    height: 2.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    background: #E2E8F0;
+    color: #1F2937;
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    padding: 2vw;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.modal-body::-webkit-scrollbar {
+    width: 0.4vw;
+}
+
+.modal-body::-webkit-scrollbar-track {
+    background: #F1F5F9;
+    border-radius: 0.2vw;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 0.2vw;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
+}
+
+/* ===================================
+   FORM SECTIONS
+   =================================== */
+
+.form-section {
+    padding: 1.5vw 2vw;
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8vw;
+    margin-bottom: 1vw;
+    padding-bottom: 0.8vw;
+    border-bottom: 0.05vw solid #2D6BFF;
+}
+
+.section-header img {
+    color: #2D6BFF;
+    flex-shrink: 0;
+    width: 1vw;
+}
+
+.section-header h3 {
+    font-size: 1vw;
+    font-weight: 600;
+    color: #2D6BFF;
+    margin: 0;
+    flex: 1;
+}
+
+.btn-add-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6vw;
+    background: linear-gradient(135deg, #2D6BFF 0%, #1e5dd4 100%);
+    color: white;
+    border: none;
+    padding: 0.7vw 1.5vw;
+    border-radius: 1.3vw;
+    font-size: 0.8vw;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0.2vw 0.6vw rgba(45, 107, 255, 0.25);
+    margin-top: 0.8vw;
+}
+
+.btn-add-link:hover {
+    background: linear-gradient(135deg, #1e5dd4 0%, #1651b8 100%);
+    transform: translateY(-0.1vw);
+    box-shadow: 0 0.3vw 0.8vw rgba(45, 107, 255, 0.35);
+}
+
+.btn-add-link span:first-child {
+    font-size: 1.2vw;
+    font-weight: 700;
+}
+
+/* ===================================
+   FORM GRID & INPUTS
+   =================================== */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1vw;
+    margin-bottom: 1.5vw;
+}
+
+.form-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1vw;
+    margin-bottom: 1.5vw;
+}
+
+.form-grid-full {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1vw;
+    margin-bottom: 1.5vw;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-size: 0.85vw;
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 0.6vw;
+    display: flex;
+    align-items: center;
+    gap: 0.3vw;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    padding: 0.75vw 1.2vw;
+    border: 0.1vw solid #9CC4FF;
+    border-radius: 1.3vw;
+    font-size: 0.85vw;
+    color: #1F2937;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background: #F8FAFC;
+    width: 100%;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #2D6BFF;
+    background: white;
+    box-shadow: 0 0 0 0.2vw rgba(45, 107, 255, 0.1);
+    transform: translateY(-0.1vw);
+}
+
+.form-group input:hover,
+.form-group textarea:hover,
+.form-group select:hover {
+    border-color: #9CC4FF;
+    background: white;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #9CA3AF;
+    font-size: 0.75vw;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 5vw;
+    margin-bottom: 1vw;
+}
+
+.form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%232D6BFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1vw center;
+    background-size: 0.8vw;
+    padding-right: 3vw;
+}
+
+.addmeetingbtnwrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.meeting-link-input {
+    width: 100%;
+    padding: 0.75vw 1.2vw;
+    border: 0.1vw solid #E2E8F0;
+    border-radius: 0.6vw;
+    font-size: 0.85vw;
+    color: #1F2937;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    background: #F8FAFC;
+}
+
+.meeting-link-input:focus {
+    outline: none;
+    border-color: #2D6BFF;
+    background: white;
+    box-shadow: 0 0 0 0.2vw rgba(45, 107, 255, 0.1);
+}
+
+/* ===================================
+   RADIO BUTTON STYLES - ENHANCED
+   =================================== */
+
+.radio-group {
+    display: flex;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 0.6vw;
+    padding: 0.6vw 1.2vw;
+    border-radius: 0.4vw;
+    cursor: pointer;
+}
+
+.radio-option:hover {
+    box-shadow: 0 0.1vw 0.4vw rgba(0, 0, 0, 0.08);
+}
+
+.radio-option input[type="radio"] {
+    cursor: pointer;
+    accent-color: #2D6BFF;
+    margin: 0;
+    width: 1vw;
+    height: 1vw;
+}
+
+.radio-option span {
+    font-size: 0.9vw;
+    font-weight: 500;
+    color: #1F2937;
+    cursor: pointer;
+}
+
+/* ===================================
+   LINKS INPUT BLOCK
+   =================================== */
+
+.link-block {
+    margin-bottom: 1vw;
+    padding: 1vw;
+    background: #F8FAFC;
+    border: 0.05vw solid #E2E8F0;
+    border-radius: 0.4vw;
+    position: relative;
+}
+
+.link-block:last-child {
+    margin-bottom: 0;
+}
+
+.link-input-group {
+    display: flex;
+    gap: 0.8vw;
+    align-items: flex-end;
+}
+
+.link-input-group .form-group {
+    flex: 1;
+}
+
+.btn-remove-link {
+    background: #FEE2E2;
+    color: #DC2626;
+    border: none;
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2vw;
+    line-height: 1;
+    transition: all 0.2s;
+    padding: 0;
+}
+
+.btn-remove-link:hover {
+    background: #FECACA;
+    transform: scale(1.1);
+}
+
+/* ===================================
+   ADDRESS INPUT BLOCK
+   =================================== */
+
+.address-block {
+    margin-bottom: 1.5vw;
+}
+
+.address-block .form-group {
+    width: 100%;
+}
+
+.address-block textarea {
+    width: 100%;
+    min-height: 5vw;
+}
+
+/* ===================================
+   ATTENDEES DROPDOWN - ENHANCED
+   =================================== */
+
+.attendees-dropdown {
+    position: relative;
+    margin-bottom: 1.5vw;
+}
+
+.attendees-dropdown-wrapper {
+    position: relative;
+}
+
+.dropdown-input {
+    padding: 0.75vw 1.2vw;
+    border: 0.1vw solid #E2E8F0;
+    border-radius: 0.6vw;
+    font-size: 0.85vw;
+    color: #1F2937;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: #F8FAFC;
+    width: 100%;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.dropdown-input::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 0.4vw solid transparent;
+    border-right: 0.4vw solid transparent;
+    border-top: 0.4vw solid #2D6BFF;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-input.active::after {
+    transform: rotate(180deg);
+}
+
+.dropdown-input:hover {
+    border-color: #9CC4FF;
+    background: white;
+}
+
+.dropdown-input:focus,
+.dropdown-input.active {
+    outline: none;
+    border-color: #2D6BFF;
+    background: white;
+    box-shadow: 0 0 0 0.2vw rgba(45, 107, 255, 0.1);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.5vw);
+    left: 0;
+    right: 0;
+    background: white;
+    border: 0.1vw solid #2D6BFF;
+    border-radius: 0.6vw;
+    max-height: 15vw;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 0.5vw 1.3vw rgba(0, 0, 0, 0.15);
+    animation: dropdownSlide 0.3s ease;
+}
+
+@keyframes dropdownSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-0.5vw);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-menu.active {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 0.8vw 1.2vw;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.85vw;
+    color: #1F2937;
+    border-bottom: 0.05vw solid #F1F5F9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.dropdown-item:hover {
+    background: #F8FAFC;
+    padding-left: 1.5vw;
+}
+
+.dropdown-item.selected {
+    background: #DEE7FF;
+    color: #2D6BFF;
+    font-weight: 600;
+}
+
+.dropdown-item.selected::after {
+    content: '✓';
+    font-weight: bold;
+    color: #2D6BFF;
+}
+
+.dropdown-menu::-webkit-scrollbar {
+    width: 0.3vw;
+}
+
+.dropdown-menu::-webkit-scrollbar-track {
+    background: #F1F5F9;
+    border-radius: 0.15vw;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 0.15vw;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
+}
+
+/* ===================================
+   ATTENDEES TAGS - ENHANCED (BELOW DROPDOWN)
+   =================================== */
+
+.attendees-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8vw;
+    margin-top: 1vw;
+    margin-bottom: 1.5vw;
+    padding: 1vw;
+    background: #F8FAFC;
+    border-radius: 0.6vw;
+    min-height: 3.5vw;
+    border: 0.1vw dashed #E2E8F0;
+}
+
+.attendees-tags:empty::before {
+    content: 'No attendees selected - Click dropdown above to add';
+    color: #94A3B8;
+    font-size: 0.8vw;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.attendee-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6vw;
+    background: linear-gradient(135deg, #DEE7FF 0%, #C7D2FE 100%);
+    color: #2D6BFF;
+    padding: 0.6vw 1vw;
+    border-radius: 1vw;
+    font-size: 0.8vw;
+    font-weight: 700;
+    box-shadow: 0 0.1vw 0.3vw rgba(45, 107, 255, 0.15);
+    transition: all 0.2s ease;
+    animation: tagAppear 0.3s ease;
+}
+
+@keyframes tagAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.attendee-tag:hover {
+    transform: translateY(-0.1vw);
+    box-shadow: 0 0.2vw 0.5vw rgba(45, 107, 255, 0.25);
+}
+
+.attendee-tag-remove {
+    background: rgba(45, 107, 255, 0.15);
+    border: none;
+    color: #2D6BFF;
+    cursor: pointer;
+    padding: 0.2vw;
+    font-size: 1vw;
+    line-height: 1;
+    transition: all 0.2s;
+    border-radius: 50%;
+    width: 1.2vw;
+    height: 1.2vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.attendee-tag-remove:hover {
+    background: #EF4444;
+    color: white;
+    transform: rotate(90deg);
+}
+
+/* ===================================
+   MODAL FOOTER
+   =================================== */
+
+.modal-footer {
+    padding: 1.2vw 2vw;
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+    border-top: 0.1vw solid #E2E8F0;
+    background: #F8FAFC;
+    position: sticky;
+    bottom: 0;
+}
+
+.btn {
+    padding: 0.8vw 3vw;
+    border: none;
+    border-radius: 1.5vw;
+    font-size: 0.85vw;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.04vw;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+    width: 15.6vw;
+    height: 15.6vw;
+}
+
+.btn-submit {
+    background: linear-gradient(135deg, #2D6BFF 0%, #1e5dd4 100%);
+    color: white;
+    box-shadow: 0 0.2vw 0.8vw rgba(45, 107, 255, 0.3);
+}
+
+.btn-submit:hover {
+    background: linear-gradient(135deg, #1e5dd4 0%, #1651b8 100%);
+    transform: translateY(-0.15vw);
+    box-shadow: 0 0.3vw 1vw rgba(45, 107, 255, 0.4);
+}
+
+.btn-submit:active {
+    transform: translateY(-0.05vw);
+}
+
+.btn-cancel {
+    background: #E2E8F0;
+    color: #475569;
+    box-shadow: 0 0.1vw 0.4vw rgba(0, 0, 0, 0.1);
+}
+
+.btn-cancel:hover {
+    background: #CBD5E1;
+    transform: translateY(-0.1vw);
+    box-shadow: 0 0.2vw 0.6vw rgba(0, 0, 0, 0.15);
+}
+
+/* ===================================
+   EMPTY STATE
+   =================================== */
+
+.empty-state {
+    text-align: center;
+    padding: 3vw 2vw;
+    color: #64748B;
+}
+
+/* ===================================
+   SCROLLBAR STYLING
+   =================================== */
+
+.modal-content::-webkit-scrollbar {
+    width: 0.3vw;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: #F1F5F9;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 0.15vw;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
+}
+
+/* ===================================
+   UTILITY CLASSES
+   =================================== */
+
+.hidden {
+    display: none !important;
+}
+
+.text-required {
+    color: #EF4444;
+    font-size: 1vw;
+    margin-left: 0.2vw;
+}
+
+.form-helper-text {
+    font-size: 0.7vw;
+    color: #64748B;
+    margin-top: 0.4vw;
+    font-style: italic;
+}
+
+/* ===================================
+   RESPONSIVE - TABLET (769px - 1024px)
+   =================================== */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .meeting-header {
+        margin-bottom: 1.25rem;
+        padding: 0.5rem 0;
+    }
+
+    .add-meeting-btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.875rem;
+        border-radius: 1.875rem;
+        box-shadow: 0 0.125rem 0.375rem rgba(45, 107, 255, 0.25);
+    }
+
+    .add-meeting-btn span {
+        font-size: 1.125rem;
+    }
+
+    .add-meeting-btn:hover {
+        transform: translateY(-0.125rem);
+        box-shadow: 0 0.25rem 0.75rem rgba(45, 107, 255, 0.3);
+    }
+
+    .meeting-table-wrapper {
+        border-radius: 1rem;
+        box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.1);
+        border-width: 0.0625rem;
+    }
+
+    .meeting-table th,
+    .meeting-table td {
+        padding: 0.875rem 1rem;
+        font-size: 0.8125rem;
+        border-width: 0.0625rem;
+    }
+
+    .action-btn {
+        min-width: 2.5rem;
+        min-height: 2.5rem;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+    }
+
+    .action-btn img {
+        width: 1rem;
+        height: 1.125rem;
+    }
+
+    .action-btn-add:hover,
+    .action-btn-view:hover,
+    .action-btn-delete:hover {
+        transform: translateY(-0.125rem);
+        box-shadow: 0 0.25rem 0.5rem rgba(45, 107, 255, 0.2);
+    }
+
+    .modal {
+        padding: 2rem;
+        backdrop-filter: blur(0.5rem);
+    }
+
+    .modal-content {
+        max-width: 70%;
+        border-radius: 0.75rem;
+        box-shadow: 0 1.5625rem 3.125rem -0.75rem rgba(0, 0, 0, 0.25);
+    }
+
+    .modal-header {
+        padding: 1.25rem 1.5rem;
+        border-bottom-width: 0.125rem;
+    }
+
+    .modal-header h2 {
+        font-size: 1.125rem;
+    }
+
+    .close-btn {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.75rem;
+    }
+
+    .modal-body {
+        padding: 1.5rem;
+    }
+
+    .modal-body::-webkit-scrollbar {
+        width: 0.5rem;
+    }
+
+    .modal-body::-webkit-scrollbar-track {
+        border-radius: 0.25rem;
+    }
+
+    .modal-body::-webkit-scrollbar-thumb {
+        border-radius: 0.25rem;
+    }
+
+    .form-section {
+        padding: 1.25rem 1.5rem;
+    }
+
+    .section-header {
+        margin-bottom: 1rem;
+        padding-bottom: 0.75rem;
+        gap: 0.75rem;
+        border-bottom-width: 0.0625rem;
+    }
+
+    .section-header img {
+        width: 1.125rem;
+    }
+
+    .section-header h3 {
+        font-size: 0.875rem;
+    }
+
+    .btn-add-link {
+        font-size: 0.8125rem;
+        padding: 0.625rem 1.25rem;
+        border-radius: 1.5625rem;
+        box-shadow: 0 0.25rem 0.75rem rgba(45, 107, 255, 0.25);
+        margin-top: 0.75rem;
+    }
+
+    .btn-add-link:hover {
+        transform: translateY(-0.125rem);
+        box-shadow: 0 0.375rem 1rem rgba(45, 107, 255, 0.35);
+    }
+
+    .btn-add-link span:first-child {
+        font-size: 1.25rem;
+    }
+
+    .form-grid {
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .form-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        font-size: 0.8125rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select,
+    .meeting-link-input {
+        font-size: 0.8125rem;
+        padding: 0.625rem 0.875rem;
+        border-width: 0.125rem;
+        border-radius: 1.5625rem;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+        box-shadow: 0 0 0 0.25rem rgba(45, 107, 255, 0.1);
+        transform: translateY(-0.125rem);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+        font-size: 0.75rem;
+    }
+
+    .form-group textarea {
+        min-height: 4.375rem;
+        margin-bottom: 1rem;
+    }
+
+    .form-group select {
+        background-position: right 1rem center;
+        background-size: 1rem;
+        padding-right: 3rem;
+    }
+
+    .radio-group {
+        gap: 1.5rem;
+    }
+
+    .radio-option {
+        padding: 0.625rem 1.125rem;
+        border-radius: 0.5rem;
+    }
+
+    .radio-option:hover {
+        box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.08);
+    }
+
+    .radio-option input[type="radio"] {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+
+    .radio-option span {
+        font-size: 0.8125rem;
+    }
+
+    .link-block {
+        padding: 0.875rem;
+        margin-bottom: 0.875rem;
+        border-width: 0.0625rem;
+        border-radius: 0.5rem;
+    }
+
+    .link-input-group {
+        gap: 0.75rem;
+    }
+
+    .btn-remove-link {
+        width: 1.75rem;
+        height: 1.75rem;
+        font-size: 1.25rem;
+    }
+
+    .address-block {
+        margin-bottom: 1.5rem;
+    }
+
+    .address-block textarea {
+        min-height: 4.375rem;
+    }
+
+    .attendees-dropdown {
+        margin-bottom: 1.5rem;
+    }
+
+    .dropdown-input {
+        font-size: 0.8125rem;
+        padding: 0.625rem 0.875rem;
+        border-width: 0.125rem;
+        border-radius: 0.75rem;
+    }
+
+    .dropdown-input::after {
+        border-left-width: 0.5rem;
+        border-right-width: 0.5rem;
+        border-top-width: 0.5rem;
+    }
+
+    .dropdown-input:focus,
+    .dropdown-input.active {
+        box-shadow: 0 0 0 0.25rem rgba(45, 107, 255, 0.1);
+    }
+
+    .dropdown-menu {
+        top: calc(100% + 0.625rem);
+        border-width: 0.125rem;
+        border-radius: 0.75rem;
+        max-height: 18.75rem;
+        box-shadow: 0 0.625rem 1.5625rem rgba(0, 0, 0, 0.15);
+    }
+
+    .dropdown-item {
+        font-size: 0.8125rem;
+        padding: 0.75rem 1.125rem;
+        border-bottom-width: 0.0625rem;
+    }
+
+    .dropdown-item:hover {
+        padding-left: 1.5rem;
+    }
+
+    .dropdown-menu::-webkit-scrollbar {
+        width: 0.375rem;
+    }
+
+    .dropdown-menu::-webkit-scrollbar-track {
+        border-radius: 0.1875rem;
+    }
+
+    .dropdown-menu::-webkit-scrollbar-thumb {
+        border-radius: 0.1875rem;
+    }
+
+    .attendees-tags {
+        gap: 0.75rem;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+        border-radius: 0.75rem;
+        min-height: 3.125rem;
+        border-width: 0.125rem;
+    }
+
+    .attendees-tags:empty::before {
+        font-size: 0.75rem;
+    }
+
+    .attendee-tag {
+        gap: 0.625rem;
+        padding: 0.625rem 1rem;
+        border-radius: 1.25rem;
+        font-size: 0.75rem;
+        box-shadow: 0 0.125rem 0.375rem rgba(45, 107, 255, 0.15);
+    }
+
+    .attendee-tag:hover {
+        transform: translateY(-0.125rem);
+        box-shadow: 0 0.25rem 0.625rem rgba(45, 107, 255, 0.25);
+    }
+
+    .attendee-tag-remove {
+        padding: 0.25rem;
+        font-size: 1.125rem;
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+
+    .modal-footer {
+        padding: 1rem 1.5rem;
+        gap: 1rem;
+        border-top-width: 0.125rem;
+    }
+
+    .btn {
+        font-size: 0.875rem;
+        padding: 0.625rem 2.5rem;
+        border-radius: 1.875rem;
+    }
+
+    .btn-submit {
+        box-shadow: 0 0.25rem 0.9375rem rgba(45, 107, 255, 0.3);
+    }
+
+    .btn-submit:hover {
+        transform: translateY(-0.1875rem);
+        box-shadow: 0 0.375rem 1.25rem rgba(45, 107, 255, 0.4);
+    }
+
+    .btn-submit:active {
+        transform: translateY(-0.0625rem);
+    }
+
+    .btn-cancel {
+        box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-cancel:hover {
+        transform: translateY(-0.125rem);
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.15);
+    }
+
+    .modal-content::-webkit-scrollbar {
+        width: 0.375rem;
+    }
+
+    .modal-content::-webkit-scrollbar-thumb {
+        border-radius: 0.1875rem;
+    }
+
+    .text-required {
+        font-size: 1.125rem;
+    }
+
+    .form-helper-text {
+        font-size: 0.75rem;
+        margin-top: 0.375rem;
+    }
+}
+
+/* ===================================
+   RESPONSIVE - MOBILE (max-width: 768px)
+   =================================== */
+
+@media (max-width: 768px) {
+    .meeting-header {
+        margin-bottom: 1.25rem;
+    }
+
+    .add-meeting-btn {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.8125rem;
+    }
+
+    .add-meeting-btn span {
+        font-size: 1rem;
+    }
+
+    .meeting-table-wrapper {
+        overflow-x: auto;
+        border-radius: 0.75rem;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .meeting-table {
+        min-width: 43.75rem;
+    }
+
+    .meeting-table th,
+    .meeting-table td {
+        padding: 0.75rem 0.875rem;
+        font-size: 0.75rem;
+    }
+
+    .action-btn {
+        min-width: 2.25rem;
+        min-height: 2.25rem;
+        padding: 0.375rem;
+    }
+
+    .action-btn img {
+        width: 0.875rem;
+        height: 1rem;
+    }
+
+    .modal {
+        padding: 1.5rem;
+    }
+
+    .modal-content {
+        max-width: 90%;
+        border-radius: 0.75rem;
+    }
+
+    .modal-header {
+        padding: 1.25rem;
+    }
+
+    .modal-header h2 {
+        font-size: 1.125rem;
+    }
+
+    .close-btn {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.75rem;
+    }
+
+    .modal-body {
+        padding: 1.25rem;
+    }
+
+    .form-section {
+        padding: 1.25rem;
+    }
+
+    .section-header {
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .section-header img {
+        width: 1.125rem;
+    }
+
+    .section-header h3 {
+        font-size: 0.875rem;
+    }
+
+    .btn-add-link {
+        font-size: 0.8125rem;
+        padding: 0.625rem 1.25rem;
+    }
+
+    .form-grid,
+    .form-grid-3,
+    .form-grid-full {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .form-grid-3 {
+        margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+        font-size: 0.8125rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select,
+    .meeting-link-input {
+        font-size: 0.8125rem;
+        padding: 0.625rem 0.875rem;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+        font-size: 0.75rem;
+    }
+
+    .form-group textarea {
+        min-height: 5rem;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .radio-option input[type="radio"] {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+
+    .radio-option span {
+        font-size: 0.8125rem;
+    }
+
+    .link-block {
+        margin-bottom: 1rem;
+        padding: 1rem;
+    }
+
+    .link-input-group {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .link-input-group .form-group {
+        width: 100%;
+    }
+
+    .btn-remove-link {
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 1rem;
+    }
+
+    .dropdown-input {
+        font-size: 0.75rem;
+        padding: 0.625rem 0.875rem;
+    }
+
+    .dropdown-menu {
+        max-height: 11.25rem;
+    }
+
+    .dropdown-item {
+        font-size: 0.75rem;
+        padding: 0.75rem;
+    }
+
+    .attendees-tags {
+        min-height: 3.125rem;
+        padding: 0.875rem;
+    }
+
+    .attendee-tag {
+        font-size: 0.7rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .attendee-tag-remove {
+        width: 1rem;
+        height: 1rem;
+        font-size: 0.875rem;
+    }
+
+    .modal-footer {
+        padding: 1rem 1.25rem;
+    }
+
+    .btn {
+        font-size: 0.8125rem;
+        padding: 0.625rem 2rem;
+    }
+
+    .meeting-table-wrapper::-webkit-scrollbar {
+        height: 0.5rem;
+    }
+
+    .meeting-table-wrapper::-webkit-scrollbar-track {
+        background: #F1F5F9;
+        border-radius: 0.25rem;
+    }
+
+    .meeting-table-wrapper::-webkit-scrollbar-thumb {
+        background: #CBD5E1;
+        border-radius: 0.25rem;
+    }
+}
+
+/* ===================================
+   RESPONSIVE - SMALL MOBILE (max-width: 480px)
+   =================================== */
+
+@media (max-width: 480px) {
+    .meeting-header {
+        margin-bottom: 1rem;
+    }
+
+    .add-meeting-btn {
+        padding: 0.625rem 1rem;
+        font-size: 0.75rem;
+        border-radius: 1.5rem;
+    }
+
+    .add-meeting-btn span {
+        font-size: 0.875rem;
+    }
+
+    .meeting-table-wrapper {
+        border-radius: 0.625rem;
+    }
+
+    .meeting-table {
+        min-width: 37.5rem;
+    }
+
+    .meeting-table th,
+    .meeting-table td {
+        padding: 0.625rem 0.75rem;
+        font-size: 0.6875rem;
+    }
+
+    .action-btn {
+        min-width: 2rem;
+        min-height: 2rem;
+        padding: 0.375rem 0.625rem;
+    }
+
+    .action-btn img {
+        width: 0.875rem;
+        height: 1rem;
+    }
+
+    .modal {
+        padding: 1rem;
+    }
+
+    .modal-content {
+        max-width: 100%;
+        border-radius: 0.75rem;
+        max-height: 90vh;
+    }
+
+    .modal-header {
+        padding: 1rem;
+    }
+
+    .modal-header h2 {
+        font-size: 1rem;
+    }
+
+    .close-btn {
+        width: 1.75rem;
+        height: 1.75rem;
+        font-size: 1.5rem;
+    }
+
+    .modal-body {
+        padding: 1rem;
+    }
+
+    .form-section {
+        padding: 1rem;
+    }
+
+    .section-header {
+        gap: 0.5rem;
+        margin-bottom: 0.875rem;
+        padding-bottom: 0.625rem;
+    }
+
+    .section-header img {
+        width: 1rem;
+    }
+
+    .section-header h3 {
+        font-size: 0.8125rem;
+    }
+
+    .btn-add-link {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.875rem;
+    }
+
+    .form-group label {
+        font-size: 0.75rem;
+        margin-bottom: 0.375rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select,
+    .meeting-link-input {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.75rem;
+        border-radius: 1rem;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+        font-size: 0.6875rem;
+    }
+
+    .form-group textarea {
+        min-height: 4.375rem;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        gap: 0.875rem;
+    }
+
+    .radio-option input[type="radio"] {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .radio-option span {
+        font-size: 0.75rem;
+    }
+
+    .link-block {
+        margin-bottom: 0.875rem;
+        padding: 0.75rem;
+    }
+
+    .link-input-group {
+        flex-direction: column;
+        gap: 0.875rem;
+    }
+
+    .btn-remove-link {
+        width: 1.25rem;
+        height: 1.25rem;
+        font-size: 0.875rem;
+    }
+
+    .dropdown-input {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .dropdown-menu {
+        max-height: 9.375rem;
+    }
+
+    .dropdown-item {
+        font-size: 0.6875rem;
+        padding: 0.625rem;
+    }
+
+    .attendees-tags {
+        min-height: 2.8125rem;
+        padding: 0.75rem;
+    }
+
+    .attendees-tags:empty::before {
+        font-size: 0.7rem;
+    }
+
+    .attendee-tag {
+        font-size: 0.65rem;
+        padding: 0.4375rem 0.625rem;
+    }
+
+    .attendee-tag-remove {
+        font-size: 1rem;
+        width: 0.875rem;
+        height: 0.875rem;
+    }
+
+    .modal-footer {
+        padding: 0.875rem 1rem;
+    }
+
+    .btn {
+        font-size: 0.75rem;
+        padding: 0.5rem 1.5rem;
+    }
+
+    .modal-content::-webkit-scrollbar {
+        width: 0.25rem;
+    }
+}
+
+/* ===================================
+   RESPONSIVE - EXTRA SMALL MOBILE (max-width: 375px)
+   =================================== */
+
+@media (max-width: 375px) {
+    .add-meeting-btn {
+        padding: 0.5rem 0.875rem;
+        font-size: 0.6875rem;
+    }
+
+    .add-meeting-btn span {
+        font-size: 0.8125rem;
+    }
+
+    .meeting-table {
+        min-width: 34.375rem;
+    }
+
+    .meeting-table th,
+    .meeting-table td {
+        padding: 0.5rem 0.625rem;
+        font-size: 0.625rem;
+    }
+
+    .action-btn {
+        min-width: 1.75rem;
+        min-height: 1.75rem;
+    }
+
+    .action-btn img {
+        width: 0.75rem;
+        height: 0.875rem;
+    }
+
+    .modal-header,
+    .modal-footer {
+        padding: 0.875rem;
+    }
+
+    .modal-header h2 {
+        font-size: 0.9375rem;
+    }
+
+    .close-btn {
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 1.25rem;
+    }
+
+    .modal-body {
+        padding: 0.875rem;
+    }
+
+    .form-section {
+        padding: 0.875rem;
+    }
+
+    .section-header h3 {
+        font-size: 0.75rem;
+    }
+
+    .btn-add-link {
+        font-size: 0.6875rem;
+        padding: 0.4375rem 0.75rem;
+    }
+
+    .form-group label {
+        font-size: 0.6875rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select,
+    .meeting-link-input {
+        font-size: 0.6875rem;
+        padding: 0.4375rem 0.625rem;
+    }
+
+    .radio-option input[type="radio"] {
+        width: 0.875rem;
+        height: 0.875rem;
+    }
+
+    .radio-option span {
+        font-size: 0.6875rem;
+    }
+
+    .dropdown-input {
+        font-size: 0.6875rem;
+    }
+
+    .dropdown-item {
+        font-size: 0.625rem;
+    }
+
+    .attendee-tag {
+        font-size: 0.6rem;
+        padding: 0.375rem 0.5rem;
+    }
+
+    .btn {
+        font-size: 0.6875rem;
+        padding: 0.4375rem 1.25rem;
+    }
+}
+
+/* ===================================
+   RESPONSIVE - LANDSCAPE MOBILE (max-height: 500px)
+   =================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .modal {
+        padding: 0.5rem;
+    }
+
+    .modal-content {
+        max-height: 98vh;
+        max-width: 70%;
+        margin: 0.5rem auto;
+    }
+
+    .modal-header {
+        padding: 0.75rem 1.5rem;
+    }
+
+    .modal-header h2 {
+        font-size: 1rem;
+    }
+
+    .close-btn {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .modal-body {
+        padding: 1rem 1.5rem;
+    }
+
+    .form-section {
+        padding: 1rem 1.5rem;
+    }
+
+    .section-header {
+        gap: 0.625rem;
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.625rem;
+    }
+
+    .section-header img {
+        width: 1rem;
+    }
+
+    .section-header h3 {
+        font-size: 0.875rem;
+    }
+
+    .btn-add-link {
+        font-size: 0.75rem;
+        padding: 0.5rem 1rem;
+        margin-top: 0.625rem;
+    }
+
+    .form-grid,
+    .form-grid-3,
+    .form-grid-full {
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .form-group label {
+        font-size: 0.75rem;
+        margin-bottom: 0.375rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select,
+    .meeting-link-input {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .form-group textarea {
+        min-height: 3rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .radio-option {
+        padding: 0.5rem 1rem;
+    }
+
+    .radio-option input[type="radio"] {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .radio-option span {
+        font-size: 0.75rem;
+    }
+
+    .link-block {
+        padding: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .btn-remove-link {
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 1rem;
+    }
+
+    .dropdown-input {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .dropdown-menu {
+        max-height: 10rem;
+    }
+
+    .dropdown-item {
+        font-size: 0.75rem;
+        padding: 0.625rem;
+    }
+
+    .attendees-tags {
+        padding: 0.75rem;
+        min-height: 2.5rem;
+        margin-top: 0.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .attendee-tag {
+        font-size: 0.6875rem;
+        padding: 0.4375rem 0.625rem;
+    }
+
+    .attendee-tag-remove {
+        width: 0.875rem;
+        height: 0.875rem;
+        font-size: 0.875rem;
+    }
+
+    .modal-footer {
+        padding: 0.75rem 1.5rem;
+    }
+
+    .btn {
+        font-size: 0.75rem;
+        padding: 0.625rem 2rem;
+    }
+}
+
+/* ===================================
+   RESPONSIVE - TABLET LANDSCAPE (768px - 1024px)
+   =================================== */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+    .modal-content {
+        max-width: 75%;
+        max-height: 92vh;
+    }
+
+    .modal-header {
+        padding: 1.25rem 1.5rem;
+    }
+
+    .modal-header h2 {
+        font-size: 1.125rem;
+    }
+
+    .close-btn {
+        width: 2.25rem;
+        height: 2.25rem;
+        font-size: 1.75rem;
+    }
+
+    .modal-body {
+        padding: 1.25rem 1.5rem;
+    }
+
+    .form-section {
+        padding: 1.25rem 1.5rem;
+    }
+
+    .section-header {
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .section-header img {
+        width: 1.125rem;
+    }
+
+    .section-header h3 {
+        font-size: 1rem;
+    }
+
+    .btn-add-link {
+        font-size: 0.875rem;
+        padding: 0.625rem 1.25rem;
+        margin-top: 0.75rem;
+    }
+
+    .form-grid,
+    .form-grid-full {
+        gap: 1rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .form-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+        font-size: 0.875rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select,
+    .meeting-link-input {
+        font-size: 0.875rem;
+        padding: 0.625rem 0.875rem;
+    }
+
+    .form-group textarea {
+        min-height: 4rem;
+        margin-bottom: 1rem;
+    }
+
+    .radio-group {
+        gap: 1.5rem;
+    }
+
+    .radio-option {
+        padding: 0.625rem 1.125rem;
+    }
+
+    .radio-option input[type="radio"] {
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+
+    .radio-option span {
+        font-size: 0.875rem;
+    }
+
+    .link-block {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .btn-remove-link {
+        width: 1.75rem;
+        height: 1.75rem;
+        font-size: 1.25rem;
+    }
+
+    .dropdown-input {
+        font-size: 0.875rem;
+        padding: 0.625rem 0.875rem;
+    }
+
+    .dropdown-menu {
+        max-height: 15rem;
+    }
+
+    .dropdown-item {
+        font-size: 0.875rem;
+        padding: 0.75rem 1.125rem;
+    }
+
+    .attendees-tags {
+        padding: 1rem;
+        min-height: 3.125rem;
+        margin-top: 1rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .attendee-tag {
+        font-size: 0.75rem;
+        padding: 0.625rem 0.875rem;
+    }
+
+    .attendee-tag-remove {
+        width: 1.125rem;
+        height: 1.125rem;
+        font-size: 1rem;
+    }
+
+    .modal-footer {
+        padding: 1rem 1.5rem;
+    }
+
+    .btn {
+        font-size: 0.875rem;
+        padding: 0.75rem 2.5rem;
+    }
+}
